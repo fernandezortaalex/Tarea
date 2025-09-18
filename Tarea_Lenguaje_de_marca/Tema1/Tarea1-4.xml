@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recetas>
+    <receta>
+        <nombre>tortilla de patatas</nombre>
+        <ingredientes>
+            <ingrediente>
+                <nombre>huevo</nombre>
+                <cantidad>2</cantidad>
+            </ingrediente>
+
+            <ingrediente>
+                <nombre>patatas</nombre>
+                <cantidad>3</cantidad>
+            </ingrediente>
+        </ingredientes>
+    </receta>
+    <tiempopreparacion>10 minutos</tiempopreparacion>
+
+    <receta>
+        <nombre>patatas con  huevos</nombre>
+        <ingredientes>
+            <ingrediente>
+                <nombre>huevo</nombre>
+                <cantidad>8</cantidad>
+            </ingrediente>
+
+            <ingrediente>
+                <nombre>patatas</nombre>
+                <cantidad>30</cantidad>
+            </ingrediente>
+        </ingredientes>
+    </receta>
+</recetas>

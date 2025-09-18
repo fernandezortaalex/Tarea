@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+    <alumno>
+        <nombre>alex</nombre>
+        <apellido>Fernandez</apellido>
+        <edad>21</edad>
+        <email>fernandez@gmail.com</email>
+    </alumno>
+
+    <alumno>
+        <nombre>iker</nombre>
+        <apellido>bueno</apellido>
+        <edad>30</edad>
+        <email>bueno@gmail.com</email>
+    </alumno>
+
+    <alumno>
+        <nombre>sem</nombre>
+        <apellido>peregrina</apellido>
+        <edad>44</edad>
+        <email>pelegrina@gmail.com</email>
+    </alumno>
+</alumnos>
