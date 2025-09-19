@@ -1,0 +1,16 @@
+<script>
+    //Pide al usuario dos valores con prompt(). Guárdalos en texto1 y texto2 (sin convertir)
+    let texto1 = prompt("Dime una consola de videojuegos: ")
+    let texto2 = prompt("Dime un juego para esa consola: ")
+
+    //Muestra en consola el resultado de la “suma” texto1 + texto2 (concatenación).
+    console.log("La suma de las dos palabras son: " + texto1 + " " + texto2)
+
+    //Convierte ambos a número (elige parseInt, parseFloat o Number) y guarda en numero1 y numero2
+    //Number es para convertir una cadena de texto a numero, pero en este caso como no se pueden convertir las palabras a numeros sale nan
+    let numero1 = Number(texto1)
+    let numero2 = parseInt(texto2)
+    
+    //Muestra en consola la suma numérica real de numero1 + numero2.
+    console.log("Convertidos a numero son: " + numero1 + " y "+ numero2)
+</script>
