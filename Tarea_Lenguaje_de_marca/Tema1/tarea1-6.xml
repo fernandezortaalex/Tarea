@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--COMENTARIO-->
 <instituto>
     <clase>
-        <alumnos>
-            <alumno>
-                <nombre>alex</nombre>
-                <edad>21</edad>
-                <notaMedia>10</notaMedia>
-            </alumno>
+        <alumno>
+            <nombre>alex</nombre>
+            <edad>21</edad>
+            <notaMedia>10</notaMedia>
+        </alumno>
 
-            <alumno>
-                <nombre>iker</nombre>
-                <edad>40</edad>
-                <notaMedia>9</notaMedia>
-            </alumno>
-        </alumnos>
+        <alumno>
+            <nombre>iker</nombre>
+            <edad>40</edad>
+            <notaMedia>9</notaMedia>
+        </alumno>
     </clase>
 
     <clase>
-        <alumnos>
-            <alumno>
-                <nombre>Sem</nombre>
-                <edad>26</edad>
-                <notaMedia>6</notaMedia>
-            </alumno>
+        <alumno>
+            <nombre>Sem</nombre>
+            <edad>26</edad>
+            <notaMedia>6</notaMedia>
+        </alumno>
 
-            <alumno>
-                <nombre>Pablo</nombre>
-                <edad>23</edad>
-                <notaMedia>8</notaMedia>
-            </alumno>
-        </alumnos>
-
+        <alumno>
+            <nombre>Pablo</nombre>
+            <edad>23</edad>
+            <notaMedia>8</notaMedia>
+        </alumno>
     </clase>
 </instituto>

@@ -1,0 +1,12 @@
+<!DOCTYPE alumno [
+<!ELEMENT alumno (nombre, apellido, curso)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellido (#PCDATA)>
+<!ELEMENT curso (#PCDATA)> 
+]>
+<!-- pcdata es que puedes poner lo que quieras -->
+<alumno>
+    <nombre>Alex</nombre>
+    <apellido>Fernandez</apellido>
+    <curso>1 fp superior</curso>
+</alumno>
