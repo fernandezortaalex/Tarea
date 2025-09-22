@@ -3,7 +3,11 @@
     let total = prompt("Dime el total de la cuenta: ")
     let propina = prompt("Dime el porcentaje de propina que quieras dejar: ")
 
-    let numero1 = Number(total)
-    let numero2 = Number(propina)
+    let totalcuenta = Number(total)
+    let totalpropina = Number(propina)
 
+    let division = totalpropina / 100
+    let multiplicacion = division * totalcuenta
+
+    console.log("La propina que vas a dar es de " + multiplicacion)
 </script>
