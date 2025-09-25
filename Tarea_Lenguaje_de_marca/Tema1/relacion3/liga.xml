@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE liga SYSTEM "liga.dtd">
+
+<liga>
+    <entrenador>
+        <nombre>Alex</nombre>
+        <pokemon>
+            <nombre>charizard</nombre>
+            <tipo>fuego</tipo>
+            <nivel>5000</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>evie</nombre>
+            <tipo>planta</tipo>
+            <nivel>40000</nivel>
+        </pokemon>
+    </entrenador>
+
+        <entrenador>
+        <nombre>iker</nombre>
+        <pokemon>
+            <nombre>agumon</nombre>
+            <tipo>planta</tipo>
+            <nivel>6000</nivel>
+        </pokemon>
+        <pokemon>
+            <nombre>agallas</nombre>
+            <tipo>miedo</tipo>
+            <nivel>40000</nivel>
+        </pokemon>
+    </entrenador>
+</liga>
