@@ -1,0 +1,17 @@
+<script>
+    //Solicita un año y determina si es bisiesto.
+    let añosolicitado = Number(prompt("Dime un año para saber si es bisiesto: "))
+
+    let divisiblex4 = añosolicitado % 4
+    let nodivisiblex100 = añosolicitado % 100
+    let divisiblex400 = añosolicitado % 400
+
+    //Cuando quiera poner mas de una condicion tengo que poner las dos primeras entre parentesis
+    //la ! en nodivisible, es para que sea lo contrario, en este caso quiero que sea lo contrario a 0
+    if ((divisiblex4 == 0 || divisiblex400 == 0) && !nodivisiblex100 == 0) {
+        console.log("Es un año bisiesto")
+    } else {
+        console.log("No es un año bisiesto")
+    }
+    
+    </script>
