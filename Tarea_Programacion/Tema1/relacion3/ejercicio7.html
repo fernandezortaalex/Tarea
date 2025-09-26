@@ -1,4 +1,43 @@
 <script>
+    let resultado
     //Pide dos números y una operación (+, -, *, /) e imprime el resultado correspondiente.
-    let primernumero = Number(prompt())
+    let primernumero = Number(prompt("Dime el primer numero: "))
+    let segundonumero = Number(prompt("Dime el segundo numero: "))
+    let operacion = prompt("Dime la operacion que quieres hacer poniendo su signo (+, -, *, /): ")
+    let division0
+
+    if (operacion == "+") {
+        resultado = primernumero + segundonumero
+    }
+    else if (operacion == "-") {
+        resultado = primernumero - segundonumero
+    }
+    else if (operacion == "*") {
+        resultado = primernumero * segundonumero
+    }
+    //Indicamos si cuando vas a hacer la division es entre 0 te de un error
+    else if(operacion == "/" ) 
+    {
+        if (segundonumero == "0")
+        {
+        console.log("no se puede hacer la division con un 0")
+        division0 = true
+        }
+        else {
+        resultado = primernumero / segundonumero
+        }
+    }
+    //Aqui le indicamos que si no tiene uno de estos signos te de un error
+    else {
+        console.log("Tienes que poner uno de estos signos (+, -, *, /): ")
+    }
+
+    if (!division0){
+        console.log("El resultado de " + primernumero + " " + operacion + " " + segundonumero + " es: " + resultado)
+    }
+    else {
+        console.log("Vuelva a probar con valores correctos")
+    }
+
+
 </script>

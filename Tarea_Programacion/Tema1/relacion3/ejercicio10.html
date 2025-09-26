@@ -1,0 +1,30 @@
+<script>
+    //Pide al usuario su calificación (entre 0 y 100) y devuelve su letra correspondiente:
+    //A (90-100).
+    //B (80-89).
+    //C (70-79).
+    //D (60-69).
+    //F (0-59).
+    let calificación = Number(prompt("Dime la nota que has sacado entre 0 y 100 para decirte una letra: "))
+
+    //Ponemos las comparaciones, para saber si el numero que has puesto esta entre tal numero a tal numero coincide con una letra
+    if (calificación >= 0 && calificación <= 59) {
+        console.log("Tu letra es F")
+    }
+    else if (calificación >= 60 && calificación <= 69) {
+        console.log("Tu letra es D")
+    }
+    else if (calificación >= 70 && calificación <= 79) {
+        console.log("Tu letra es C")
+    }
+    else if (calificación >= 80 && calificación <= 89) {
+        console.log("Tu letra es B")
+    }
+    else if (calificación >= 90 && calificación <= 100) {
+        console.log("Tu letra es A")
+    }
+    else {
+        console.log("No es valido ")
+    }
+
+</script>
