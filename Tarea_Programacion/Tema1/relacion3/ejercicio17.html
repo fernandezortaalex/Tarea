@@ -1,0 +1,24 @@
+<script>
+    //Pide al usuario la duración de una llamada (en minutos) y calcula el coste total según estas reglas:
+    //Los primeros 3 minutos son gratis.
+    //De 3 a 10 minutos cuesta 0.50€ por minuto.
+    //Más de 10 minutos cuesta 0.30€ por minuto adicional.
+
+    let duracionllamada = Number(prompt("Dime la duracion de la llanta en minutos"))
+    let coste0 = 0
+
+    if (duracionllamada <= 3){
+        console.log("Te sale " + coste0)
+    }
+    else {
+        let coste1 = (duracionllamada - 3) * 0.5 
+        let coste2 = (7 * 0.5) + ((duracionllamada - 10) * 0.3)
+
+        if (duracionllamada <= 10){
+        console.log("Te cuesta: " + coste1)
+        }
+        else{
+        console.log("Te cuesta: " + coste2)
+        } 
+    }
+</script>

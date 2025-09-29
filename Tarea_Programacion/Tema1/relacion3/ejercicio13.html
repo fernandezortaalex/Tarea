@@ -1,23 +1,9 @@
 <script>
-    //Pide una letra al usuario e indica si es una vocal (a, e, i, o, u) o una consonante.
-    let letra = prompt("Dime una letra y te digo si es una vocal o una consonante: ")
+    let letra = prompt("Introduzca una letra: ")
 
-    if (letra == "a"){
-        console.log("la vocal que has puesto es la a")
-    }
-    else if (letra == "e"){
-        console.log("la vocal que has puesto es la e")
-    }
-    else if (letra == "i"){
-        console.log("la vocal que has puesto es la i")
-    }
-    else if (letra == "o"){
-        console.log("la vocal que has puesto es la o")
-    }
-    else if (letra == "u"){
-        console.log("la vocal que has puesto es la u")
-    }
-    else {
-        console.log("Es una consonante")
+    if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u") {
+        console.log("Es vocal.")
+    } else {
+        console.log("Es consonante.")
     }
 </script>
