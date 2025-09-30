@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 <xs:element name="pedidos">
-    <xs:complexType>
-        <xs:sequence>
+    <xs:complexType>    <!-- puede contener varios elementos -->
+        <xs:sequence> <!--que deben aparecer en un orden en especifico lo que vayas a poner -->
             <xs:element name="pedido" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name= "cliente">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name= "nombre"><!-- Para poner unas restricciones -->
+                                        <xs:simpleType><!-- Para definir un dato simple -->
+                                            <xs:restriction base="xs:string"><!-- Tiene una restriccion que representa texto -->
+                                                <xs:maxLength value="100"/><!--que tenga como maximo 100 palabras-->
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name= "email">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element> 
+                                    <xs:element name= "telefono">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string"><!--Le ponemos string, porque queremos que obligatoriamente tenga 9 digitos con guiones-->
+                                                <xs:pattern value="\d{3}-\d{3}-\d{3}"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="productos" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="producto" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name= "nombre">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:maxLength value="100"></xs:maxLength>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element name= "precio">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base= "xs:decimal"><!--queremos que sea decimal si o si-->
+                                                            <xs:minInclusive value="0.01"/><!--Para que sea obligatoriamente decimal positivo lo ponemos a partir de 0.01-->
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                                <xs:element name= "cantidad">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:integer">
+                                                            <xs:minInclusive value="1"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:element>
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name= "estado">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Pendiente"/>
+                                    <xs:enumeration value="Enviado"/>
+                                    <xs:enumeration value="Entregado"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                <xs:attribute name="codigo" type="xs:string" use="required"/>
+                </xs:complexType>
             </xs:element>
         </xs:sequence>
     </xs:complexType>

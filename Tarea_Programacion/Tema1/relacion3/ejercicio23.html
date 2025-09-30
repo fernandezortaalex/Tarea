@@ -1,0 +1,45 @@
+<script>
+// Crea un programa que pida al usuario su salario anual y calcule los impuestos a pagar aplicando un sistema 
+// progresivo por tramos:
+
+// Los primeros 10.000 € no pagan impuestos.
+// Los siguientes 10.000 € (de 10.001 € a 20.000 €) pagan el 10%.
+// Los siguientes 20.000 € (de 20.001 € a 40.000 €) pagan el 20%.
+// Todo lo que supere los 40.000 € paga el 30%.
+// El programa debe mostrar:
+
+// Los impuestos totales a pagar.
+// El tipo efectivo de impuestos (es decir, el porcentaje real sobre el salario que representa la cantidad 
+// de impuestos).
+
+    let salarioanual = Number(prompt("Dime tu salario anual"))
+
+    const noimpuestos = 0
+    const impuestos10 = salarioanual * 0.1
+    const impuestos20 = salarioanual * 0.2
+    const impuestos30 = salarioanual * 0.3
+
+
+    if (salarioanual <= 10000){
+        console.log("No pagas impuestos")
+    }
+    else if (salarioanual >= 10001 && salarioanual <= 20000){
+        let tipoefectivo = (impuestos10 / (salarioanual - impuestos10)) * 100
+        console.log("pagas el 10%: " + impuestos10 + ". Y tu tipo efectivo de impuestos es: " + tipoefectivo + " %")
+        
+    }
+    else if (salarioanual >= 20001 && salarioanual <= 40000){
+        let tipoefectivo = (impuestos20 / (salarioanual - impuestos20)) * 100
+        console.log("pagas el 20%: " + impuestos20 + ". Y tu tipo efectivo de impuestos es: " + tipoefectivo + " %")
+        
+    }
+    else if (salarioanual > 40000){
+        let tipoefectivo = (impuestos30 / (salarioanual - impuestos30)) * 100
+        console.log("pagas el 30%: " + impuestos30 + ". Y tu tipo efectivo de impuestos es: " + tipoefectivo + " %")
+        
+    }
+    else{
+        console.log("Los datos no son validos")
+    }
+
+</script>

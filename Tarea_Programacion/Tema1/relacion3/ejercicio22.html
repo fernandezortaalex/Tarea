@@ -1,0 +1,36 @@
+<script>
+    //Pide a dos jugadores que ingresen "piedra", "papel" o "tijera" y determina el ganador según las reglas
+    //del juego.
+    let jugador1 = prompt("Elige piedra, papel o tijeras: ")
+    let jugador2 = prompt("Elige piedra, papel o tijeras: ")
+
+    //compara que los datos introducidos por los jugadores sean correctos
+    if (jugador1 !== "piedra" && jugador1 !== "papel" && jugador1 !== "tijeras"){
+        console.log("Datos introducidos no validos por jugador1")
+    }
+    else if (jugador2 !== "piedra" && jugador2 !== "papel" && jugador2 !== "tijeras"){
+        console.log("Datos introducidos no validos por jugador2")
+    }
+    // Solo pongo los casos en los que gane o empate el jugador 1, ya que si no es el caso es que gana jugador 2
+    else if(jugador1 == "piedra" && jugador2 == "piedra"){
+        console.log("Empate")
+    }
+    else if(jugador1 == "piedra" && jugador2 == "tijeras"){
+        console.log("Gana jugador1")
+    }
+    else if(jugador1 == "papel" && jugador2 == "piedra"){
+        console.log("Gana jugador1")
+    }
+    else if(jugador1 == "papel" && jugador2 == "papel"){
+        console.log("Empate")
+    }
+    else if(jugador1 == "tijeras" && jugador2 == "papel"){
+        console.log("Gana jugador1")
+    }
+    else if(jugador1 == "tijeras" && jugador2 == "tijeras"){
+        console.log("Empate")
+    }
+    else {
+        console.log("Gana jugador 2")
+    }
+</script>
