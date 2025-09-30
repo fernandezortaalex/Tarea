@@ -4,13 +4,25 @@
     //De 2 a 5 horas: 4€ cada hora.
     //Más de 5 horas: 3€ cada hora adicional.
     let tiempohora = Number(prompt("Dime el tiempo que has estado estacionado en horas: "))
+    const Precio2Horas = 5
+    const precio2a5 = 4
+    const preciomasde5 = 3
 
-    if (tiempohora <= 2){
-        let coste = tiempohora * 5
+    if (tiempohora <= 0){
+        console.log("vaya...")
+    }
+    else if (tiempohora <= 2){
+        let coste = tiempohora * Precio2Horas
         console.log("Tienes que pagar " + coste)
     }
     else if (tiempohora <= 5) {
-        let coste = (2 * 5) + (tiempohora * )
-        console.log("Tienes que pagar " + horas3)
+        let coste = tiempohora * precio2a5
+        console.log("Tienes que pagar " + coste)
+    }
+    else {
+        //las primeras 5 horas se cobran a 4€ y despues le restas el tiempo que lleva menos las 5 
+        //primeras horas y el resto de horas extras se cobran a 3€
+        let coste = (5 * precio2a5) + ((tiempohora - 5) * preciomasde5)
+        console.log("Tienes que pagar " + coste)
     }
 </script>
