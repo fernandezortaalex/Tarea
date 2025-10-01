@@ -16,7 +16,7 @@
         <mxCell id="eB8i6GthP_7G-YW2y4yg-7" value="especies" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="187" y="110" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="eB8i6GthP_7G-YW2y4yg-8" value="descripcion general&lt;div&gt;foto&lt;/div&gt;&lt;div&gt;nombre cientifico&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="eB8i6GthP_7G-YW2y4yg-7">
+        <mxCell id="eB8i6GthP_7G-YW2y4yg-8" value="(id)descripcion general&lt;div&gt;foto&lt;/div&gt;&lt;div&gt;nombre cientifico&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="eB8i6GthP_7G-YW2y4yg-7">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
         <mxCell id="eB8i6GthP_7G-YW2y4yg-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="eB8i6GthP_7G-YW2y4yg-9" target="eB8i6GthP_7G-YW2y4yg-3">
@@ -31,7 +31,7 @@
         <mxCell id="eB8i6GthP_7G-YW2y4yg-14" value="habitat" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="620" y="110" width="160" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="eB8i6GthP_7G-YW2y4yg-15" value="nombre&lt;div&gt;clima&lt;/div&gt;&lt;div&gt;vegetacion predominante&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="eB8i6GthP_7G-YW2y4yg-14">
+        <mxCell id="eB8i6GthP_7G-YW2y4yg-15" value="(id)nombre&lt;div&gt;clima&lt;/div&gt;&lt;div&gt;vegetacion predominante&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="eB8i6GthP_7G-YW2y4yg-14">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
         <mxCell id="eB8i6GthP_7G-YW2y4yg-18" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="eB8i6GthP_7G-YW2y4yg-16" target="eB8i6GthP_7G-YW2y4yg-15">
@@ -61,8 +61,8 @@
         <mxCell id="eB8i6GthP_7G-YW2y4yg-22" value="codigo (id)&lt;div&gt;duracion estimada&lt;/div&gt;&lt;div&gt;longitud&lt;/div&gt;&lt;div&gt;numero maximo visitantes&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="eB8i6GthP_7G-YW2y4yg-21">
           <mxGeometry y="50" width="160" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="eB8i6GthP_7G-YW2y4yg-24" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
-          <mxGeometry x="779" y="151" width="30" height="30" as="geometry" />
+        <mxCell id="eB8i6GthP_7G-YW2y4yg-24" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="774" y="151" width="40" height="30" as="geometry" />
         </mxCell>
         <mxCell id="eB8i6GthP_7G-YW2y4yg-25" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="1030" y="150" width="30" height="30" as="geometry" />
@@ -79,7 +79,7 @@
         <mxCell id="eB8i6GthP_7G-YW2y4yg-29" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
           <mxGeometry x="235" y="510" width="40" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="eB8i6GthP_7G-YW2y4yg-31" value="vulnerabilidad" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+        <mxCell id="eB8i6GthP_7G-YW2y4yg-31" value="id vulnerabilidad" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="430" y="250" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
