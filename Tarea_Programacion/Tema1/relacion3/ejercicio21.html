@@ -6,28 +6,37 @@
     //Obesidad (IMC >= 30).
     let peso = Number(prompt("Dime tu peso para calcular el IMC: "))
     let altura = Number(prompt("Dime tu altura: "))
-    let IMC = peso / (altura * altura)
+
     const BajoPeso = 18.5
     const MaxNormal = 24.9
     const MinSobrepeso = 25
     const MaxSobrepeso = 29.9
     const Obesidad = 30
 
-
-    if (IMC <= 0){
-        console.log("Eso es imposible: ")
-    } 
-    else if(IMC < BajoPeso){
-        console.log("Bajo Peso")
-    }
-    else if(IMC >= BajoPeso && IMC <= MaxNormal){
-        console.log("Normal")
-    }
-    else if(IMC >= MinSobrepeso && IMC <= MaxSobrepeso){
-        console.log("Sobrepeso")
+    //ponemos que si el valor introducido de peso es menor o igual a cero o altura es menor o igual a 0 no es un dato valido
+    if(peso <= 0 || altura <= 0){
+        console.log("Dame datos validos")
     }
     else{
-        console.log("Obesidad")
+        let IMC = peso / (altura * altura)
+        //creamos la formula de IMC y ponemos toFIxed, para que en caso de que de muchos decimales te de los dos primeros
+        console.log("Tu peso es " + IMC.toFixed(2))
+        if (IMC <= 0){
+            console.log("Eso es imposible: ")
+        } 
+        else if(IMC < BajoPeso){
+            console.log("Bajo Peso")
+        }
+        else if(IMC >= BajoPeso && IMC <= MaxNormal){
+            console.log("Normal")
+        }
+        else if(IMC >= MinSobrepeso && IMC <= MaxSobrepeso){
+            console.log("Sobrepeso")
+        }
+        else{
+            console.log("Obesidad")
+        }
     }
+
 
 </script>

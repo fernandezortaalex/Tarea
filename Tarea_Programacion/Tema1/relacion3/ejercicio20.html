@@ -1,26 +1,33 @@
 <script>
     //Solicita la puntuación de crédito del usuario y el tiempo que ha estado en el banco:
-    //Si la puntuación es mayor a 750 y lleva más de 5 años como cliente, se le aprueba un crédito premium.
+    //Si la puntuación es mayor a 650 y lleva más de 5 años como cliente, se le aprueba un crédito premium.
     //Si la puntuación es mayor a 650 y lleva entre 2 y 5 años, se le aprueba un crédito estándar.
     //Si la puntuación es menor a 650 o lleva menos de 2 años, se le rechaza el crédito.
     let puntuación = Number(prompt("Dime tu puntuacion de creditos: "))
     let tiempobanco = Number(prompt("Dime el tiempo que has estado en el banco: "))
     const MinimaPuntuacion = 650
     const MinimoTiempoBanco = 2
-    const MaximaPuntuacion = 750
+    const MaximaPuntuacion = 650
     const MaximoTiempoBanco = 5
 
-    //Si la puntuación es menor a 650 o lleva menos de 2 años, se le rechaza el crédito.
-    if (puntuación < MinimaPuntuacion || tiempobanco < MinimoTiempoBanco){
-        console.log("No se te ha concedido el credito")
-    }
-    //Si la puntuación es mayor a 650 y lleva entre 2 y 5 años, se le aprueba un crédito estándar.
-    else if(puntuación >= MinimaPuntuacion && tiempobanco >= MinimoTiempoBanco && tiempobanco <= MaximoTiempoBanco){
-        console.log("Tienes un credito estandar")
+    //Le decimos que si la puntuacion no es mayor o igual a 0 o el tiempo que lleva en el banco no es mayor o igual a cero no entra dentro de la primera condicion
+    if (!(puntuación >=0) || !(tiempobanco >= 0)) {
+        console.log=("Dame un numero que no sea negativo")
+        //Si la puntuación es menor a 650 o lleva menos de 2 años, se le rechaza el crédito.
+        if (puntuación < MinimaPuntuacion || tiempobanco < MinimoTiempoBanco){
+            console.log("No se te ha concedido el credito")
         }
-    //Si la puntuación es mayor a 750 y lleva más de 5 años como cliente, se le aprueba un crédito premium.
+        //Si la puntuación es mayor a 650 y lleva entre 2 y 5 años, se le aprueba un crédito estándar.
+        else if(puntuación >= MinimaPuntuacion && tiempobanco >= MinimoTiempoBanco && tiempobanco <= MaximoTiempoBanco){
+            console.log("Tienes un credito estandar")
+            }
+        //Si la puntuación es mayor a 650 y lleva más de 5 años como cliente, se le aprueba un crédito premium.
+        else{
+            console.log("Tienes un credito premium")
+        }
+    }
     else{
-        console.log("Tienes un credito premium")
+        console.log("credito rechazado")
     }
 
 </script>
