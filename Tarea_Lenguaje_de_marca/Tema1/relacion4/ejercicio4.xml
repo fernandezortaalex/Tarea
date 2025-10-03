@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="ejercicio4.xsd">
+    <clase>
+        <alumno id="1">
+            <nombre>Alex</nombre>
+            <edad>16</edad>
+            <nota>
+                <matematicas>9</matematicas>
+                <lengua>8</lengua>
+                <ingles>10</ingles>
+                <portugues>10</portugues>
+            </nota>
+            <dni>12345678N</dni>
+        </alumno>
+        <alumno id="2">
+            <nombre>Iker</nombre>
+            <edad>13</edad>
+            <nota>
+                <matematicas>7</matematicas>
+                <lengua>6</lengua>
+                <ingles>10</ingles>
+            </nota>
+            <dni>12345678N</dni>
+        </alumno>
+    </clase>
+</clase>

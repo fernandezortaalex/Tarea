@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<calendario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio3.xsd">
+    <evento id="1">
+        <titulo>El quijote</titulo>
+        <fecha>2004-05-14</fecha>
+        <hora>14:30:00</hora><!--Time debe ir con HH:MM:SS-->
+        <ubicacion>granada</ubicacion>
+        <codigoPostal>18010</codigoPostal>
+    </evento>
+</calendario>
