@@ -1,0 +1,14 @@
+<script>
+    //Solicitar un número entero y un color. Mostrar por pantalla el color separado por espacios 
+    // tantas veces como nos indique el número.
+
+    let numeroEntero = Number(prompt("Dime un numero entero"))
+    let color = prompt("Dimer un color")
+    let mensaje = " "
+    //tiene que ser menor que para cuando haga una vuelta compare i con el numero que hayas puesto, 
+    //para que cuando de una vuelta vea que i sea menor que el numero
+    for(let i = 0; i < numeroEntero; i++){
+        mensaje = mensaje + color + " "
+    }
+    console.log(mensaje)
+</script>

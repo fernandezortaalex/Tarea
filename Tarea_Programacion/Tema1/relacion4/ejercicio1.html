@@ -4,11 +4,13 @@
 
     //Pedimos el numero con el que queremos multiplicar
     let numero = Number(prompt("Dime un numero del 1 al 10"))
-
-    //Le decimos que empiece por 1 hasta el 11 y que vaya 1,2,3
-    for (let i = 0; i < 11; i++){
-
+    //estamos definiendo una variable diciendo que iteracion es 0, para que empiece a multiplicar por el 1
+    let iteracion = 0
+    //Le decimos que empiece por 0 hasta el 10 y que vaya 1,2,3
+    for (let i = 0; i < 10; i++){
+        //le decimos que iteracion sea i mas 1 "posicion"
+        iteracion = i + 1
         //Le decimos que muestre el numero introducido mas el contador y el resultado
-        console.log(numero + "x " + i + " = " + numero * i)
+        console.log(numero + "x " + iteracion + " = " + numero * iteracion)
     }
 </script>

@@ -1,0 +1,24 @@
+<script>
+    //Solicitar un número entero y un color. Mostrar por pantalla el color tantas veces 
+    //como nos indique el número, numerando las apariciones del color.
+    
+    let numeroEntero = Number(prompt("Dime un numero entero"))
+    let color = prompt("Dime un color")
+    
+    //Es el que guarda lo que vamos poniendo
+    let mensaje = " "
+    //Se usa para llevar la cuenta
+    let iteracion = 0
+
+    //tiene que ser menor que para cuando haga una vuelta compare i con el numero que hayas puesto, 
+    //para que cuando de una vuelta vea que i sea menor que el numero
+    for(let i = 0; i < numeroEntero; i++){
+        //Le decimos que como i empieza en 0 se le añade una posicion para que empieze en la siguiente
+        iteracion = i + 1
+
+        //cada vuelta añade lo que hemos puesto + la cuenta + el color
+        mensaje += " " + iteracion + " " + color
+
+    }
+    console.log(mensaje)
+</script>

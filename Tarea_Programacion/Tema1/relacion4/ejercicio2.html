@@ -5,13 +5,15 @@
     //Cuando acierte, debe mostrar:
     //¡Correcto! Has adivinado el número.
 
-    let numerosecreto = Number(prompt("Dime un numero secreto entre 1 y 10: "))
-    const numero = "8"
+    let numerosecreto = prompt("Dime un numero secreto entre 1 y 10: ")
+    let intento = prompt("Averigua el numero")
 
-
-    while(numerosecreto != numero){
+    //mientras que el numero secreto sea distinto al intento que se muestre
+    while(numerosecreto != intento){
+        //Le mostramos un mensaje de error cuando no sea el mismo numero
         console.log("numero incorrecto")
-        numerosecreto = prompt ("Dime un numero secreto entre 1 y 10: ")
+        //si son numeros distintos le decimos que vuelva a mostrar el mensaje de intento
+        intento = prompt("Averigua el numero: ")
     }
-    console.log("¡Correcto! Has adivinado el número.")
+    console.log("has acertado")
 </script>
