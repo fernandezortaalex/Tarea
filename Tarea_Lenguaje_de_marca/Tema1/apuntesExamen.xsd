@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- A completar por vostros -->
+
+    <!--Esto siempre se pone en los archivos xsd sin cambiar nada-->
+    <?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"></xs:schema>
+
+    <!--esto siempre se pone en los archivos xml cambiando "pedidos", ya que es el nodo raiz y "ejercicio2.xsd ya que es 
+    la correlacion con el xsd"--> 
+    <?xml version="1.0" encoding="UTF-8"?>
+    <pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio2.xsd"></pedidos>
+
+    <!-- Elemento complejo-->
+    <xs:element name="nodo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="elemento1" type="xs:string" />
+                <xs:element name="elemento2" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Elemento complejo en el que puede haber mas de un "pedido"-->
+    <xs:element name="pedido" maxOccurs="unbounded"> <!--unbounded, es que el numero de pedidos que hay dentro es indefinido-->
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cliente"></xs:element>
+                <xs:element name="productos" maxOccurs="unbounded"></xs:element>
+                <xs:element name="estado"></xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo" use="required">
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Elemnto string con restriccion de patron-->
+    <xs:element name="email">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <!-- Email simple: usuario@dominio.tld -->
+                <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento string con restriccion por digitos-->
+    <xs:element name="telefono">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"><!--Le ponemos string, porque queremos que obligatoriamente tenga 9 digitos con guiones-->
+                <xs:pattern value="\d{3}-\d{3}-\d{3}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Elemento string con restriccion por palabras con un maximo de 100-->
+    <xs:element name="nombre">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="100"></xs:maxLength>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+
+    <!--Elemento string con enumeracion de posibles opciones que puedes poner-->
+    <xs:element name="estado">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Pendiente" />
+                <xs:enumeration value="Enviado" />
+                <xs:enumeration value="Entregado" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento string de uso requerido-->
+    <xs:attribute name="codigo" use="required">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="A\d{3}" /><!--Es para que la A sea siempre mayusculas y tenga 3 digitos-->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <!--Elemento decimal con restriccion por numeros con digitos-->
+    <xs:element name="precio">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal"><!--queremos que sea decimal si o si-->
+                <xs:minInclusive value="0.01" /><!--Para que sea obligatoriamente minimo decimal positivo lo ponemos a partir de 0.01-->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento decimal con restriccion de numero entero-->
+    <xs:element name="cantidad">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer"><!--integer es para que sea obligatoriamente minimo un numero entero-->
+                <xs:minInclusive value="1" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento de año entre un minimo y un maximo-->
+    <xs:element name="anioPublicacion">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="1900" />
+                <xs:maxInclusive value="2025" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!--Elemento para un minimo y un maximo de notas-->
+    <xs:element name="nota" minOccurs="1" maxOccurs="5">
+    </xs:element>
+
+</xs:schema>

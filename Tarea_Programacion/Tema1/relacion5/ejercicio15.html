@@ -1,5 +1,14 @@
 <script>
     //Solicitar un número entero. Mostrar el siguiente número múltiplo de 2 y 3 a partir del número.
     let numeroEntero = Number(prompt("Dime un numero"))
-    
+
+    numeroEntero++
+    //en este caso le decimos que se repita el bucle mientras el numero no sea multiplo de 2 o de 3
+    // seguira hasta que encuentre un numero de 2 y de 3 al mismo tiempo
+    while(numeroEntero % 3 != 0 || numeroEntero % 2 != 0){
+        numeroEntero++
+    }
+
+    console.log("El siguiente numero multiplo de 2 y 3 es " + numeroEntero)
+
 </script>
