@@ -35,3 +35,16 @@ nano prueba3.sh
     cat archivo1.txt archivo2.txt > archivo3.txt
     cat archivo3.txt > archivo1.txt
 ```
+
+## 3 
+Repite el ejercicio 1 pero como lo pensamos originalmente. En este caso, carpetas, archivos y programas serán carpetas y hay que almacenar en cada uno lo que corresponde. En carpetas, mover todas las carpetas que haya en la carpeta donde estas haciendo el ejercicio, en archivos los archivos y en programas los programas.
+
+NOTA: carpetas no puede estar dentro de la carpeta donde estás trabajando. Qué pasa si intentamos hacerlo con carpetas dentro de nuestra carpeta? Por qué falla?
+```bash
+nano prueba4.sh
+    #!/bin/bash
+    mkdir carpeta carpeta/carpetas carpeta/archivos carpeta/programas
+    mv *.txt carpeta/archivos
+    mv *.sh carpeta/programas
+    mv */ ../carpetas
+```

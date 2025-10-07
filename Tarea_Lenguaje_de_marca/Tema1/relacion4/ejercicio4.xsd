@@ -24,7 +24,19 @@
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        <xs:element name="nota" minOccurs="1" maxOccurs="5">
+                                        <xs:element name="nota">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="nota" minOccurs="1" maxOccurs="5">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:decimal"><!--queremos que sea decimal si o si-->
+                                                                    <xs:minInclusive value="0.0" /><!--Para que sea obligatoriamente minimo decimal positivo lo ponemos a partir de 0.01-->
+                                                                    <xs:maxInclusive value="10.0" /><!--Para que sea obligatoriamente minimo decimal positivo lo ponemos a partir de 0.01-->
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
                                         </xs:element>
                                         <xs:element name="dni">
                                             <xs:simpleType>

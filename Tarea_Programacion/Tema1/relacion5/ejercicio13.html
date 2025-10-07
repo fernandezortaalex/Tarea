@@ -5,16 +5,16 @@
     let numeroEntero = Number(prompt("Dame un numero entero"))
     
     //Esto es para incrementar el numero en 1 y empezar a comprobar desde el siguiente numero, porque 
-    //no te tiene que decir si el numero que tu has puesto es multiplo de 2 te tiene que decir
-    //el siguiente numero multiplo de 2, ejemplo
+    //no te tiene que decir si el numero que tu has puesto es multiplo de 3 te tiene que decir
+    //el siguiente numero multiplo de 3, ejemplo
     numeroEntero++
 
     while (numeroEntero % 3 != 0){
-        //Si no es divisible por 2 se le añade un numero mas y como ese numero ya es divisible por el
+        //Si no es divisible por 3 se le añade un numero mas y como ese numero ya es divisible por el
         //dos sale del bucle
         numeroEntero++
         console.log("El numero vale " + numeroEntero)
     }
 
-    console.log("El siguiente numero multiplo de 2 es: " + numeroEntero)
+    console.log("El siguiente numero multiplo de 3 es: " + numeroEntero)
 </script>

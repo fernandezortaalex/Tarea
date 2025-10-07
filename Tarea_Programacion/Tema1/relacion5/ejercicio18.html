@@ -2,25 +2,16 @@
     // Solicitar un número entero. Mostrar el siguiente número múltiplo de 2, 3 y 5 a partir del número.
     let numeroEntero = number(prompt("Dime un numero entero"))
     numeroEntero++
-    let multiplo2 = numeroEntero
-    let multiplo3 = numeroEntero
-    let multiplo5 = numeroEntero
+
 
 
     //no puede estar anidado porque si le pones por ejemplo un 4 cuando se termina de cumplir el while 
     // del multiplo 5 se termina el codigo pero el del 3 se queda igual
-    while(multiplo2 % 2 != 0){
-    multiplo2++
-
-    }
-    while(multiplo3 % 3 != 0){
-    multiplo3++
-    }
-    while(multiplo5 % 5 != 0){
-    multiplo5++
+    while(numeroEntero % 2 != 0 || numeroEntero % 3 != 0 || numeroEntero % 5 != 0){
+    numeroEntero++
     }
 
-    console.log("El siguiente numero multiplo de 3 es " + multiplo2)
-    console.log("El siguiente numero multiplo de 5 es " + multiplo3)
-    console.log("El siguiente numero multiplo de 5 es " + multiplo5)
+
+    console.log("El siguiente numero multiplo de 3, 3 y de 5 es " + numeroEntero)
+
 </script>

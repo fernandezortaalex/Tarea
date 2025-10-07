@@ -1,13 +1,16 @@
 <script>
     // Solicitar un número entero. Dibujar una pirámide con tantas filas como indique el número.
     let numero = Number(prompt("Dime un numero"))
-    
-    while(numero != 0){
-        numero++
-        for(i = 0; i <= numero; i++){
-            console.log("*" + i)
-            
-        }
+    //Le decimos que disminuya en uno para que no te muestre el 0
+    numero--
+    //Declaramos la variable piramide
+    let piramide = ""
+
+    for(i = 0; i <= numero; i++){
+        //Le decimos que piramide sea piramide que va incrementando por cada vuelta y que cada fila sea un *
+        piramide += "*"
+        console.log(piramide);
         
     }
+
 </script>

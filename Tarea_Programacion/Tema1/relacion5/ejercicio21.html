@@ -1,0 +1,23 @@
+<script>
+    //Solicitar un número entero. Dibujar una pirámide con tantas filas como indique el número.
+    let numero = Number(prompt("Dime un numero"))
+    //Le decimos que disminuya en uno para que no te muestre el 0
+    numero--
+    //Declaramos la variable piramide
+    let piramide = ""
+    let espacio = ""
+    let asterisco= ""
+    let numeroEspacio = 0
+    for(let i = 0; i <= numero; i++){
+        //Le decimos que piramide sea piramide que va incrementando por cada vuelta y que cada fila sea un *
+        asterisco += "*"
+        espacio = ""//reseteo los espacios
+        numeroEspacio = numero - (i + 1)                            //Tienes que poner mas uno porque si no sera -1 y (- * -) = + y lo 
+                                    //que queremos es quitarle un espacio
+        for(let j = 0; j < numeroEspacio ; j++){
+        espacio += " "
+        }
+        piramide = espacio + asterisco
+        console.log(espacio + piramide);
+    }
+</script>
