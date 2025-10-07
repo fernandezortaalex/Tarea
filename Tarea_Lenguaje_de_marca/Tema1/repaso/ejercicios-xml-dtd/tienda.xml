@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tienda SYSTEM "tienda.dtd">
+
+<tienda>
+    <nombre>Aljaraque</nombre>
+    <pokemon>
+        <nombre>Bulbasur</nombre>
+        <tipo>Fuego</tipo>
+        <precio>32</precio>
+    </pokemon>
+
+    <pokemon>
+        <nombre>Bulbasur</nombre>
+        <tipo>Fuego</tipo>
+        <tipo>Planta</tipo>
+        <precio>32</precio>
+    </pokemon>
+</tienda>

@@ -11,6 +11,30 @@
     <?xml version="1.0" encoding="UTF-8"?>
     <pedidos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio2.xsd"></pedidos>
 
+    <!-- Para conectar un DTD externa con un xml se pone en el XML-->
+    <!DOCTYPE curso SYSTEM "curso.dtd">
+
+    <!--XML Y DTD-->
+    <!--La raiz se pone dentro del DOCTYPE-->
+    <!DOCTYPE alumno []>
+
+    <!--Dentro ponemos los elementos que tenga la raiz-->
+    <!ELEMENT libro (titulo, autor, editorial)>
+
+    <!--Dentro de cada elemento ponemos de que tipo es-->
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT tipo (#PCDATA)>
+    <!ELEMENT nivel (#PCDATA)> 
+
+    <!--PCDATA  significa elemento de texto-->
+    <!ELEMENT nombre (#PCDATA)>
+
+    <!-- + indica que el elemento debe aparecer al menos una vez.-->
+    <!-- * indica que el elemento puede aparecer cero o más veces.-->
+    <!-- ? indica que el elemento es opcional y puede aparecer una o ninguna vez.-->
+    <!ELEMENT persona (nombre, edad?)>
+
+
     <!-- Elemento complejo-->
     <xs:element name="nodo">
         <xs:complexType>

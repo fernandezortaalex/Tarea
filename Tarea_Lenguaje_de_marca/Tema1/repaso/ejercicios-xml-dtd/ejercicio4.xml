@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca [
+<!ELEMENT biblioteca (seccion+)>
+<!ELEMENT seccion (nombre, libro+)>
+<!ELEMENT libro (titulo, autor, anio?)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+]>
+
+<biblioteca>
+    <seccion>
+        <nombre>Terror</nombre>
+        <libro>
+            <titulo>Mantis</titulo>
+            <autor>Alex</autor>
+            <anio>21</anio>
+        </libro>
+        <libro>
+            <titulo>noche</titulo>
+            <autor>Iker</autor>
+            <anio>25</anio>
+        </libro>
+    </seccion>
+
+    <seccion>
+        <nombre>suspense</nombre>
+        <libro>
+            <titulo>caracol</titulo>
+            <autor>Sem</autor>
+        </libro>
+        <libro>
+            <titulo>Rueda</titulo>
+            <autor>Carlos</autor>
+            <anio>21</anio>
+        </libro>
+    </seccion>
+</biblioteca>

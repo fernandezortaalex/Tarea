@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="agencia">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="paquete" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="destino" type= "xs:string"/>
+                            <xs:element name="precio">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:decimal"><!--queremos que sea decimal si o si-->
+                                        <xs:minInclusive value="0" /><!--Para que sea obligatoriamente minimo decimal positivo lo ponemos a partir de 0.01-->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="fechaInicio" type="xs:date"/>
+                            <xs:element name="fechaFin" type="xs:date"/>
+                            <xs:element name="tipo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Aventura" />
+                                        <xs:enumeration value="Relax" />
+                                        <xs:enumeration value="Cultura" />
+                                        <xs:enumeration value="Familiar" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="cliente">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:maxLength value="100"></xs:maxLength>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="PKT-\d{4}" /><!--Es para que la A sea siempre mayusculas y tenga 3 digitos-->
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
