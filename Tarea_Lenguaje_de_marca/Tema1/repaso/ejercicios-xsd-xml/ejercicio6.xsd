@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="inventario">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="producto" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="nombre" type="xs:string" />
+                                <xs:element name="categoria">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="Periferico" />
+                                            <xs:enumeration value="Ordenador" />
+                                            <xs:enumeration value="Movil" />
+                                            <xs:enumeration value="Accesorio" />
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="precio">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal"><!--queremos que sea decimal si o si-->
+                                            <xs:minInclusive value="0.01" />
+                                            <xs:maxInclusive value="9999.99" />
+                                            <xs:pattern value="\d+\.\d{2}"/><!--Para que sea obligatoriamente minimo decimal positivo lo ponemos a partir de 0.01-->
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="stock">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:integer">
+                                            <xs:minInclusive value="0"/>
+                                            <xs:maxInclusive value="1000"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="proveedor" minOccurs="0">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="nombre" type="xs:string" />
+                                            <xs:element name="telefono">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string"><!--Le ponemos string, porque queremos que obligatoriamente tenga 9 digitos con guiones-->
+                                                        <xs:pattern value="\d{3}-\d{3}-\d{3}" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:element>
+                                            <xs:element name="pais" type="xs:string" />
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                            <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:schema>

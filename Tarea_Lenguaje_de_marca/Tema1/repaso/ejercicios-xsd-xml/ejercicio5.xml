@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <agencia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio5.xsd">
-<agencia></agencia>
+
+<paquete codigo="PKT-4567">
+    <destino>Ayamonte</destino>
+    <precio>5</precio>
+    <fechaInicio>2004-05-14</fechaInicio>
+    <fechaFin>2025-05-14</fechaFin>
+    <tipo>Aventura</tipo>
+    <cliente>
+        <nombre>Alex</nombre>
+        <dni>22334455N</dni>
+        <edad>21</edad>
+        <email>dwasdasd@asd.com</email>
+    </cliente>
+</paquete>
+
+</agencia>

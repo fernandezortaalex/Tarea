@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio6.xsd">
+    <producto id="32">
+        <nombre>Alex</nombre>
+        <categoria>Movil</categoria>
+        <precio>3.43</precio>
+        <stock>67</stock>
+        <proveedor>
+            <nombre>Caixa</nombre>
+            <telefono>456-456-456</telefono>
+            <pais>España</pais>
+        </proveedor>
+    </producto>
+
+    <producto id="33">
+        <nombre>Miguel</nombre>
+        <categoria>Periferico</categoria>
+        <precio>8.43</precio>
+        <stock>999</stock>
+    </producto>
+
+</inventario>

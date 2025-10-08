@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hospital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ejercicio9.xsd">
+
+    <nombre>asdaw</nombre>
+    <departamento>
+        <nombre>adsad</nombre>
+        <medicojefe>Aadas Fefsdf</medicojefe>
+        <paciente>
+            <dni>22334455N</dni>
+            <edad>56</edad>
+            <fechaIngreso>2005-11-24</fechaIngreso>
+            <diagnostico>sfdsfsdf</diagnostico>
+            <tratamiento>czsdc</tratamiento>
+        </paciente>
+        <paciente>
+            <dni>22334455N</dni>
+            <edad>56</edad>
+            <fechaIngreso>2005-11-24</fechaIngreso>
+            <diagnostico>sfdsfsdf</diagnostico>
+            <tratamiento>czsdc</tratamiento>
+        </paciente>
+    </departamento>
+    <departamento>
+        <nombre>adsad</nombre>
+        <medicojefe>Aadas Fefsdf</medicojefe>
+        <paciente>
+            <dni>22334455N</dni>
+            <edad>56</edad>
+            <fechaIngreso>2005-11-24</fechaIngreso>
+            <diagnostico>sfdsfsdf</diagnostico>
+            <tratamiento>czsdc</tratamiento>
+        </paciente>
+        <paciente>
+            <dni>22334455N</dni>
+            <edad>56</edad>
+            <fechaIngreso>2005-11-24</fechaIngreso>
+            <diagnostico>sfdsfsdf</diagnostico>
+            <tratamiento>czsdc</tratamiento>
+        </paciente>
+    </departamento>
+</hospital>

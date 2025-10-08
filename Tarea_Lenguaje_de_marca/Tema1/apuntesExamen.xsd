@@ -34,6 +34,20 @@
     <!-- ? indica que el elemento es opcional y puede aparecer una o ninguna vez.-->
     <!ELEMENT persona (nombre, edad?)>
 
+    <!-- XSD Y XML-->
+    <xs:element name="pedidos"><!--es la raiz-->
+
+    <xs:complexType>    <!-- puede contener varios elementos -->
+
+    <xs:sequence> <!--que deben aparecer en un orden en especifico lo que vayas a poner -->
+
+    <xs:simpleType><!-- Para meter una restriccion -->
+
+    <xs:element><!-- Una etiqueta con un tipo de dato, por ejemplo <nombre>Juan</nombre>-->
+
+    <xs:attribute><!-- Un atributo que va dentro de la misma etiqueta, por ejemplo <habitacion tipo="Doble" numero="202"/>-->
+
+
 
     <!-- Elemento complejo-->
     <xs:element name="nodo">
@@ -98,7 +112,7 @@
         </xs:simpleType>
     </xs:element>
 
-    <!--Elemento string de uso requerido-->
+    <!--Elemento string de uso requerido, va antes del sequence-->
     <xs:attribute name="codigo" use="required">
         <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -106,6 +120,9 @@
             </xs:restriction>
         </xs:simpleType>
     </xs:attribute>
+
+    <!-- Tipo entero positivo-->
+    <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
 
     <!--Elemento decimal con restriccion por numeros con digitos-->
     <xs:element name="precio">
@@ -148,7 +165,7 @@
         </xs:simpleType>
     </xs:element>
 
-    <!-- Elemento de mayusculas-->
+    <!-- Elemento de inicio mayusculas-->
     <xs:element name="nombre">
         <xs:simpleType>
             <xs:restriction base="xs:string">
@@ -157,7 +174,16 @@
         </xs:simpleType>
     </xs:element>
 
-    <!-- Elemento de edad-->
+    <!-- Elemento de nombre y apellido que empiece por mayusculas-->
+    <xs:element name="medicojefe">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]+ [A-Z][a-z]+"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Elemento de minimos y maximos-->
     <xs:element name="edad">
         <xs:simpleType>
             <xs:restriction base="xs:integer">
@@ -167,4 +193,46 @@
         </xs:simpleType>
     </xs:element>
 
+    <!-- telefono-->
+    <xs:element name="telefono">
+        <xs:simpleType>
+            <xs:restriction base="xs:string"><!--Le ponemos string, porque queremos que obligatoriamente tenga 9 digitos con guiones-->
+                <xs:pattern value="\d{3}-\d{3}-\d{3}" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Cuando no quieres poner ninguna restriccion, solo el tipo-->
+    <xs:element name="titulo" type="xs:string" />
+    <xs:element name="fecha" type="xs:date" />
+    <xs:element name="hora" type="xs:time" />
+    <xs:element name="ubicacion" type="xs:string" />
+
+    <!-- Elementos dentro de la etiqueta-->
+    <xs:element name="habitacion">
+        <xs:complexType>
+            <xs:attribute name="tipo">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Individual" />
+                        <xs:enumeration value="Doble" />
+                        <xs:enumeration value="Suite" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="numero" type="xs:positiveInteger" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Para que sea opcional -->
+    <xs:element name="proveedor" minOccurs="0"></xs:element>
+
+    <!-- nota → decimal entre 0 y 10, con una cifra decimal (\d(\.\d)?-->
+    <xs:element name="nota">
+        <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+                <xs:pattern value="\d(\.\d)?" /><!--Es para que la A sea siempre mayusculas y tenga 3 digitos-->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
 </xs:schema>

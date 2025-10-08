@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="reservas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="reserva">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="cliente">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="[A-Z].*" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="dni">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="\d{8}[A-Z]" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="habitacion">
+                                <xs:complexType>
+                                    <xs:attribute name="tipo">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Individual" />
+                                                <xs:enumeration value="Doble" />
+                                                <xs:enumeration value="Suite" />
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="numero" type="xs:positiveInteger"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="fechaEntrada" type="xs:date" />
+                            <xs:element name="fechaSalida" type="xs:date" />
+                            <xs:element name="precioTotal">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:decimal"><!--queremos
+                                        que sea decimal si o si-->
+                                        <xs:minInclusive value="50" /><!--Para
+                                        que sea obligatoriamente minimo decimal positivo lo ponemos
+                                        a partir de 0.01-->
+                                        <xs:maxInclusive value="5000" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="codigo" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="R\d{3}" /><!--Es
+                                    para que la A sea siempre mayusculas y tenga 3 digitos-->
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

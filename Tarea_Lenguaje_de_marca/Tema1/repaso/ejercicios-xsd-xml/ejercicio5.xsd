@@ -43,21 +43,36 @@
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        
+                                        <xs:element name="edad">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:minInclusive value="18"/>
+                                                    <xs:maxInclusive value="99"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="email">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <!-- Email simple: usuario@dominio.tld -->
+                                                    <xs:pattern value="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}" />
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                    <xs:attribute name="codigo" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:pattern value="PKT-\d{4}" /><!--Es para que la A sea siempre mayusculas y tenga 3 digitos-->
+                                </xs:restriction>
+                            </xs:simpleType>
+                    </xs:attribute>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="codigo" use="required">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:pattern value="PKT-\d{4}" /><!--Es para que la A sea siempre mayusculas y tenga 3 digitos-->
-                    </xs:restriction>
-                </xs:simpleType>
-            </xs:attribute>
         </xs:complexType>
     </xs:element>
 </xs:schema>
