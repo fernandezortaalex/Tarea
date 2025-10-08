@@ -139,4 +139,32 @@
     <xs:element name="nota" minOccurs="1" maxOccurs="5">
     </xs:element>
 
+    <!-- Elemento DNI-->
+    <xs:element name="dni">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="\d{8}[A-Z]"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Elemento de mayusculas-->
+    <xs:element name="nombre">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z].*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- Elemento de edad-->
+    <xs:element name="edad">
+        <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="6"/>
+                <xs:maxInclusive value="18"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
 </xs:schema>

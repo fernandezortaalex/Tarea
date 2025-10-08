@@ -30,16 +30,20 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="nombre">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:simpleType>
-                                                        <xs:restriction base="xs:string">
-                                                            <xs:maxLength value="100"></xs:maxLength>
-                                                        </xs:restriction>
-                                                    </xs:simpleType>
-                                                </xs:sequence>
-                                            </xs:complexType>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="[A-Z].*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
                                         </xs:element>
+                                        <xs:element name="dni">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="\d{8}[A-Z]"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
