@@ -1,0 +1,22 @@
+<script>
+    let tamanio = Number(prompt("Introduce el tamaño de la piramide:"))
+    let fila = ""
+    let asteriscos = ""
+    let espacios = ""
+    //Creamos las constantes espacio y asterisco
+    const ASTERISCO = "*"
+    const ESPACIO = " "
+
+
+    for(let i = 0; i < tamanio; i++){
+        //Utilizamos la funcion repeat , (nombre de la funcion.repeat(veces que queremos que se repita))
+        //le decimos que repita tantos espacios como i haya
+        espacios = ESPACIO.repeat(i)
+        //le decimos que ponga tantos asteriscos como el numero que hayamos puesto quitandole una posicion
+        asteriscos = ASTERISCO.repeat(tamanio-i)        
+
+        fila = espacios + asteriscos
+        console.log(fila);
+    }
+
+</script>
