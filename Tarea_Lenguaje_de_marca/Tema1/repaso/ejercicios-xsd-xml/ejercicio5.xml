@@ -2,7 +2,7 @@
 <agencia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ejercicio5.xsd">
 
 <paquete codigo="PKT-4567">
-    <destino>Ayamonte</destino>
+    <destino></destino>
     <precio>5</precio>
     <fechaInicio>2004-05-14</fechaInicio>
     <fechaFin>2025-05-14</fechaFin>

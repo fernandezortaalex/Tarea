@@ -236,3 +236,13 @@
         </xs:simpleType>
     </xs:element>
 </xs:schema>
+
+    <!-- Nombre con apellido-->
+    "[A-ZÁÉÍÓÚ][a-záéíóú]+( [A-ZÁÉÍÓÚ][a-záéíóú]+)*"
+    <xs:element name="destino">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string"><!--integer es para que sea obligatoriamente minimo un numero entero-->
+                                        <xs:minLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
