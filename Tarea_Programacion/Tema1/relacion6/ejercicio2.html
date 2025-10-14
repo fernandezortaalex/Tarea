@@ -1,0 +1,35 @@
+<script>
+    //Crea un programa que simule un cajero. El usuario tiene un saldo inicial de 1000 euros y el cajero 
+    //permite al usuario retirar dinero mientras su saldo no se quede por debajo de cero.
+
+    //Saldo: 1000 | Introduzca saldo a retirar: 400
+    //Saldo: 600 | Introduzca saldo a retirar: 200
+    //Saldo: 400 | Introduzca saldo a retirar: 500
+    //Saldo insuficiente.
+    //Saldo: 400 | Introduzca saldo a retirar: 400
+    //Te has quedado sin saldo ¡A trabajar!
+
+    let saldoInicial = 1000
+    let saldoRetirar = Number(prompt("saldo: " + saldoInicial + " Introduce tu saldo a retirar"))
+
+
+    while(saldoInicial > 0){
+        saldoInicial -= saldoRetirar
+        
+
+        if(saldoInicial > saldoRetirar){
+            saldoRetirar = Number(prompt("saldo: " + saldoInicial + "Introduce tu saldo a retirar"))
+            
+        }
+        else if(saldoInicial < saldoRetirar){
+            console.log("Saldo Insuficiente")
+        }
+        else{
+            console.log("Te has quedado sin saldo a trabajar");
+        }
+
+        
+    }
+
+
+</script>
