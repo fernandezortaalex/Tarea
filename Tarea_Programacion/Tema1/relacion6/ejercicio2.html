@@ -13,22 +13,31 @@
     let saldoRetirar = Number(prompt("saldo: " + saldoInicial + " Introduce tu saldo a retirar"))
 
 
+    //Mientras el saldo inicial sea mayor que 0 se hace el bucle
     while(saldoInicial > 0){
-        saldoInicial -= saldoRetirar
-        
 
-        if(saldoInicial > saldoRetirar){
-            saldoRetirar = Number(prompt("saldo: " + saldoInicial + "Introduce tu saldo a retirar"))
-            
+        if(saldoRetirar < 0){
+            saldoRetirar = Number(prompt("Dime un numero valido saldo: " + saldoInicial + " Introduce tu saldo a retirar"))
         }
-        else if(saldoInicial < saldoRetirar){
-            console.log("Saldo Insuficiente")
+        //si el saldo a retirar es mayor al saldo inicial le pido otra vez el saldo a retirar
+        else if(saldoRetirar > saldoInicial){
+            saldoRetirar = Number(prompt("Saldo insuficiente " + " saldo: " + saldoInicial + " Introduce tu saldo a retirar"))
         }
+        //Si no significa que esta bien y hago la resta
         else{
-            console.log("Te has quedado sin saldo a trabajar");
+            saldoInicial -= saldoRetirar
+            //Cuando hago la resta si veo que el saldo inicial es menor o igual a 0 es que no tiene dinero
+            if(saldoInicial <= 0){
+                console.log("Te has quedado sin dinero a trabajar");
+                
+            }
+            //Si no significa que todavia tiene dinero y le vuelvo a preguntar cuanto dinero quiere sacar
+            else{
+                saldoRetirar = Number(prompt("saldo: " + saldoInicial + " Introduce tu saldo a retirar"))
+            }
         }
-
         
+                
     }
 
 
