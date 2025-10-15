@@ -1,0 +1,45 @@
+<script>
+    // Crea una calculadora básica de dos números. El programa pide dos números y luego una operación (+, -, *, /). El programa pide números hasta que el usuario indique "SALIR".
+    // Introduce el primer número: 4
+    // Introduce el segundo número: 5
+    // Introduce la operación: +
+
+    // El resultado de 4 + 5 es 9
+
+    // Introduce el primer número: 3
+    // Introduce el segundo número: 4
+    // Introduce la operación: *
+
+    // El resultado de 3 * 4 es 12
+
+    // Introduce el primer número: SALIR
+
+    let numero = prompt("Introduce el primer número: ")
+    
+
+    while(numero != "SALIR"){
+    let numero1 = Number(numero)
+    let numero2 = Number(prompt("Introduce el segundo número: "))
+    let operacion = prompt("Introduce la operacion: ")
+        
+        if (numero != "SALIR"){
+            if(operacion == "+"){
+                let suma = numero1 + numero2
+                console.log("El resultado de " + numero1 + " + " + numero2 + " es " + suma);
+            }
+            else if(operacion == "-"){
+                let resta = numero1 - numero2
+                console.log("El resultado de " + numero1 + " - " + numero2 + " es " + resta);
+            }
+            else if(operacion == "*"){
+                let multiplicacion = numero1 * numero2
+                console.log("El resultado de " + numero1 + " * " + numero2 + " es " + multiplicacion);
+            }
+            else if(operacion == "/"){
+                let dividir = numero1 / numero2
+                console.log("El resultado de " + numero1 + " / " + numero2 + " es " + dividir);
+            }
+            numero = prompt("Introduce el primer número: ")
+        }
+    }
+</script>
