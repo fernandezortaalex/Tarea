@@ -1,0 +1,34 @@
+<script>
+    // Crea un programa que pida la temperatura de los 7 días de la semana y 
+    // calcule la temperatura promedio. Se deben descartar los valores fuera del rango (-20 y 50).
+
+    // Introduce la temperatura del día 1: 32
+    // Introduce la temperatura del día 2: 31
+    // Introduce la temperatura del día 3: 28.5
+    // Introduce la temperatura del día 4: 82
+    // Temperatura incorrecta. Debe estar entre -20 y 50
+    // Introduce la temperatura del día 4: 12
+    // Introduce la temperatura del día 5: 33
+    // Introduce la temperatura del día 6: 35
+    // Introduce la temperatura del día 7: 65
+    // Temperatura incorrecta. Debe estar entre -20 y 50
+    // Introduce la temperatura del día 7: 25.3
+
+    // La temperatura media de la semana es: 28.1
+
+    let dia = 1
+    let temperatura = Number(prompt("Introduce la temperatura del dia " + dia))
+
+    while (dia <= 7){
+        temperatura = Number(prompt("Introduce la temperatura del dia " + dia))
+        dia++
+
+        if(temperatura < -20 || temperatura > 50){
+            temperatura = Number(prompt("Temperatura incorrecta Introduce la temperatura del dia " + dia))
+            
+        }
+        else{
+            temperatura = Number(prompt("Introduce la temperatura del dia " + dia))
+        }
+    }
+</script>
