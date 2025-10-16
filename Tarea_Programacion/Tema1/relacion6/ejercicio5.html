@@ -17,14 +17,20 @@
     // La temperatura media de la semana es: 28.1
 
     let dia = 1
-    let temperatura = Number(prompt("Introduce la temperatura del dia " + dia))
+    let temperatura = 0
     let totalTemperatura = 0
-    while (dia <= 7){
-        
-        if(temperatura >= -20 && temperatura <= 50){
+    const diaMaximos = 7
+    const temperaturaMinima = -20
+    const temperaturaMaxima = 50
+
+    
+
+    for (let i = 1; i <= diaMaximos; i++){
+        temperatura = (prompt("Introduce la temperatura del dia " + dia))
+        if(temperatura >= temperaturaMinima && temperatura <= temperaturaMaxima){
             dia++
             totalTemperatura+=temperatura
-            if(dia <= 7){
+            if(dia <= diaMaximos){
                 temperatura = Number(prompt("Introduce la temperatura del dia " + dia))
             }
         }

@@ -20,6 +20,10 @@
     let producto = 1
     let precio = Number(prompt("Precio del producto " + producto))
     let totalPrecio = 0
+    let numeroPersona = ""
+    let propinaDeja = ""
+    let propina = 0
+    let precioCabeza = 0
     
     while (precio != 0){
         if(precio < 0){
@@ -32,12 +36,12 @@
         }
     }
 
-    let numeroPersona = Number(prompt("¿Cúantas personas sois?: "))
-    let propinaDeja = Number(prompt("¿Cuánto porcentaje de propina quieres dejar?: "))
+    numeroPersona = Number(prompt("¿Cúantas personas sois?: "))
+    propinaDeja = Number(prompt("¿Cuánto porcentaje de propina quieres dejar?: "))
 
     if(numeroPersona > 0 && propinaDeja > 0){
-        let propina = (totalPrecio * (propinaDeja / 100)) + totalPrecio
-        let precioCabeza = propina / numeroPersona
+        propina = (totalPrecio * (propinaDeja / 100)) + totalPrecio
+        precioCabeza = propina / numeroPersona
         console.log("El total sin la propina es: " + totalPrecio);
         console.log("El total con la propina es: " + propina);
         console.log("Precio por cabeza: " + precioCabeza);
