@@ -1,0 +1,48 @@
+<script>
+    // Crea un programa que simule un entrenamiento de 5 vueltas para un coche. En cada vuelta, se pide el tiempo (en segundos). Al final, muestra:
+
+    // La vuelta más rápida
+    // El tiempo total
+    // El tiempo promedio
+    // Utiliza for para iterar las vueltas y if para comprobar cuál es la más rápida.
+
+    // 🧪 Ejemplo:
+    // Tiempo vuelta 1: 60
+    // Tiempo vuelta 2: 58
+    // Tiempo vuelta 3: 62
+    // Tiempo vuelta 4: 57
+    // Tiempo vuelta 5: 59
+
+    // Tiempo total: 296
+    // Tiempo medio: 59.2
+    // La vuelta más rápida fue la 4 con 57 segundos.
+
+    let vueltas = 5
+    let tiempoVuelta = ""
+    let tiempoTotal = 0
+    let tiempoMedio = 0
+    let menorTiempo = 999999999999
+    let vueltaMasRapida = 0
+
+    for (let i = 1; i <= vueltas; i++) {
+        tiempoVuelta = Number(prompt("Tiempo vuelta " + i + ": "))
+        
+
+        if (tiempoVuelta > 0) {
+            tiempoTotal += tiempoVuelta
+            if (tiempoVuelta < menorTiempo) {
+                vueltaMasRapida = i
+                menorTiempo = tiempoVuelta
+            }
+        } else {
+            console.log("Tienes que poner un numero valido");
+            
+        }
+    }
+
+    tiempoMedio = tiempoTotal / vueltas
+    console.log("Tiempo total: " + tiempoTotal);
+    console.log("Tiempo medio: " + tiempoMedio);
+    console.log("La vuelta mas rapida fue " + vueltaMasRapida + " con " + menorTiempo);
+    
+</script>

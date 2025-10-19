@@ -26,23 +26,21 @@
 
     if (operacion == "+") {
       resultado = numero + numero2;
-     
+
     } else if (operacion == "-") {
       resultado = numero - numero2;
-      
+
     } else if (operacion == "*") {
       resultado = numero * numero2;
-      
+
     } else if (operacion == "/") {
       resultado = numero / numero2;
-      
+
     }
     else {
-        resultado = prompt("No es un caracter valido")
+      resultado = prompt("No es un caracter valido")
     }
-     console.log(
-        "El resultado de " + numero + operacion + numero2 + " es " + resultado
-      );
+    console.log("El resultado de " + numero + operacion + numero2 + " es " + resultado);
     numero = prompt("Introduce el primer número: ");
   }
 </script>
