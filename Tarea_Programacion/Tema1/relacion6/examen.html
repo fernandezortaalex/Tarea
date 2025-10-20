@@ -1,0 +1,71 @@
+<script>
+    //Creo las variables 
+    let numeroPedidos = 0
+    let stockDeArroz = 0
+    let stockDeAgua =  0
+    let precioUnitario = 0
+    let pedido = 0
+    let tipoPlato = ""
+    let unidades = 0
+    let plato
+    let arroz = 0
+    let agua = 0
+    let totalPrecio = 0
+    let arrozGastado = 0
+    let aguaGastada = 0
+
+
+   // while (numeroPedidos > 0 && stockDeArroz > 0 && stockDeAgua > 0 ) {
+        //Pido los numeros de los pedidos y el stock de cada alimento
+        numeroPedidos = Number(prompt("Número de pedidos:"))
+        stockDeArroz = Number(prompt("Stock de arroz (g):"))
+        stockDeAgua = Number(prompt("Stock de agua (L):"))
+        
+    //    console.log("Los datos no son validos vuelve a introducirlos");
+        
+   // }
+    //Creo un bucle que vaya contando de uno en uno hasta llegar al numero de pedidos
+    for (let i = 1; i <= numeroPedidos; i++) {
+        console.log("Pedido " + i);
+        
+        //Le pido el tipo de plato y segun el plato calculo lo que gasta cada plato
+        tipoPlato = prompt("Tipo de plato")
+        if (tipoPlato == "maki") {
+            arroz += 120
+            agua += 0.10
+            precioUnitario = 8
+        }
+        else if(tipoPlato == "nigiri"){
+            arroz += 50
+            agua += 0.05
+            precioUnitario = 10
+        }
+        else if(tipoPlato == "sashimi"){
+            agua += 0.02
+            precioUnitario = 12
+        }
+        else{
+            console.log("La opcion que has puesto no esta disponible");
+            
+        }
+        unidades = Number(prompt("Unidades"))
+        
+        //calculo cuanta cantidad de arroz y de agua he gastado
+        arrozGastado = arroz * unidades
+        aguaGastada = agua * unidades
+        //Segun los platos pedidos calculo el coste total
+        totalPrecio = unidades * precioUnitario
+        console.log("Unidades: " + unidades);
+        
+        //Actualizo el stock 
+        stockDeAgua -= arrozGastado
+        stockDeArroz -= aguaGastada
+        
+        console.log("Importe cobrado: ");
+        console.log("Arroz gastado: " + stockDeAgua);
+        console.log("Agua gastada: " + stockDeArroz);
+        
+        
+        
+    }
+</script>
