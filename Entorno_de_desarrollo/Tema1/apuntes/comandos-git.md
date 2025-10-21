@@ -13,64 +13,98 @@
     - [**10 ver los hashes**](#10-ver-los-hashes)
 
 # **Comandos basicos de git**
+
 Git guarda versiones de tu proyecto como si hicieras un guardado cada vez que haces cambios importantes de tus proyectos
+
 ## **¿Como funciona git?**
+
 ### **1 Inicializar un repositorio**
+
 Le decimos a Git que empieze a controlar nuestro proyecto:
+
 ```bash
-git ini
+git init
 ```
+
 ### **2 Agregar archivos al seguimiento**
+
 Cuando haces cambios en tus archivos tienes que decirle a Git que archivos quieres guardar:
+
 ```bash
 git add archivo.txt
 ```
-Si quieres agregar todos los archivos 
+
+Si quieres agregar todos los archivos
+
 ```bash
 git add .
 ```
 
 ### **3 Remover ficheros del arbol de trabajo**
+
 ```bash
 git-rm
 ```
 
 ### **4 Guardar un cambio (commit)**
+
 Una vez agregados, guardas ese cambio con un mensaje
+
 ```bash
 git commit -m "mensaje"
 ```
+
 ### **5 Subida de repositorios**
+
 ```bash
 git commit "archivo1.txt"
 ```
 
+### **6 reescribir commit anterior**
+
+```bash
+git mv Jose.txt <tu-nombre>.txt # Reemplaza <tu-nombre> por tu nombre real (Cambiar nombre del fichero)
+git commit --amend -m "Renombra Jose.txt a <tu-nombre>.txt" # Reescribe el commit anterior
+```
+
 ### **6 Creacion de una nueva rama**
+
 ```bash
 git branch nombrerama
 ```
 
 ### **6 Cambiar a una rama existente**
+
 ```bash
 git checkout nombrerama
 ```
 
 ### **7 Mueve tu trabajo de una rama a otra**
+
 ```bash
 git rebase nombrerama
 ```
 
 ### **8 El ultimo punto donde has tocado**
+
 ```bash
 head
 ```
 
 ### **9 moverse una cantidad determinadas de commit**
+
 ```bash
 git checkout
 ```
 
 ### **10 ver los hashes**
+
 ```bash
 git log
+```
+
+### **11**
+
+```bash
+
 ```
