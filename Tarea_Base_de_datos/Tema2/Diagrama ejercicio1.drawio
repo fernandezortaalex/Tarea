@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.7">
+  <diagram name="Página-1" id="v4S8-J7HO90VfEI-XX9y">
+    <mxGraphModel dx="2108" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vJkgdpiVfPOg-435cQB6-1" value="Libros" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-2" value="(id)libros&lt;div&gt;Titulo&lt;/div&gt;&lt;div&gt;autor&lt;/div&gt;&lt;div&gt;Año de publicacion&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="vJkgdpiVfPOg-435cQB6-1">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="vJkgdpiVfPOg-435cQB6-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="120" as="sourcePoint" />
+            <mxPoint x="80" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-9" value="Socios" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="140" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-10" value="(id)Socios&lt;div&gt;Nombre&lt;/div&gt;&lt;div&gt;Direccion&lt;/div&gt;&lt;div&gt;Telefono&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="vJkgdpiVfPOg-435cQB6-9">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-13" target="vJkgdpiVfPOg-435cQB6-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-13" value="prestamo" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="230" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-10" target="vJkgdpiVfPOg-435cQB6-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-16" value="N" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-17" value="M" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="120" y="180" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-20" value="Categorias" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="140" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-21" value="(id)Categorias&lt;div&gt;Nombre&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="vJkgdpiVfPOg-435cQB6-20">
+          <mxGeometry y="50" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-22" target="vJkgdpiVfPOg-435cQB6-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-22" value="Clasificados" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="650" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-2" target="vJkgdpiVfPOg-435cQB6-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-25" value="N" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="810" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-26" value="M" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="170" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=14;fontColor=default;fontStyle=0;horizontal=1;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-27" target="vJkgdpiVfPOg-435cQB6-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-27" value="Fecha Inicio" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;rounded=1;shadow=0;dashed=0;strokeColor=default;strokeWidth=2;verticalAlign=middle;arcSize=4;fontFamily=Helvetica;fontSize=14;fontColor=default;horizontal=1;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="240" y="100" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Helvetica;fontSize=14;fontColor=default;fontStyle=0;horizontal=1;" edge="1" parent="1" source="vJkgdpiVfPOg-435cQB6-28" target="vJkgdpiVfPOg-435cQB6-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-28" value="Fecha devolucion" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;rounded=1;shadow=0;dashed=0;strokeColor=default;strokeWidth=2;verticalAlign=middle;arcSize=4;fontFamily=Helvetica;fontSize=14;fontColor=default;horizontal=1;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="240" y="300" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vJkgdpiVfPOg-435cQB6-31" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;Socios: ID_Socios, Nombre, Direccion, Telefono&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;Prestamo: ID_Socio, ID_Libro Fecha Inicio, Fecha Devolucion&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;Libros: ID_Libros, Titulo,&amp;nbsp; Autor, Año de publicacion&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;Categorias: ID_Categorias, Nombre&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px; font-weight: normal;&quot;&gt;Libro_tiene_Categoria: ID_Socio, ID_Categorias&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=14;fontColor=default;fontStyle=0;horizontal=1;" vertex="1" parent="1">
+          <mxGeometry x="77" y="440" width="750" height="190" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
