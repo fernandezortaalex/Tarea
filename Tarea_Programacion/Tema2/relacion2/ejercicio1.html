@@ -6,25 +6,50 @@
     // Mostrar la temperatura más baja registrada.
     // Calcular la temperatura promedio de la semana.
     // Salir del programa.
-    // El programa debe ejecutarse hasta que el usuario elija la opción de salir.
+    // El programa debe ejecutarse hasta que el usuario elija la opcion de salir.
 
     const DIAS = 7
     let temperaturaRegistrada = 0
     let temperaturaDias = []
     let temperaturaMasAlta = 0
-
+    let temperaturaMasBaja = 9999999
+    let totalTemperatura = 0
+    let temperaturaPromedio = 0
+    let opcion = ""
+    let salidaPrograma = 4
 
     for (let i = 1; i <= DIAS; i++) {
         temperaturaRegistrada = Number(prompt(`Dime la temperatura registrada durante el dia ${i}`))
+        //Se añade la temperatura a la ultima parte de temperatura dias
         temperaturaDias.push(temperaturaRegistrada)
+
+        //Calculo todas las condiciones
+        if (temperaturaRegistrada > temperaturaMasAlta) {
+            temperaturaMasAlta = temperaturaRegistrada
+        }
+
+        if (temperaturaRegistrada < temperaturaMasBaja) {
+            temperaturaMasBaja = temperaturaRegistrada
+        }
+
+        totalTemperatura += temperaturaRegistrada
+        temperaturaPromedio = totalTemperatura / DIAS
     }
     console.log(`La temperatura de la semana ha sido ${temperaturaDias}`);
+
+    //menu de opciones
+    opcion = prompt("Elige una de las siguientes opciones\n 1 Mostrar la temperatura más alta registrada.\n 2 Mostrar la temperatura más baja registrada.\n 3Calcular la temperatura promedio de la semana.\n 4 Salir del programa.")
+    while (opcion != salidaPrograma) {
+        if (opcion == 1) {
+            alert(`La temperatura mas alta ha sido ${temperaturaMasAlta}`);
+        } else if (opcion == 2) {
+            alert(`La temperatura mas baja ha sido ${temperaturaMasBaja}`);
+        } else if (opcion == 3) {
+            alert(`La temperatura promedio ha sido ${temperaturaPromedio}`);
+        } else {
+            alert(`Introduce un numero valido`);
+        }
+        opcion = prompt("Elige una de las siguientes opciones\n 1 Mostrar la temperatura más alta registrada.\n 2 Mostrar la temperatura más baja registrada.\n 3Calcular la temperatura promedio de la semana.\n 4 Salir del programa.")
     
-    if (temperaturaRegistrada > temperaturaMasAlta) {
-        temperaturaMasAlta == temperaturaRegistrada
     }
-    console.log(temperaturaMasAlta);
-    
-
-
 </script>
