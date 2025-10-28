@@ -3,6 +3,14 @@
     // Invierte el array utilizando alguno (o varios) de las siguientes funciones: push(), pop(), shift() y unshift().
     // Imprime el array invertido.
     let letras = ['a', 'b', 'c', 'd']
-    console.log(letras);
+    //Cuentas la cantidad que hay dentro de letras
+    let cantidadNumeros = letras.length
+    let invertido = []
+
+    for (let i = 0; i < cantidadNumeros; i++) {
+        invertido.push(letras.pop())
+        
+    }
+    console.log(invertido);
     
 </script>

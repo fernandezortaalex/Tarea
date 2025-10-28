@@ -1,0 +1,30 @@
+<script>
+    // Escribe un programa que permita al usuario ingresar las temperaturas registradas durante una semana (7 días).
+    // Una vez ingresadas las temperaturas, el programa debe mostrar al usuario un menú con las siguientes opciones:
+
+    // Mostrar la temperatura más alta registrada.
+    // Mostrar la temperatura más baja registrada.
+    // Calcular la temperatura promedio de la semana.
+    // Salir del programa.
+    // El programa debe ejecutarse hasta que el usuario elija la opción de salir.
+
+    const DIAS = 7
+    let temperaturaRegistrada = 0
+    let temperaturaDias = []
+    let temperaturaMasAlta = 0
+
+
+    for (let i = 1; i <= DIAS; i++) {
+        temperaturaRegistrada = Number(prompt(`Dime la temperatura registrada durante el dia ${i}`))
+        temperaturaDias.push(temperaturaRegistrada)
+    }
+    console.log(`La temperatura de la semana ha sido ${temperaturaDias}`);
+    
+    if (temperaturaRegistrada > temperaturaMasAlta) {
+        temperaturaMasAlta == temperaturaRegistrada
+    }
+    console.log(temperaturaMasAlta);
+    
+
+
+</script>
