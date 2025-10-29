@@ -42,17 +42,20 @@ sudo adduser propietario
 sudo usermod -g direccion propietario
 sudo usermod -aG desarrollo propietario
 sudo usermod -aG analisis propietario
+sudo deluser propietario users
 ```
 
 ```bash
 sudo adduser desarrollador1
 sudo usermod -g desarrollo desarrollador1
 sudo groupmod -R desarrollador1 users
+sudo deluser desarrollador1 users
 ```
 
 ```bash
 sudo adduser analista1
 sudo usermod -g analisis analista1
+sudo deluser analista1 users
 ```
 
 
@@ -63,10 +66,11 @@ sudo usermod -g analisis analista1
 * Cambiando los propietarios y los grupos de la estructura de carpetas :  
 
 ```bash
-
+sudo mkdir proyTicketsAlhambra
 ```
 
 ```bash
+su analista1
 
 ```
 
