@@ -20,7 +20,14 @@
 
     for (let i = 1; i <= DIAS; i++) {
         temperaturaRegistrada = Number(prompt(`Dime la temperatura registrada durante el dia ${i}`))
+        
+        //Manejo de errores
+        while (temperaturaRegistrada < -200 || temperaturaRegistrada > 1000) {
+            temperaturaRegistrada = Number(prompt(`Dime la temperatura registrada durante el dia ${i}`))
+            
+        }
         temperaturaDias.push(temperaturaRegistrada)
+
         //Se añade la temperatura a la ultima parte de temperatura dias
         //Calculo todas las condiciones
         if (temperaturaRegistrada > temperaturaMasAlta) {
@@ -43,11 +50,11 @@
     //menu de opciones
     opcion = prompt("Elige una de las siguientes opciones\n 1 Mostrar la temperatura más alta registrada.\n 2 Mostrar la temperatura más baja registrada.\n 3Calcular la temperatura promedio de la semana.\n 4 Salir del programa.")
     while (opcion != salidaPrograma) {
-        if (opcion == 1) {
+        if (opcion == "1") {
             alert(`La temperatura mas alta ha sido ${temperaturaMasAlta}`);
-        } else if (opcion == 2) {
+        } else if (opcion == "2") {
             alert(`La temperatura mas baja ha sido ${temperaturaMasBaja}`);
-        } else if (opcion == 3) {
+        } else if (opcion == "3") {
             temperaturaPromedio = totalTemperatura / DIAS
             alert(`La temperatura promedio ha sido ${temperaturaPromedio}`);
         } else {
