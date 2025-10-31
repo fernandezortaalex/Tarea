@@ -1,14 +1,14 @@
 <script>
     // Desarrolla un programa que gestione las compras en un almacén. Para esto:
 
-    // Crea un array que contenga los nombres de 10 productos disponibles en el almacén.
-    // Crea otro array que contenga los precios correspondientes a esos 10 productos.
+    // Crea un array que contenga los nombres de 10 nombreproductos disponibles en el almacén.
+    // Crea otro array que contenga los precioProducto correspondientes a esos 10 nombreproductos.
     // El programa debe permitir al usuario realizar una compra solicitando el nombre del producto y la cantidad deseada.
     // El programa debe buscar el precio del producto seleccionado, multiplicarlo por la cantidad y añadirlo al total de la compra.
-    // Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los productos adquiridos, sus cantidades, y el costo total a pagar.
+    // Si el usuario escribe "FIN", el programa debe finalizar la compra, mostrando un resumen con todos los nombreproductos adquiridos, sus cantidades, y el costo total a pagar.
 
-    let productos = ['Cafe', 'Te', 'Pan', 'Leche', 'Azucar', 'Chocolate', 'Galletas', 'Zumo', 'Mermelada', 'Mantequilla']
-    let precios = [3, 2, 1, 6, 8, 9, 12, 4, 5, 15]
+    let nombreproductos = ['Cafe', 'Te', 'Pan', 'Leche', 'Azucar', 'Chocolate', 'Galletas', 'Zumo', 'Mermelada', 'Mantequilla']
+    let precioProducto = [3, 2, 1, 6, 8, 9, 12, 4, 5, 15]
 
     let productoElegir
     let cantidad
@@ -23,9 +23,9 @@
         if (productoElegir != "FIN") {
             
             cantidad = Number(prompt(`Dime la cantidad que desees`))
-            for (let i = 0; i < productos.length; i++) {
-                if (productoElegir == productos[i]) {
-                    totalProducto = precios[i] * cantidad
+            for (let i = 0; i < nombreproductos.length; i++) {
+                if (productoElegir == nombreproductos[i]) {
+                    totalProducto = precioProducto[i] * cantidad
                     totalCompra += totalProducto
                     console.log(`El producto elegido es ${productoElegir} con una cantidad de ${cantidad}`);
                 }
