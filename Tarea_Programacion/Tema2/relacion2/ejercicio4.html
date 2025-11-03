@@ -9,17 +9,58 @@
 
     let librosAlmacenados = ["el quijote", "pulgarcito", "pinocho", "el principito"]
     let cantidadLibros = [3, 6, 4, 7]
+    let posicion = ""
+    let libroAñadido = ""
+    let cantidadLibro = 0
+    let libroActualizar = ""
+    let cantidadActualizar = 0
 
-    let libroAñadido = prompt("Dime el nombre del libro que quieras añadir")
-    let cantidadLibro = Number(prompt(`Cuanta cantidad de ${libroAñadido} quieres introducir` ))
-
-    librosAlmacenados.push(libroAñadido)
-    cantidadLibros.push(cantidadLibro)
-
-    console.log(`${librosAlmacenados} ${cantidadLibros}`);
-
-    if (libroAñadido == librosAlmacenados) {
+    let menu = ""
+    while (menu != 4) {
+        menu = prompt("Dime que opcion quieres elegir:\n 1:Añadir un nuevo libro\n 2: Actualizar la cantidad de un libro\n 3: Ver el inventario\n 4: Salir del programa")
+        if (menu == 1) {
+            //Paso 1 añado el libro y la cantidad""
+            libroAñadido = prompt("Dime el nombre del libro que quieras añadir")
+            cantidadLibro = Number(prompt(`Cuanta cantidad de ${libroAñadido} quieres introducir` ))
+        
+            librosAlmacenados.push(libroAñadido)
+            cantidadLibros.push(cantidadLibro)
+        
+            
+        }else if (menu == 2) {
+            //paso 2 Actualizar la cantidad de un libro exitente
+            //Pido el libro y la cantidad a actualizar
+            libroActualizar = prompt("Dime el libro que quieres actualizar")
+            cantidadActualizar = Number(prompt("Dime la cantidad que quieras ponerle"))
+            
+            // //Saco cada libro de librosAlmacenados
+            // for (let libro of librosAlmacenados) {
+            //     //Sie el libro es igual a libroActualizar
+            //     if (libro == libroActualizar) {
+            //         //Calculo la posicion en la que esta el libro ahora mismo en librosAlmacenados
+            //         posicion = librosAlmacenados.indexOf(libro)
+            //         //me situo en cantidadLibros la posicion en la que esta el libro y le actualizo la cantidad
+            //         cantidadLibros[posicion] = cantidadActualizar
+            //         alert("Cambios actualizados")
+            //     }
+            // }
+            
+            for (let i = 0; i < librosAlmacenados.length; i++) {
+                if (librosAlmacenados[i] == libroActualizar) {
+                    cantidadLibros[i] = cantidadActualizar
+                    alert("Cambios actualizados")
+                }
+                
+            }
+        }else if (menu == 3) {
+            for (let i = 0; i < librosAlmacenados.length; i++) {
+                console.log(`${librosAlmacenados[i]} - ${cantidadLibros[i]}`);
+                
+                
+            }
+        }
         
     }
+
     
 </script>
