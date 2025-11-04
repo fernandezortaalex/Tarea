@@ -7,24 +7,65 @@
     // Mostrar la calificación más alta y el nombre del estudiante correspondiente.
     // Mostrar la calificación más baja y el nombre del estudiante correspondiente.
     // Salir del programa.
-    let estudiantes = ["alumno1", "alumno2", "alumno3", "alumno4"]
-    let calificaciones = [1, 2, 3, 4]
+    let estudiantes = []
+    let calificaciones = []
     let nombreEstudiante = ""
     let calificación = 0
-    
-    let menu = Number(prompt("Que opcion quieres elegir:\n 1 Añadir un estudiante y su calificación.\n 2 Mostrar la calificación promedio de la clase.\n 3 Mostrar la calificación más alta y el nombre del estudiante correspondiente.\n 4 Salir del programa."))
-    if (menu == 1) {
-        nombreEstudiante = prompt("Introduce el nombre del nuevo estudiante")
-        calificación = Number(prompt("Introduce la calificacion de ese estudiante"))
-        estudiantes.push(nombreEstudiante)
-        calificaciones.push(calificación)
-        console.log(`${estudiantes} ${calificaciones}`);
-        
-    } else if (menu == 2){
-        for (let i = 0; i < calificaciones.length; i++) {
-            
+    let sumaCalificaciones = 0
+    let promedio = 0
+    let calificacionMasAlta = 0
+    let estudianteNotaMasAlta = ""
+    let calificacionMasBaja = 0
+    let estudianteNotaMasBaja = ""
+    let menu = ""
+    while (menu != 5) {
+        menu = Number(prompt("Que opcion quieres elegir:\n 1 Añadir un estudiante y su calificación.\n 2 Mostrar la calificación promedio de la clase.\n 3 Mostrar la calificación más alta y el nombre del estudiante correspondiente.\n 4 Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n 5 Salir del programa."))
+        while (menu != "1" && menu != "2" && menu != "3" && menu != "4" && menu != "5") {
+            menu = Number(prompt("Que opcion quieres elegir:\n 1 Añadir un estudiante y su calificación.\n 2 Mostrar la calificación promedio de la clase.\n 3 Mostrar la calificación más alta y el nombre del estudiante correspondiente.\n 4 Mostrar la calificación más baja y el nombre del estudiante correspondiente.\n 5 Salir del programa."))
             
         }
+        if (menu == 1) {
+            nombreEstudiante = prompt("Introduce el nombre del nuevo estudiante")
+            calificación = Number(prompt("Introduce la calificacion de ese estudiante"))
+            estudiantes.push(nombreEstudiante)
+            calificaciones.push(calificación)
+            
+        } else if (menu == 2){
+            for (let i = 0; i < calificaciones.length; i++) {
+                sumaCalificaciones += calificaciones[i]
+            }
+            promedio = sumaCalificaciones / calificaciones.length
+            console.log(`${promedio}`);
+
+        } else if (menu == 3) {
+            //Suponemos que la calificacion mas alta es la primera calificacion
+            calificacionMasAlta = calificaciones[0]
+            //va mirando uno por uno el array decalificacion
+            for (let i = 0; i < calificaciones.length; i++) {
+                //si la calificacion en la que esta es mayor que la calificacion mas alta, se sustituye
+                //calificacion mas alta por la calificacion que esta ahora
+                if (calificaciones[i] > calificacionMasAlta) {
+                    calificacionMasAlta = calificaciones[i]
+                    estudianteNotaMasAlta = estudiantes[i]
+                }
+            }
+            console.log(`${calificacionMasAlta} - ${estudianteNotaMasAlta}`);
+
+        } else if (menu == 4) {
+            //suponemos que la calificacion mas baja es el primero y el primer alumno
+            calificacionMasBaja = calificaciones[0]
+            estudianteNotaMasBaja = estudiantes[0]
+            for (let i = 0; i < calificaciones.length; i++) {
+                //si la calificacion es mas baja que la calificacion mas baja se sustituye la nota y el estudiante
+                if (calificaciones[i] < calificacionMasBaja) {
+                    calificacionMasBaja = calificaciones[i]
+                    estudianteNotaMasBaja = estudiantes[i]
+                }
+            }
+            console.log(`${calificacionMasBaja} - ${estudianteNotaMasBaja}`);
+            
+        }
+
     }
     
 </script>
