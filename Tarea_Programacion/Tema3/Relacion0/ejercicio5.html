@@ -1,0 +1,22 @@
+<script>
+    // Haz una función llamada factorial que reciba un número y 
+    // devuelva su factorial calculado de forma iterativa.
+    function factorial(iterativa) {
+        //let multiplicacion = iterativa * iterativa
+        let primeraMult = 1
+        let guardado = []
+        guardado.push(primeraMult)
+        let ultimoElem 
+        let multiplicacion
+        for (let i = 2; i <= iterativa; i++) {
+            ultimoElem = guardado[guardado.length - 1]
+            multiplicacion = ultimoElem * i
+            guardado.push(multiplicacion)
+        }
+        return guardado
+    }
+
+    let numero = Number(prompt(`Dime un numero`))
+    console.log(factorial(numero));
+    
+</script>
