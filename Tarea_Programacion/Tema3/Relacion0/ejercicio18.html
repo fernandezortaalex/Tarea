@@ -1,0 +1,17 @@
+<script>
+    //Crea una función llamada contarVocalesEnCadena que reciba una cadena de texto 
+    // y devuelva la cantidad total de vocales que contiene.
+    function contarVocalesEnCadena(vocal) {
+        let vocales = []
+        for (const elemento of vocal) {
+            if (elemento == "A" || elemento == "E" || elemento == "I" || elemento == "O" || elemento == "U") {
+                vocales += elemento
+            }
+        }
+        return vocales.length
+    }
+
+    const CADENA = "MURCIELAGO GRANDE"
+    console.log(contarVocalesEnCadena(CADENA));
+    
+</script>

@@ -1,0 +1,16 @@
+<script>
+    //Crea una función llamada invertirArray que reciba un array y 
+    //devuelva un nuevo array con los elementos en orden inverso.
+    function invertirArray(invertido) {
+        let arrayInvertido = []
+        
+    //Cogo el primer numero del array numero y lo añado al principio del arrayInvertido
+        for (const elemento of invertido) {
+            arrayInvertido.unshift(elemento)
+        }
+        return arrayInvertido
+    }
+
+    let numero = [1, 2, 3, 4, 5]
+    alert(invertirArray(numero))
+</script>
