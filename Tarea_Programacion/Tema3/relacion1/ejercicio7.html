@@ -1,0 +1,28 @@
+<script>
+    // Crea una función juegoAdivinaNumero que genere un número aleatorio entre 1 y 10.
+    // Pídele al usuario que adivine el número, y dile si el número que ingresó es 
+    // menor, mayor o igual al número generado.
+    function juegoAdivinaNumero() {
+        let numeroRamdom = Math.floor(Math.random() * 10) + 1
+        return numeroRamdom
+    }
+
+    function resultadoJuego(adivinaNumero) {
+        let resultado = ""
+        if (adivinaNumero == juegoAdivinaNumero()) {
+            resultado = "Has adivinado el numero"
+        }else if (adivinaNumero > juegoAdivinaNumero()) {
+            resultado = "El numero que has puesto es mayor al numero que ha salido"
+            
+        }else{
+            resultado = "El numero que has puesto es menor al numero que ha salido"
+            
+        }
+        return resultado
+    }
+    let adivinaNumero = Number(prompt(`Adivina que numero ha salido: `))
+    console.log(juegoAdivinaNumero());
+    
+    console.log(resultadoJuego(adivinaNumero));
+    
+</script>

@@ -1,0 +1,13 @@
+<script>
+  // Escribe una función lanzarDadoPersonalizado que reciba un número caras
+  //  y devuelva un número aleatorio entre 1 y caras.
+  // Esto debe funcionar para dados con diferente número de caras, por ejemplo, un dado de 20 caras.
+    function lanzarDadoPersonalizado(numeroCaras) {
+        let resulDado = Math.floor(Math.random() * numeroCaras) + 1;
+        return resulDado
+    }
+
+    let numeroCaras = Number(prompt(`¿Cuantas caras quieres que tenga el dado?`))
+    console.log(lanzarDadoPersonalizado(numeroCaras));
+    
+</script>
