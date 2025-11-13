@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Roll</title>
+</head>
+<body>
+    <form action="/procesar-datos" method="POST">
+        <!--Tipo texto, nombre, placeholder es lo que va a aparecer en el recuadro, con un minimo de 2 caracteres y uso requerido-->
+        <input type="text" name="nombre" placeholder="nombre y apellido" minlength="2" required> 
+        <input type="email" name="correo" placeholder="correo electronico">
+        <input type="number" name="numero" placeholder="Numero de telefono" maxlength="9" required>
+        <input type="date" name="nacimiento" placeholder="Fecha de nacimiento" required>
+        <select name="pais">
+            <option value="es">España</option>
+            <option value="es">Mexico</option>
+            <option value="es">Argentina</option>
+        </select>
+    </form>
+</body>
+</html>
