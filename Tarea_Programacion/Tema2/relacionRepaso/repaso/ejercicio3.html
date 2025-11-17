@@ -1,0 +1,45 @@
+<script>
+    let faltasPersonales = [false, false, true, true, true, true, true, true, true, true]
+    let faltasRevisadas = []
+    let posicion = 0
+    let contador = 0
+    let muerto = false
+    let posicionesSinFaltas = 0
+    for (const falta of faltasPersonales) {
+        if (falta != true) {
+            posicionesSinFaltas++
+        }
+    }
+    while (muerto != true && faltasRevisadas.length < posicionesSinFaltas) {
+        contador = 0
+        posicion = Number(prompt(`Que posicion quieres revisar`))
+        faltasRevisadas.push(posicion)
+        for (let i = 0; i < faltasPersonales.length && muerto != true; i++) {
+            if (posicion == i) {
+                if (faltasPersonales[i] == true) {
+                    console.log(`Game over`);
+                    muerto = true
+                }else if (faltasPersonales[i] == false) {
+                    console.log(`Te has salvado`);
+                    if (faltasPersonales[i - 1] == true) {
+                        contador++
+                    }  
+                    if (faltasPersonales[i + 1] == true) {
+                        contador++
+                    }
+                    console.log(`Al lado tuyo hay ${contador} falta personales`);
+                    
+                }
+            }
+            
+        }
+        
+    }
+    if (muerto != true) {
+        console.log(`has ganado`);
+        
+    } else{
+        console.log(`Has perdido`);
+        
+    }
+</script>
