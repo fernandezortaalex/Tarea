@@ -1,0 +1,82 @@
+<script>
+// Guarda en un array los resultados de 10 tiros libres de un jugador (valores 0 o 1).
+
+// El menú permitirá:
+
+// Mostrar cuántos tiros ha encestado .
+
+// Mostrar cuántos ha fallado .
+
+// Mostrar el porcentaje de acierto.
+
+// Modificar un tiro concreto .
+
+// Salir.
+
+    let tiros = [0, 1, 0, 1, 1, 0, 1, 1, 0, 1]
+
+    let encestado = 0
+    let fallado = 0
+    let porcentaje = 0
+    let modificarTiro = 0
+    let numeroModificar = ""
+    let numero = 0
+    let menu = 0
+
+    while (menu != 5) {
+        menu = Number(prompt(`Elige una opcion: 
+    1- Mostrar cuántos tiros ha encestado .
+    2- Mostrar cuántos ha fallado.
+    3- Mostrar el porcentaje de acierto.
+    4- Modificar un tiro concreto .
+    5- Salir.`))
+        if (menu == 1) {
+            for (const tiro of tiros) {
+                if (tiro == 1) {
+                    encestado++
+                }
+            }
+            console.log(`Has encestado: ${encestado}`);
+            
+        } else if (menu == 2) {
+            for (const tiro of tiros) {
+                if (tiro == 0) {
+                    fallado++
+                }
+            }
+            console.log(`Has fallado: ${fallado}`);
+            
+        } else if (menu == 3) {
+            for (const tiro of tiros) {
+                if (tiro == 1) {
+                    encestado++
+                }
+            }
+            porcentaje = encestado * 100 / tiros.length
+            console.log(porcentaje);
+            
+        } else if (menu == 4) {
+            modificarTiro = Number(prompt(`Que tiro quieres modificar: `))
+            while (modificarTiro < 1 || modificarTiro > tiros.length || isNaN(modificarTiro)) {
+                modificarTiro = Number(prompt(`Que tiro quieres modificar: `))
+                
+            }
+            numeroModificar = prompt(`Has encestado o fallado `)
+            while (numeroModificar != "encestado" && numeroModificar != "fallado") {
+                if (numeroModificar == "encestado") {
+                    numero = 1
+                } else if (numeroModificar == "fallado") {
+                    numero = 0
+                } else{
+                    alert(`Introduce una opcion correcta`)
+                }
+                numeroModificar = prompt(`Has encestado o fallado `)
+                
+            }
+            tiros[modificarTiro] = numero
+            console.log(tiros);
+            
+        }
+        
+    }
+</script>

@@ -1,0 +1,33 @@
+<script>
+    let productos = [`producto1`, `producto2`,`producto3`,`producto4`,`producto5`,`producto6`,`producto7`,`producto8`]
+    let precio = [120, 44, 123, 87, 90, 30, 50, 66]
+
+    let comprarProducto = prompt(`Que producto quieres comprar: `).toLowerCase()
+    let totalCompras = 0
+    let total = 0
+    let productosComprados = []
+    let existe 
+    while (comprarProducto != "fin") {
+        existe = productos.includes(comprarProducto)
+        if (existe == false) {
+            alert(`Pon un producto que exista`);
+            
+        } else {
+        let cantidadCompraProducto = Number(prompt(`¿Cuanta cantidad quieres?`))
+        for (let i = 0; i < productos.length; i++) {
+            if (productos[i] == comprarProducto) {
+                totalCompras = cantidadCompraProducto * precio[i]
+                total += totalCompras
+                productosComprados.push(productos[i])
+            }
+            
+        }
+            
+        }
+        comprarProducto = prompt(`Que producto quieres comprar: `).toLowerCase()
+        
+    }
+    console.log(`Has gastado ${total} en ${productosComprados}`);
+    
+    
+</script>

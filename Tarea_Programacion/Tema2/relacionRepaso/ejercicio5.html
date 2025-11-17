@@ -1,0 +1,39 @@
+<script>
+    let jugadores = [`jugador1`, `jugador2`, `jugador3`, `jugador4`, `jugador5`, `jugador6`]
+    let puntuaciones = [13, 10, 4, 5, 98, 45]
+    let ordenClasificacion = [0]
+    let ordenClasificado = []
+    let añadirJugador = ``
+    let añadirPuntuacion
+    let menu = Number(prompt(`que opcion quieres elegir: 
+    1-Añadir jugador.
+    2-Registrar ronda (sumar puntos a cada jugador).
+    3-Mostrar clasificación.
+    4-Mostrar jugadores por encima de la media.
+    5-Reiniciar puntuaciones.
+    6-Salir.`))
+
+    if (menu == 1) {
+        añadirJugador = prompt(`Dime el nombre del jugador que quieres añadir`)
+        jugadores.push(añadirJugador)
+
+        añadirPuntuacion = Number(prompt(`Dime la puntuacion que va a tener ese jugador`))
+        puntuaciones.push(añadirPuntuacion)
+    }
+    else if (menu == 2) {
+        for (let i = 0; i < jugadores.length; i++) {
+            añadirPuntuacion = Number(prompt(`Dime la puntuacion que ha ganado ${jugadores[i]}`))
+            puntuaciones[i] += añadirPuntuacion
+        }
+    }
+    else if (menu == 3) {
+        for (let i = 0; i < jugadores.length; i++) {
+            
+            
+            
+        }
+    }
+
+    console.log(`${jugadores}, ${puntuaciones}`);
+    
+</script>
