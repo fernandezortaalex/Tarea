@@ -1,0 +1,28 @@
+<script>
+    let minas = [true, false, true, true, true, false, true, false, false, true]
+    let posicion = []
+
+    let introducirPosicion = Number(prompt(`Introduce la posicion que quieras descubrir`))
+    posicion.push(introducirPosicion)
+    
+    let muerto = false
+    
+    
+    for (let i = 0; i < minas.length && muerto != true; i++) {
+        if (minas[i] == introducirPosicion) {
+            if (minas[i] == true) {
+                console.log(`has muerto has encontrado una mina`);
+                muerto = true
+            }
+        }else{
+            console.log(`no hay mina`);
+            if (condition) {
+                
+            } else {
+                
+            }
+        }
+        
+    }
+
+</script>

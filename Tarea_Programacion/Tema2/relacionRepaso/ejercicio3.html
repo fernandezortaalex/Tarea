@@ -1,0 +1,33 @@
+<script>
+    let cartas = [`carta1`, `carta2`, `carta3`, `carta4`, `carta5`, `carta6`, `carta7`, `carta8`]
+    let precio = [120, 44, 123, 87, 90, 30, 50, 66]
+
+    let comprarCarta = prompt(`Dime la carta que quieras comprar`).toLowerCase()
+    let cantidadCompraCarta = 0
+    let totalComprasCarta = 0
+    let cartasCompradas = []
+    let totalCompras = 0
+    let existeCarta
+
+    while (comprarCarta != `fin`) {
+        existeCarta = cartas.includes(comprarCarta)
+        if (existeCarta != false) {
+            cantidadCompraCarta = Number(prompt(`Cuanta cantidad quieres comprar`))
+            for (let i = 0; i < cartas.length; i++) {
+                if (cartas[i] == comprarCarta) {
+                    totalComprasCarta = precio[i] * cantidadCompraCarta
+                    totalCompras += totalComprasCarta
+                    cartasCompradas.push(cartas[i])
+                }
+            }
+            
+        }else{
+            alert(`Pon un articulo valido`)
+        }
+        comprarCarta = prompt(`Dime la carta que quieras comprar`).toLowerCase()
+    }
+
+    console.log(`El total de las compras ha sido ${totalCompras} y las cartas que has comprado son ${cartasCompradas}`);
+    
+    
+</script>
