@@ -1,0 +1,56 @@
+<script>
+    let tiradas = []
+    let numeroAleatorio 
+    let menu = 0
+    let puntuaciónAlta = 0
+    let puntuacionBaja = 0
+    let puntuacionTotal = 0
+    let puntuacionMedia = 0
+
+    for (let i = 0; i < 10; i++) {
+        numeroAleatorio = Math.floor(Math.random() * 99) + 1
+        tiradas.push(numeroAleatorio)
+    }
+    while (menu != 5) {
+        menu = Number(prompt(`Que opcion quieres elegir
+        1-Mostrar la puntuación más alta.
+        2-Mostrar la puntuación más baja.
+        3-Calcular la puntuación total.
+        4-Calcular la media.
+        5-Salir.`))
+
+        if (menu == 1) {
+            puntuaciónAlta = tiradas[0]
+            for (let i = 0; i < tiradas.length; i++) {
+                if (tiradas[i] > puntuaciónAlta) {
+                    puntuaciónAlta = tiradas[i]
+                }
+                
+            }
+            alert(`La tirada mas alta es ${puntuaciónAlta}`)
+        } 
+        else if (menu == 2) {
+            puntuacionBaja = tiradas[0]
+            for (let i = 0; i < tiradas.length; i++) {
+                if (tiradas[i] < puntuacionBaja) {
+                    puntuacionBaja = tiradas[i]
+                }
+                
+            }
+            alert(`La tirada mas baja es ${puntuacionBaja}`)
+        }
+        else if (menu == 3) {
+            for (const tirada of tiradas) {
+                puntuacionTotal += tirada
+            }
+            alert(`La puntuacion total es ${puntuacionTotal}`)
+        }
+        else if (menu == 4) {
+            for (const tirada of tiradas) {
+                puntuacionTotal += tirada
+            }
+            puntuacionMedia = puntuacionTotal / tiradas.length
+            alert(`La puntuacion media es ${puntuacionMedia}`)
+        }
+    }
+</script>

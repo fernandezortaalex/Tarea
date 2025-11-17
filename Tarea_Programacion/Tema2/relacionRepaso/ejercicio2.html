@@ -1,0 +1,50 @@
+<script>
+    let jugadores = [`jugador1`, `jugador2`, `jugador3`, `jugador4`, `jugador5`, `jugador6`]
+    let puntuaciones = [13, 10, 4, 5, 98, 45]
+    let jugadorNuevo
+    let jugadorMayorPuntuacion = ""
+    let puntuacionJugador = 0
+    let jugadorMenorPuntuacion = ""
+
+    let menu = Number(prompt(`Que opcion quieres elegir:
+    1-Añadir un nuevo jugador (eliminando al más antiguo).
+    2-Mostrar jugadores y puntuaciones.
+    3-Mostrar el jugador con mayor puntuación.
+    4-Mostrar el jugador con menor puntuación.
+    5-Salir.`))
+
+    if (menu == 1) {
+        jugadorNuevo = prompt(`Como se llama el jugador nuevo:`)
+        puntuaciones = prompt(`Que puntuacion tiene:`)
+        jugadores.shift()
+        puntuaciones.shift()
+
+        jugadores.push(jugadorNuevo)
+        puntuaciones.push(puntuaciones)
+        console.log(jugadores);
+        
+    } else if (menu == 2) {
+        console.log(`Los jugadores son ${jugadores} y sus puntos son ${puntuaciones}`);
+        
+    } else if (menu == 3) {
+        puntuacionJugador = puntuaciones[0]
+        for (let i = 0; i < puntuaciones.length; i++) {
+            if (puntuaciones[i] > puntuacionJugador) {
+                puntuacionJugador = puntuaciones[i]
+                jugadorMayorPuntuacion = jugadores[i]
+            }
+            
+        }
+        console.log(`El jugador con mayor puntuacion es ${jugadorMayorPuntuacion} con una puntuacion de ${puntuacionJugador}`);
+        
+    } else if (menu == 4) {
+        puntuacionJugador = puntuaciones[0]
+        for (let i = 0; i < puntuaciones.length; i++) {
+            if (puntuaciones[i] < puntuacionJugador) {
+                puntuacionJugador = puntuaciones[i]
+                jugadorMenorPuntuacion = jugadores[i]
+            }
+            
+        }
+    }
+</script>
