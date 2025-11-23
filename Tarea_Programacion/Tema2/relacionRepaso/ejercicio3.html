@@ -8,8 +8,15 @@
     let cartasCompradas = []
     let totalCompras = 0
     let existeCarta
+    let cartaYPrecio = []
 
     while (comprarCarta != `fin`) {
+        for (let i = 0; i < cartas.length; i++) {
+            cartaYPrecio = cartas[i] + precio[i]
+            
+        }
+
+        alert (cartaYPrecio)
         existeCarta = cartas.includes(comprarCarta)
         if (existeCarta != false) {
             cantidadCompraCarta = Number(prompt(`Cuanta cantidad quieres comprar`))
