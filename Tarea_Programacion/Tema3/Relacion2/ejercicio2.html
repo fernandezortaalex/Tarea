@@ -2,17 +2,20 @@
 
     function citasSolapadas(horas) {
         let horasSimplificadas = []
+        let seSolapan = true
         for (const hora of horas) {
             horasSimplificadas.push(hora.replace(":", ""))
             
         }
-
         if (horasSimplificadas[1] > horasSimplificadas[2]) {
-            
+            seSolapan = true
+        }else{
+            seSolapan = false
         }
-        console.log(horasSimplificadas)
+        return seSolapan
     }
     
-    let citas = ["14:00", "15:30", "15:00", "16:00"]
-    citasSolapadas(citas)
+    let citas = ["14:00", "15:30", "15:31", "16:00"]
+    console.log(citasSolapadas(citas));
+    
 </script>

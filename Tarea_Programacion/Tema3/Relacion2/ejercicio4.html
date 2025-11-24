@@ -1,0 +1,16 @@
+<script>
+    function detectarPalabrasClave(texto, palabrasClave) {
+        let palabras = texto.split(palabrasClave)
+        return palabras
+    }
+
+    // ============================= MAIN ============================= //
+
+    const texto = "Me gusta programar en Python y Java"
+    const palabrasClave = ["python", "java", "c++"]
+
+    let recuentoPalabrasClave = detectarPalabrasClave(texto, palabrasClave)
+
+    console.log("Las palabras clave aparecen " + recuentoPalabrasClave + " veces.")
+
+</script>
