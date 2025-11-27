@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Critical roll</h1>
+
+    <form action="/procesar-datos" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required minlength="2">
+        <input type="text" name="apellido" placeholder="apellido" required minlength="2">
+        <input type="email" name="correo" placeholder="email" required>
+        <!-- Casilla de texto donde poner numero de telefono con los datos necesarios para ello -->
+        <input type="text" name="telefono" pattern="\d{9}" placeholder="numero de telefono" title="tiene que tener 9 digitos">
+        <!-- Casilla que abre un calendario para poner una fecha -->
+        <input type="date" name="Fecha_nacimiento" placeholder="Fecha_nacimiento" required>
+        <select name="pais">
+            <option value="es">España</option>
+            <option value="mx">Mexico</option>
+            <option value="ar">Argentina</option>
+        </select>
+        <input type="checkbox" required placeholder="terminos"> Aceptar terminos y condiciones
+        <button type="submit">Enviar</button>
+
+
+    </form>
+
+
+</body>
+</html>
