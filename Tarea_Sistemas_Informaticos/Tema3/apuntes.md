@@ -1,3 +1,5 @@
+
+
 Aquí tienes **unos apuntes claros, resumidos y bien estructurados** de todo lo que contiene tu Unidad Didáctica 3 de *Desarrollo de Scripts en Bash*, con ejemplos incluidos para que puedas estudiar más fácil.
 
 ---
@@ -161,7 +163,7 @@ Operadores:
 
 ---
 
-# **4.1. Condicionales `if - else`**
+# **4.1. Condicionales `  - else`**
 
 ### ✔ Sintaxis
 
@@ -333,3 +335,8 @@ echo "Argumentos: ${args[@]}"
 ---
 
 # ✔ ¿Quieres que te lo convierta en PDF, Markdown o un esquema resumido?
+awk -F'[()]' usa paréntesis como separadores.
+
+/PING/{print $2} busca la línea que contiene PING y toma la segunda parte entre paréntesis, que es la IP.
+
+echo muestra la variable.
