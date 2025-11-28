@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/procesar-datos" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="email" required>
+        <p>¿Traerás tus propios dados? </p>
+        <!-- Elegir uno de los dos datos en el que aparece un circulo -->
+        <input type="radio" name="propiosDados" value="si"> si
+        <input type="radio" name="propiosDados" value="no"> no
+        <p>Actividades del evento</p>
+        <!-- Seleccionar casillas-->
+        <input type="checkbox" placeholder="torneo"> torneo de d20
+        <input type="checkbox" placeholder="taller"> Taller de pintura de dados
+        <input type="checkbox" placeholder="partida"> Partida de iniciacion a Dungeon y Dragons
+        <input type="checkbox" placeholder="intercambio"> Zona libre de intercambio de colecciones
+        <p>Seleccion de horario</p>
+        <!-- Seleccion de opciones -->
+        <select name="horario">
+            <option value="primero">18:00 – 20:00</option>
+            <option value="segundo">20:00 – 22:00</option>
+            <option value="tercero">22:00 – 00:00</option>
+        </select>
+        <p>comentarios</p>
+        <!-- Zona para comentar -->
+        <textarea name="comentarios" rows="4" cols="50" minlength="10" maxlength="200"></textarea>
+        <p><input type="radio" name="terminos" value="aceptarTerminos" required>Aceptar terminos y condiciones</p>
+        <!-- Boton de enviar -->
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
