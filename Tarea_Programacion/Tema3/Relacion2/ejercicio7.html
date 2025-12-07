@@ -1,0 +1,28 @@
+<script>
+    function analizarTexto(texto) {
+        //Calculo el numero de palabras diviendo el texto en espacios
+        let cantidadPalabras = texto.split(" ")
+        //Calculo el numero de caracteres dividiendo el texto en nada
+        let cantidadLetras = texto.split("")
+        let cantidadCaracteres = []
+        //Por cada caracter de cantidadLetras si no tiene espacio lo añado al array de cantidadCaracteres
+        for (const caracter of cantidadLetras) {
+            if (caracter != " ") {
+                cantidadCaracteres.push(caracter)
+            }
+        }
+        //Calculo la longitud promedio 
+        let totalLongitud = cantidadCaracteres.length / cantidadPalabras.length
+        //Guardo todos los datos en un array
+        let totalDatos = []
+        totalDatos.push(cantidadPalabras.length, cantidadCaracteres.length, totalLongitud)
+        return totalDatos
+        
+        
+    }
+    //======================================MAIN=====================================//
+
+    const texto = "Hola mundo mundo programacion es increible increible increible";  
+    console.log(analizarTexto(texto));
+    
+</script>
