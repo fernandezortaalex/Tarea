@@ -1,6 +1,18 @@
 <script>
-    function detectarPalabrasClave(texto, palabrasClave) {
-        let palabras = texto.split(palabrasClave)
+    function detectarPalabrasClave(textoMinusculas, arrayPalabrasClaves) {
+        
+        const textoSeparado = textoMinusculas.split(" ")
+        let palabras = []
+        
+        for (const element of textoSeparado) {
+            for (let i = 0; i < arrayPalabrasClaves.length; i++) {
+                if (element == arrayPalabrasClaves[i]) {
+                    palabras.push(element)
+                }
+                
+            }
+        }
+        console.log(palabras);
         return palabras
     }
 
@@ -9,8 +21,9 @@
     const texto = "Me gusta programar en Python y Java"
     const palabrasClave = ["python", "java", "c++"]
 
-    let recuentoPalabrasClave = detectarPalabrasClave(texto, palabrasClave)
+    let recuentoPalabrasClave = detectarPalabrasClave(texto.toLowerCase(), palabrasClave)
 
-    console.log("Las palabras clave aparecen " + recuentoPalabrasClave + " veces.")
+    console.log("Las palabras clave aparecen " + recuentoPalabrasClave.length + " veces.")
 
+    
 </script>
