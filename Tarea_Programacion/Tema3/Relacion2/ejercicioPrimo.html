@@ -1,0 +1,29 @@
+<script>
+    function listaPrimos (numero) {
+        let listaNumerosPrimos = []
+        for (let i = 0; i < numero; i++) {
+            if (esPrimo(i)) {
+                listaNumerosPrimos.push(i)
+            }
+            
+        }
+        return listaNumerosPrimos
+    }
+
+    function esPrimo (numero) {
+        let esPrimo = true
+        for (let i = 2; i < numero && esPrimo; i++) {
+            if (numero % i == 0) {
+                esPrimo = false
+            }
+            
+        }
+        return esPrimo
+    }
+
+    //====================================MAIN==================================//
+    let numero = Number(prompt(`Dime un numero`))
+    console.log(listaPrimos(numero));
+    
+
+</script>

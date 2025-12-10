@@ -1,10 +1,24 @@
 <script>
     function emparejarAmigos(amigos) {
         
+        let pareja = []
+        let totalParejas = []
+        let numeroAleatorio = 0
+        while (amigos.length != 0) {
+            while (pareja.length < 2) {
+                numeroAleatorio = Math.floor(Math.random() * amigos.length)
+                pareja.push(amigos[numeroAleatorio])
+                amigos.splice(numeroAleatorio, 1)
+            }
+            totalParejas.push(pareja)
+            pareja = []
+            
+        }
+        return totalParejas
     }
     // ============================= MAIN ============================= //
 
-    const amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"]
+    let amigos = ["Ana", "Luis", "Marta", "Pedro", "Elena", "Carlos"]
     const parejasAmigoInvisible = emparejarAmigos(amigos)
 
     console.log(parejasAmigoInvisible)

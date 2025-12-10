@@ -1,0 +1,52 @@
+<script>
+    function simularClimaSemanaCompleta (climaElegido) {
+        let valoresClima = []
+        let temperaturaMaxima = 0
+        let temperaturaMinima = 0
+        let probabilidadLluvia = 0
+        if (climaElegido == `invierno`) {
+            temperaturaMaxima = Math.floor(Math.random() * (15 - -5 + 1)) + -5
+            temperaturaMinima = Math.floor(Math.random() * (5 - -15 + 1)) + -15
+            while (temperaturaMaxima < temperaturaMinima) {
+                temperaturaMinima = Math.floor(Math.random() * (5 - -15 + 1)) + -15
+                
+            }
+            probabilidadLluvia = Math.floor(Math.random() * (100 - 50 + 1)) + 50
+            valoresClima.push(temperaturaMaxima, temperaturaMinima, probabilidadLluvia)
+            console.log(valoresClima);
+            
+        }else if (climaElegido == `verano`) {
+            temperaturaMaxima = Math.floor(Math.random() * (40 - 25 + 1)) + 25
+            temperaturaMinima = Math.floor(Math.random() * (25 - 15 + 1)) + 15
+            while (temperaturaMaxima < temperaturaMinima) {
+                temperaturaMinima = Math.floor(Math.random() * (25 - 15 + 1)) + 15
+                
+            }
+            probabilidadLluvia = Math.floor(Math.random() * (50 + 1))
+            valoresClima.push(temperaturaMaxima, temperaturaMinima, probabilidadLluvia)
+            
+        }
+        return valoresClima
+    }
+
+    function simularClimaSemanaCompleta (climaElegidoUsuario) {
+        let semanaCompleta = []
+        for (let i = 0; i < 7; i++) {
+            semanaCompleta.push(simularClimaSemana(climaElegidoUsuario))
+            
+        }
+        return semanaCompleta
+    }
+
+    //===========================MAIN================================//
+    let menu = prompt(`¿Que estacion quieres \n 1 verano\n 2 invierno?`)
+    let estacion = ""
+    if (menu == 1) {
+        estacion = `verano`
+    } else if (menu == 2) {
+        estacion = `invierno`
+    }
+    console.log(simularClimaSemanaCompleta(estacion));
+    
+    
+</script>

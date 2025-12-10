@@ -1,0 +1,115 @@
+<script>
+    function agregarPlato (nombre, precio, tipo, arrayPlato) {
+
+        let producto = ""
+        let mensaje = ""
+        let partes = []
+        if (isNaN(precio) || precio <= 0) {
+            mensaje = `Ere un parguela no has puesto precio`
+            
+        } else {
+            if (arrayPlato.length <= 0) {
+                producto = `${nombre} - ${precio} - ${tipo}`
+                arrayPlato.push(producto)
+                mensaje = `Plato introducido`
+                
+            }else{
+                for (const plato of arrayPlato) {
+                    partes = []
+                    partes = plato.split(` - `)
+                    if (partes[0] == nombre) {
+                        mensaje = `Ya esta introducido el producto`
+                    } else {
+                        mensaje = `Plato introducido`
+                        producto = `${nombre} - ${precio} - ${tipo}`
+                        arrayPlato.push(producto)
+                        
+                        
+                    }
+                }
+            }
+        }
+        return mensaje
+    }
+
+    function obtenerPrecio (platoElegido, arrayPlato) {
+        let mensaje = ""
+        let partes = []
+        for (const plato of arrayPlato) {
+            partes = []
+            if (plato == 0) {
+                mensaje = `No hay ningun plato registrado`
+            } else{ 
+                partes = plato.split(` - `)
+                if (partes[0] == platoElegido) {
+                    mensaje = `El plato ${platoElegido} tiene un precio de ${partes[1]}`
+                    
+                }else{
+                    mensaje = `No exite el plato`
+                }
+            }
+        }
+        return mensaje
+    }
+
+    function buscarPlato (platoElegido, arrayPlato) {
+        let mensaje = ""
+        let partes = []
+        for (const plato of arrayPlato) {
+            partes = []
+            if (plato == 0) {
+                mensaje = `No hay ningun plato registrado`
+            } else{ 
+                partes = plato.split(` - `)
+                if (partes[0] == platoElegido) {
+                    mensaje = `El plato ${platoElegido} tiene estos datos ${plato}`
+                    
+                }else{
+                    mensaje = `No exite el plato`
+                }
+            }
+        }
+        return mensaje
+    }
+
+    function calcularPrecioMedio (arrayPlato) {
+        let mensaje = ""
+        let partes = []
+        let precioMedio = 0
+        for (const plato of arrayPlato) {
+            partes = plato.split(` - `)
+            precioMedio += Number( partes[1])
+        }
+        mensaje = `El precio medio de todos los productos es ${precioMedio}`
+        return mensaje
+    }
+
+    //===========================================MAIN======================================//
+    let nombrePlato = ""
+    let precioPlato = ""
+    let tipoPlato = ""
+    let platos = []
+    let mensajeUsurio = ""
+    let menu = ""
+    let platoElegir = ""
+    while (menu != 7) {
+        menu = Number(prompt(`Opcion: `))
+        if (menu == 1) {
+        nombrePlato = prompt(`Introduce el nombre del plato`)
+        precioPlato = Number(prompt(`Introduce el precio del plato`))
+        tipoPlato = prompt(`Introduce el tipo de plato`)
+        mensajeUsurio = alert(agregarPlato(nombrePlato, precioPlato, tipoPlato, platos))
+        }
+        else if (menu == 2) {
+            platoElegir = prompt(`Dime el nombre del plato que quieras saber `)
+            mensajeUsurio = alert(obtenerPrecio(platoElegir, platos))
+        }
+        else if (menu == 3) {
+            platoElegir = prompt(`Dime el nombre del plato que quieras buscar: `)
+            mensajeUsurio = alert(buscarPlato(platoElegir, platos))
+        }
+        else if (menu == 4) {
+            mensajeUsurio = alert(calcularPrecioMedio(platos))
+        }
+    }
+</script>
