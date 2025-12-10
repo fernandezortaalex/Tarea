@@ -1,0 +1,54 @@
+<script>
+    function separarLetras (textoSeparar) {
+        let arrayTextoSeparado = textoSeparar.split("")
+        let vocales = numeroVocales(arrayTextoSeparado)
+        let consonantes = numeroConsonantes(arrayTextoSeparado)
+        let espacios = numeroEspacios(arrayTextoSeparado)
+        return espacios
+    }
+    function numeroVocales(letras) {
+        let vocales = ["a", "e", "i", "o", "u"]
+        let contadorVocales = 0
+        for (const letra of letras) {
+            for (const vocal of vocales) {
+                if (letra == vocal) {
+                    contadorVocales++
+                }
+            }
+        }
+        return contadorVocales
+        
+    }
+    function numeroConsonantes (letras) {
+        let vocales = ["a", "e", "i", "o", "u"]
+        let contadorConsonantes = 0
+        let consonante = true
+        for (const letra of letras) {
+            for (const vocal of vocales) {
+                if (letra == vocal) {
+                    consonante = false
+                }else if (letra == " ") {
+                    consonante = false
+                    
+                }
+            }
+            if (consonante == true) {
+                contadorConsonantes++
+            }
+            consonante = true
+        }
+        return contadorConsonantes
+    }
+    function numeroEspacios (letras) {
+        let espacios = 0
+        for (const letra of letras) {
+            if (letra == " ") {
+                espacios++
+            }
+        }
+        return espacios
+    }
+    //=============================MAIN======================//
+    let texto = "Hola mundo"
+    console.log(separarLetras(texto));
+</script>

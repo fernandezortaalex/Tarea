@@ -1,0 +1,31 @@
+<script>
+    function separarFecha (date) {
+        let fechaSeparada = date.split("-")
+        let fechaReorganizada = reorganizarFecha(fechaSeparada)
+        let fechaFinal = añadirElementosFecha(fechaReorganizada)
+        return fechaFinal
+        
+    }
+    function reorganizarFecha (elementos) {
+        let arrayElementos = elementos
+        let tmp = elementos[2]
+        arrayElementos[2] = arrayElementos[0]
+        arrayElementos[0] = tmp
+        return arrayElementos
+    }
+    function añadirElementosFecha (fecha) {
+        let resultado = ``
+        for (let i = 0; i < fecha.length; i++) {
+            resultado += fecha[i]
+            if (i < fecha.length - 1) {
+                resultado += `/`
+            }
+        }
+        
+        return resultado
+        
+    }
+    //=============================MAIN======================//
+    let fecha = "2025-03-18"
+    console.log(separarFecha(fecha));
+</script>

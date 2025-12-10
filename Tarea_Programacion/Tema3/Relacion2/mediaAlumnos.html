@@ -1,0 +1,45 @@
+<script>
+    function datosAlumnos (alumno) {
+        let nombre = ""
+        let nota1 = 0
+        let nota2 = 0
+        let nota3 = 0
+        let notasTotales = 3
+        let notaMedia = 0
+        let alumnoNotaMedia = []
+        let alumnosAprobados = []
+        for (let i = 0; i < alumno.length; i++) {
+            nombre = alumno[i][0]
+            nota1 = alumno[i][1]
+            nota2 = alumno[i][2]
+            nota3 = alumno[i][3]
+            notaMedia = calcularMedia(nota1, nota2, nota3, notasTotales)
+            alumnoNotaMedia.push(nombre, notaMedia)
+            alumnosAprobados.push(calcularAprobados(nombre, notaMedia))
+            
+        }
+        
+        return alumnosAprobados
+    }
+    function calcularMedia (notaPrimera, notaSegunda, notaTercera, totalNotas) {
+        let sumaNotas = notaPrimera + notaSegunda + notaTercera
+        let notaTotal = sumaNotas / totalNotas
+        return notaTotal
+    }
+    function calcularAprobados (alumno, nota) {
+        let alumnosAprobado = []
+        if (nota >= 5) {
+            alumnosAprobado.push(alumno, nota)
+        }
+        return alumnosAprobado
+    }
+
+    //=============================MAIN======================//
+    let alumnos = [["Ana", 7, 9, 6],
+    ["Luis", 4, 5, 3],
+    ["Marta", 10, 7, 8]
+    ]
+    console.log(datosAlumnos(alumnos));
+    
+
+</script>

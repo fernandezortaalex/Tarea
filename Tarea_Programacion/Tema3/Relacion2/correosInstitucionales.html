@@ -1,0 +1,32 @@
+<script>
+    function nombreApellido (nombre, apellido) {
+        let cantidadLetras = 3
+        let cantidadNumeros = 3
+        let nombreUsuario = ""
+        nombreUsuario += tresPrimerasLetras(nombre, cantidadLetras)
+        nombreUsuario += tresPrimerasLetras(apellido, cantidadLetras)
+        for (let i = 0; i < cantidadNumeros; i++) {
+            nombreUsuario += Math.floor(Math.random() * 10)
+            
+        }
+        return nombreUsuario.toLowerCase()
+        
+    }
+
+    function tresPrimerasLetras (nombre, cantidad) {
+        let letras = ""
+        for (let i = 0; i < cantidad && i < nombre.length; i++) {
+            letras += nombre[i]
+            
+        }
+        
+        return letras
+    }
+
+
+// ============================= MAIN ============================= //
+
+let miNombreUsuario = nombreApellido("Pedro", "Rodriguez")
+
+console.log(miNombreUsuario)
+</script>

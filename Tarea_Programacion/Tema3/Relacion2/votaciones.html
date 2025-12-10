@@ -1,0 +1,18 @@
+<script>
+    function simularVotaciones (personas) {
+        let votacion = 0
+        let personaConVoto = []
+        let votacionesTotales = 0
+        for (const persona of personas) {
+            votacion = Math.floor(Math.random() * ((100 - votacionesTotales) + 1))
+            votacionesTotales += votacion
+            personaConVoto.push(persona, votacion)
+        }
+        console.log(personaConVoto);
+        
+    }
+    //=============================MAIN======================//
+    const candidatos = ["Juan", "Sofía", "Carlos"];
+    console.log(simularVotaciones(candidatos));
+
+</script>
