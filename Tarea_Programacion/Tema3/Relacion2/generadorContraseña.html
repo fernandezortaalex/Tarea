@@ -1,0 +1,52 @@
+<script>
+    function crearContraseña (numero) {
+        let contraseña = ""
+        contraseña += mayusculas(numero)
+        contraseña += minusculas(numero)
+        contraseña += generarNumero(numero)
+        return contraseña
+    }
+    function mayusculas (numero) {
+        let datos = ""
+        let letras = "abcdefghijKlmnopqrstuvwxyz"
+        let numeroAleatorio = 0
+        let numeroLetrasAleatorio = 0
+        numeroAleatorio = Math.floor(Math.random() * numero)
+        for (let i = 0; i < numeroAleatorio; i++) {
+            numeroLetrasAleatorio = Math.floor(Math.random() * letras.length)
+            datos += letras[numeroLetrasAleatorio]
+            
+        }
+        return datos.toUpperCase()
+        
+    }
+    function minusculas (numero) {
+        let datos = ""
+        let letras = "abcdefghijKlmnopqrstuvwxyz"
+        let numeroAleatorio = 0
+        let numeroLetrasAleatorio = 0
+        numeroAleatorio = Math.floor(Math.random() * numero)
+        for (let i = 0; i < numeroAleatorio; i++) {
+            numeroLetrasAleatorio = Math.floor(Math.random() * letras.length)
+            datos += letras[numeroLetrasAleatorio]
+            
+        }
+        return datos.toLowerCase()
+        
+    }
+    function generarNumero (numero) {
+        let datos = ""
+        let numeroAleatorio = 0
+        numeroAleatorio = Math.floor(Math.random() * numero)
+        let numeroIntroducir = 0
+        for (let i = 0; i < numeroAleatorio; i++) {
+            numeroIntroducir = Math.floor(Math.random() * 11)
+            datos += numeroIntroducir
+        }
+        return datos
+    }
+    //===========================================MAIN======================================//
+    let longitud = crearContraseña(10)
+    console.log(longitud);
+    
+</script>

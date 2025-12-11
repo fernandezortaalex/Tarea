@@ -1,0 +1,24 @@
+<script>
+    function generarDatos (nombre, apellido) {
+        let generarNombreUsuario = ""
+        generarNombreUsuario += generarNombre(nombre)
+        generarNombreUsuario += generarNombre(apellido)
+        for (let i = 0; i < 3; i++) {
+            generarNombreUsuario += Math.floor(Math.random() * 10)
+        }
+        return generarNombreUsuario
+    }
+    function generarNombre (arrayNombre) {
+        let letras = ""
+        for (let i = 0; i < 3 && i < arrayNombre.length; i++) {
+            letras += arrayNombre[i]
+            
+        }
+        return letras.toLowerCase()
+        
+    }
+    //===========================================MAIN======================================//
+    let datos = generarDatos("Teclado", "Gamer")
+    console.log(datos);
+    
+</script>

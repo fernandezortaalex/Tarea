@@ -1,0 +1,64 @@
+<script>
+    function comprobarContrasena (gmail) {
+        let letras = ""
+        letras = gmail.split("")
+        let valido = true
+        let mensaje = ""
+        valido = tieneArroba(letras)
+        valido = tienePunto(letras)
+        valido = tieneLetras(letras)
+        if (valido) {
+            mensaje = `El correo esta bien`
+        } else {
+            mensaje = `El correo esta mal`
+        }
+        return mensaje
+        
+    }
+    function tieneArroba (desglosado) {
+        let valido = false
+        if (desglosado.includes("@")) {
+            valido = true
+        } else{
+            valido = false
+        }
+        return valido
+        
+    }
+    function tienePunto (desglosado) {
+        let valido = false
+        if (desglosado.includes(".")) {
+            valido = true
+        } else{
+            valido = false
+        }
+        return valido
+    }
+    function tieneLetras (desglosado) {
+        let valido = false
+        let letras = "abcdefghijklmnopqrstuvwxyz"
+        let letrasSeparadas = letras.split("")
+        let posicionArroba = 0
+        let posicionPunto = 0
+        let incluyeCaracter = 0
+        for (let i = 0; i < desglosado.length; i++) {
+            if (desglosado[i] == "@") {
+                posicionArroba = i
+            }
+            if (desglosado[i] == ".") {
+                posicionPunto = i
+            }
+            
+        }
+        if (letrasSeparadas.includes(desglosado[posicionArroba - 1 ]) && letrasSeparadas.includes(desglosado[posicionArroba + 1]) && letrasSeparadas.includes(desglosado[posicionPunto - 1]) && letrasSeparadas.includes(desglosado[posicionPunto + 1])) {
+            valido = true;
+        }
+        
+        return valido
+        
+    }
+    //===========================================MAIN======================================//
+    let contrasena = comprobarContrasena("awd@dawd.com")
+    console.log(contrasena);
+    
+</script>
