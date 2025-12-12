@@ -1,0 +1,40 @@
+<script>
+    function analizarTexto (frase) {
+        let datos = []
+        datos.push(cantidadPalabras(frase))
+        datos.push(cantidadCaracteres(frase))
+        datos.push(longitudPromedio(cantidadPalabras(frase), cantidadCaracteres(frase)))
+
+        return datos
+        
+    }
+    function cantidadPalabras (texto) {
+        let textoSinEspacio = texto.split(" ")
+        
+        return textoSinEspacio.length
+    }
+    function cantidadCaracteres (texto) {
+        let textoSinEspacio = texto.split("")
+        let contador = 0
+        for (const palabra of textoSinEspacio) {
+            if (palabra != " ") {
+                contador++
+            }
+            
+        }
+        return contador
+        
+    }
+    function longitudPromedio (palabras, caracteres) {
+        let division = caracteres / palabras
+        
+        return division
+    }
+
+    // ============================= MAIN ============================= //
+
+    const texto = "Hola mundo mundo programacion es increible increible increible"
+    const datosTexto = analizarTexto(texto)
+
+    console.log(datosTexto)
+</script>

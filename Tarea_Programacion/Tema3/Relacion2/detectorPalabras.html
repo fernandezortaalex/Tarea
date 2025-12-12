@@ -1,0 +1,19 @@
+<script>
+    function detectarPalabrasClave (frase, palabras) {
+        let palabrasMinusculas = frase.toLowerCase()
+        let contador = 0
+        for (const palabra of palabras) {
+            if (palabrasMinusculas.includes(palabra)) {
+                contador++
+            }
+            
+        }
+        return contador
+        
+    }
+    //=============================MAIN======================//
+    const texto = "Me gusta programar en Python y Java";
+    const palabrasClave = ["python", "java", "c++"];
+    console.log(detectarPalabrasClave(texto, palabrasClave));
+    
+</script>
