@@ -1,0 +1,22 @@
+<script>
+    function combinarNombresNumeros (personas, edad) {
+        let personaConNumero = []
+        let numeroAleatorio = 0
+        
+            for (const persona of personas) {
+                numeroAleatorio = Math.floor(Math.random() * edad.length)
+                personaConNumero.push(persona, edad[numeroAleatorio])
+                edad.splice(numeroAleatorio, 1)
+            }
+        
+        return personaConNumero
+        
+    }
+
+    // ============================= MAIN ============================= //
+    let nombres = ["Ana","Luis","Marta"]
+    let numeros = [10,20,30]
+    let combinar = combinarNombresNumeros(nombres, numeros)
+    console.log(combinar);
+    
+</script>
