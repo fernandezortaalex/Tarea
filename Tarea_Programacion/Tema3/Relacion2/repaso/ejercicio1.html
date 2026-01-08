@@ -1,0 +1,16 @@
+<script>
+    let palabras = ["apple", "banana", "watermelon", "kiwi"]
+    let palabraLarga = ""
+    let separadorTemporal = []
+    palabraLarga = palabras[0]
+
+    for (const palabra of palabras) {
+        separadorTemporal = palabra.split("")
+        if (separadorTemporal.length > palabraLarga.length) {
+            palabraLarga = palabra
+            
+        }
+    }
+    console.log(palabraLarga);
+    
+</script>
