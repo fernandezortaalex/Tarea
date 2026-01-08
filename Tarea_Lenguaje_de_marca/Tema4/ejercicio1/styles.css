@@ -1,0 +1,10 @@
+*{
+    color: blueviolet;
+    margin: 20px;
+    padding: 30px;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-image: linear-gradient( red, yellow);
+}

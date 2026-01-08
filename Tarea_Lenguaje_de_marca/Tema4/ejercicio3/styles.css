@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    /* relleno */
+    padding: 0;
+}
+
+div > ul > li{
+    color: red;
+}
