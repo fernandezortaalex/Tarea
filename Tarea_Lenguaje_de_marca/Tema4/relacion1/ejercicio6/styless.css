@@ -1,0 +1,10 @@
+.contenedor{
+    /* Ancho de un elemento */
+    width: 200px;
+    /* espacio entre contenido de un elemento y su borde */
+    padding: 100px;
+    /* Margenes exteriores */
+    margin: 300px;
+    
+    border: 10px solid black;
+}

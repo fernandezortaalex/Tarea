@@ -1,0 +1,15 @@
+h1, h2, p{
+    /* Cambiar la fuente de la letra */
+    font-family: 'Bebas Neue';
+}
+
+h2{
+    /* Cambiar el tamaño del texto */
+    font-size: 50px;
+}
+
+blockquote{
+    /* Cambiar el estilo a cursiva de la letra */
+    font-style: italic;
+    color: blueviolet;
+}

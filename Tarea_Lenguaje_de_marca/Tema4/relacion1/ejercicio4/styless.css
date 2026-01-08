@@ -1,0 +1,14 @@
+h2{
+    color: blueviolet;
+}
+
+body{
+    /* Introducir imagen */
+    background-image: url('pepe_rana.png') ;
+    background-size: cover;
+}
+
+/* hover para que se ponga el color cuando pases el raton por encima */
+p:hover{
+    background-color: blue;
+}

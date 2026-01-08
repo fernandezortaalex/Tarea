@@ -7,3 +7,7 @@
 div > ul > li{
     color: red;
 }
+
+div + p {
+    background-color: blue;
+}
