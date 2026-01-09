@@ -6,18 +6,24 @@ public class ejercicio9 {
     
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
+        //Creo las variables
+        int caramelos = 0;
+        int ninos = 0;
+        int carameloPorNino;
+        int restoCaramelos;
 
         //Cada vez que le vaya a introducir un valor tengo que decirle que tipo de dato es
         System.out.println("¿Cuántos caramelos tienes?: ");
-        int caramelos = scanner1.nextInt();
+        caramelos = scanner1.nextInt();
         
         System.out.println("¿Cuántos niños hay?: ");
-        int ninos = scanner1.nextInt();
+        ninos = scanner1.nextInt();
+        //Cuando dejo de introducirle datos al scanner lo cierro para que no este abierto
+        scanner1.close();
 
-        int carameloPorNino = caramelos / ninos;
-        int restoCaramelos = caramelos % ninos;
+        carameloPorNino = caramelos / ninos;
+        restoCaramelos = caramelos % ninos;
 
         System.out.println("A cada niño le toca " + carameloPorNino + " y sobran " + restoCaramelos + " caramelos.");
-        scanner1.close();
     }
 }
