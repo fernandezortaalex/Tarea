@@ -2,9 +2,10 @@ h2{
     color: blueviolet;
 }
 
-body{
+section{
     /* Introducir imagen */
     background-image: url('pepe_rana.png') ;
+    /* Ocupe todo el espacio visible */
     background-size: cover;
 }
 
