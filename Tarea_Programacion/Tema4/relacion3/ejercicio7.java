@@ -20,6 +20,7 @@ public class ejercicio7 {
         operador = scanner.next();
         scanner.close();
 
+        //equals es para comprar dos strings
         if (operador.equals("+")) {
             resultado = operando1 + operando2;
         } else if (operador.equals("-")) {
