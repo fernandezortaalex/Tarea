@@ -8,7 +8,7 @@ public class Ejercicio1 {
         //Creo las variables
         int calificacion;
         int numeroAlumno = 1;
-        int sumatorio = 0;
+        double sumatorio = 0;
         int aprobados = 0;
         int suspensos = 0;
         double media = 0;
@@ -24,7 +24,6 @@ public class Ejercicio1 {
             if (calificacion >= 5) {
                 aprobados++;
             } else {
-
                 suspensos++;
             }
 
@@ -32,11 +31,17 @@ public class Ejercicio1 {
             calificacion = scanner.nextInt();
         }
         scanner.close();
-        numeroAlumno--;
+        
 
-        //Preguntar porque no me aparece con decimales
-        media = sumatorio / numeroAlumno;
-        System.out.println("Han aprobado: " + aprobados + " y han suspendido: " + suspensos + " con una media en total de: " + media);
+        if (numeroAlumno > 1) {
+            //Preguntar porque no me aparece con decimales
+            //Le quito 1 alumno porque comienza en 1 para el contador 
+            media = sumatorio / (numeroAlumno - 1);
+            System.out.println("Han aprobado: " + aprobados + " y han suspendido: " + suspensos + " con una media en total de: " + media);
+            
+        } else {
+            System.out.println("No se ha introducido ninguna calificacion");
+        }
 
     }
 }

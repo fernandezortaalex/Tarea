@@ -13,19 +13,22 @@ public class Ejercicio6 {
 
         //Pongo el primer numero en modo texto
         System.out.println("Introduce el primer número: ");
-        numero1 = scanner.next();
-        //Lo pongo siempre en minusculas
-        numero1 = numero1.toLowerCase();
+        numero1 = scanner.nextLine();
         
-        while (!numero1.equals("salir")) {
+        //equalsIgnoreCase ignora las mayusculas y minusculas
+        while (!numero1.equalsIgnoreCase("salir")) {
             //Paso el numero a modo int
+            //Tambien se puede pasar a numero decimal poniendo .parseDouble
+            //Tambien puedo pasar de numero a string con .value
             operando1 = Integer.parseInt(numero1);
 
             System.out.println("Introduce el segundo número: ");
             operando2 = scanner.nextInt();
             
             System.out.println("Introduce la operación: ");
-            operador = scanner.next();
+            //Cuando introduces un nextLine despues de un nextInt o que guarde numero coge el \n del anterior println y coge ese valor, que esta en blanco, si no se pone esto da error
+            scanner.nextLine();
+            operador = scanner.nextLine();
             
             //equals es para comprarar el contenido de dos strings
             if (operador.equals("+")) {
@@ -47,8 +50,8 @@ public class Ejercicio6 {
             System.out.println("El resutado de " + operando1 + operador + operando2 + " es " + resultado);
             
             System.out.println("Introduce el primer número: ");
-            numero1 = scanner.next();
-            numero1 = numero1.toLowerCase();
+            numero1 = scanner.nextLine();
+            scanner.nextLine();
         }
         scanner.close();
     }

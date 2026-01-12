@@ -20,6 +20,6 @@ public class Ejercicio2 {
             adivinarNumero = scanner.nextInt();
         }
         scanner.close();
-    System.out.println("!Enhorabuena¡");
+        System.out.println("!Enhorabuena¡");
     }
 }

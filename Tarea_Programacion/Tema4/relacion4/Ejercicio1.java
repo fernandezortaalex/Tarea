@@ -21,12 +21,13 @@ public class Ejercicio1 {
         //Creo las variables
         int numeroEntero;
         int resultado;
+        final int DIGITOMOSTRAR = 10;
 
         System.out.println("Dime un numero entero positivo: ");
         numeroEntero = scanner.nextInt();
         scanner.close();
 
-        for (int i = 1; i < 11; i++) {
+        for (int i = 1; i <= DIGITOMOSTRAR; i++) {
             resultado = numeroEntero * i;
             System.out.println(numeroEntero + " * " + i + " = "+ resultado);
         }
