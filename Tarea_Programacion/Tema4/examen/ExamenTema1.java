@@ -21,14 +21,30 @@ public class ExamenTema1 {
         int stockArrozAcumulado = 0;
         double stockAguaAcumulado = 0.0;
 
+        //Pido los datos y que los vuelva a pedir si estan mal introducidos
         System.out.println("Numero de pedidos: ");
         numeroPedidos = scanner.nextInt();
-
+        while (numeroPedidos <= 0) {
+            System.out.println("Numero de pedidos: ");
+            numeroPedidos = scanner.nextInt();
+            
+        }
+        
         System.out.println("Stock Arroz: ");
         stockArroz = scanner.nextInt();
+        while (stockArroz <= 0) {
+            System.out.println("Stock Arroz: ");
+            stockArroz = scanner.nextInt();
+            
+        }
 
         System.out.println("Stock Agua: ");
-        stockAgua = scanner.nextInt();
+        stockAgua = scanner.nextDouble();
+        while (stockAgua <= 0) {
+            System.out.println("Stock Agua: ");
+            stockAgua = scanner.nextDouble();
+            
+        }
 
         for (int i = 0; i < numeroPedidos; i++) {
             //Empieza programa
@@ -40,6 +56,12 @@ public class ExamenTema1 {
             
             System.out.println("Numero de unidades: ");
             unidades = scanner.nextInt();
+            while (unidades < 0) {
+                System.out.println("Numero de unidades: ");
+                unidades = scanner.nextInt();
+                
+            }
+            scanner.close();
             
             for (int j = 0; j < unidades; j++) {
                 if (tipoPlato.equalsIgnoreCase("maki")) {
