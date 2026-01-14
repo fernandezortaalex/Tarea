@@ -121,9 +121,9 @@ select * from equipos order by ciudad asc;
 -- 7. Filtrar jugadores que juegan como "Delantero" y tienen más de 20 goles.
 select * from jugadores where posicion = 'Delantero' and goles > 20;
 -- 8. Obtener el promedio de goles por partido para un equipo con un ID específico.
-select avg(goles_local + goles_visitante) as promedio from partidos group by id_equipo_local and id_equipo_visitante having id_equipo_local or id_equipo_visitante = 1;
+select avg(goles_local + goles_visitante) as promedio from partidos where id_equipo_local = 1 or id_equipo_visitante = 1;
 -- 9. Mostrar partidos jugados en enero de 2023.
-
+select * from partidos where fecha between '2023-01-01' and '2023-01-31';
 -- 10. Contar jugadores de un equipo con ID específico.
 
 
