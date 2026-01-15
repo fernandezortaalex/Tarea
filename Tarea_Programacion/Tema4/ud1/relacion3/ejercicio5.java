@@ -1,4 +1,4 @@
-package Tarea_Programacion.Tema4.relacion3;
+package Tarea_Programacion.Tema4.ud1.relacion3;
 
 import java.util.Scanner;
 

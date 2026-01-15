@@ -1,4 +1,4 @@
-package Tarea_Programacion.Tema4.examen;
+package Tarea_Programacion.Tema4.ud1.examen;
 
 import java.util.Scanner;
 
