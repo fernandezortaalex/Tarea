@@ -4,10 +4,10 @@
 package Tarea_Programacion.Tema4.ud3.relacion0;
 import java.util.Scanner;
 public class Ejercicio17 {
-    public static int main() {
+    public static int revertirCadena() {
         
     }
     public static void main(String[] args) {
-        
+        System.out.println(revertirCadena("hola"));
     }
 }
