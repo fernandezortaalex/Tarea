@@ -125,20 +125,25 @@ select avg(goles_local + goles_visitante) as promedio from partidos where id_equ
 -- 9. Mostrar partidos jugados en enero de 2023.
 select * from partidos where fecha between '2023-01-01' and '2023-01-31';
 -- 10. Contar jugadores de un equipo con ID específico.
-
+select * from jugadores where id_equipo = 1;
 
 -- 11. Ordenar equipos por ciudad alfabéticamente y despues por año de fundacion descendente.
-
+select * from equipos order by ciudad asc;
+select * from equipos order by fundado asc;
 
 -- 12. Calcular la edad promedio de los jugadores y asignarle un alias, ordenado por ID de equipo y edad promedio de forma descendente.
-
+select id_equipo, avg(edad) as edad_promedio from jugadores group by id_equipo order by id_equipo, edad_promedio desc;
 
 -- 13. Mostrar el promedio de goles y asistencias de cada equipo, con alias "promedio_goles" y "promedio_asistencias", ordenados por promedio de goles descendente y promedio de asistencias ascendente.
-
+select id_equipo, avg(goles) as promedio_goles, avg(asistencias) as promedio_asistencias from jugadores group by id_equipo order by promedio_goles desc, promedio_asistencias asc;
 
 -- 14. Obtener los equipos con el total de goles anotados en sus partidos como local, usando alias "total_goles", <ordenados por nombre del equipo ascendente>[NO HACE FALTA] y total de goles descendente.
-
-
+SELECT id_equipo_local as equipo,
+    SUM(goles_local + goles_visitante) as total_goles
+FROM partidos
+GROUP BY id_equipo_local
+ORDER BY total_goles DESC;
 -- 15. Contar la cantidad de partidos jugados por cada equipo local, con alias "partidos_local", cantidad de partidos descendente.
-
+select count(*) as partidos_local,id_equipo_local as equipo from partidos group by id_equipo_local;
 -- 16. Calcular la cantidad de partidos en los que el equipo local ganó, usando alias "victorias_local", ordenados por cantidad de victorias y goles locales promedio en orden descendente.
+select count(*) as victorias_local from partidos where (goles_local > goles_visitante);
