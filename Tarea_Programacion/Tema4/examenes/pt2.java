@@ -52,6 +52,7 @@ public class pt2 {
         }
         System.out.println(tableroVisible);
 
+        /*Bucle principal, mientras no llegue al numero total de dientes no picados y el juego no haya terminado*/
         for (int i = 0; i < DIENTESNOPICADOS && !juegoPerdido; i++) {
             // Jugador introduce la posicion que quiere
             do {
@@ -64,7 +65,7 @@ public class pt2 {
                     valido = false;
                 }
             } while (tableroVisible.get(posicionSeleccionada) != DIENTE || (posicionSeleccionada < 0 || posicionSeleccionada > NUMDIENTES) || !valido );
-
+            scanner1.close();
             // Comparo la opcion introducida por el usuario con el tablero Interno
             if (tableroInterno.get(posicionSeleccionada) == 0) {
                 tableroVisible.set(posicionSeleccionada, DIENTESANO);
