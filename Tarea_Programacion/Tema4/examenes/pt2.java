@@ -1,15 +1,16 @@
 package Tarea_Programacion.Tema4.examenes;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class pt2 {
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
-        //Arrays
+        // Arrays
         ArrayList<Integer> tableroInterno = new ArrayList<>();
         ArrayList<String> tableroVisible = new ArrayList<>();
-    
-        //Constantes
+
+        // Constantes
         final int NUMDIENTES = 10;
         final int MAXDIENTESPICADOS = 5;
         final int DIENTESPICADOS = (int) ((Math.random() * MAXDIENTESPICADOS) + 1);
@@ -19,23 +20,24 @@ public class pt2 {
         final String DIENTE = "D";
         final String DIENTESANO = "DS";
         final String DIENTEDANIADO = "M";
-    
-        //Variables
+
+        // Variables
         boolean juegoPerdido = false;
         String jugadorActual = JUGADOR1;
         String mensajeFinPrograma = "Enhorabuena, ambos ganan";
         int posicionSeleccionada = 0;
         int dientesPicadosIntroducidos = 0;
         int posicionDienteIntroducir = 0;
+        boolean valido = true;
 
-        //Inicio Programa
+        // Inicio Programa
 
-        //Introduzco tantos 0 como numero de dientes haya
+        // Introduzco tantos 0 como numero de dientes haya
         for (int i = 0; i < NUMDIENTES; i++) {
             tableroInterno.add(0);
         }
-        
-        //Bucle para Introducir los dientes picados
+
+        // Bucle para Introducir los dientes picados
         while (dientesPicadosIntroducidos < DIENTESPICADOS) {
             posicionDienteIntroducir = (int) ((Math.random() * NUMDIENTES) + 1);
             if (tableroInterno.get(posicionDienteIntroducir) == 0) {
@@ -43,23 +45,27 @@ public class pt2 {
                 dientesPicadosIntroducidos++;
             }
         }
-        System.out.println(tableroInterno);
-        
+
+        /*Bucle para añadir al tablero visible tantos dientes como posiciones haya en el array*/
         for (int i = 0; i < NUMDIENTES; i++) {
             tableroVisible.add(DIENTE);
         }
         System.out.println(tableroVisible);
 
         for (int i = 0; i < DIENTESNOPICADOS && !juegoPerdido; i++) {
+            // Jugador introduce la posicion que quiere
             do {
-                
-            } while (tableroVisible.get(posicionSeleccionada) != DIENTE || (posicionSeleccionada < 0 || posicionSeleccionada > NUMDIENTES) || float.isNaN(posicionSeleccionada));
+                try {
+                    System.out.println(jugadorActual + " elige: ");
+                    posicionSeleccionada = Integer.parseInt(scanner1.nextLine()); 
+                    valido = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Error introduce un numero");
+                    valido = false;
+                }
+            } while (tableroVisible.get(posicionSeleccionada) != DIENTE || (posicionSeleccionada < 0 || posicionSeleccionada > NUMDIENTES) || !valido );
 
-            //Jugador introduce la posicion que quiere
-            System.out.println(jugadorActual + " elige: ");
-            posicionSeleccionada = scanner1.nextInt();
-            
-            //Comparo la opcion introducida por el usuario con el tablero Interno
+            // Comparo la opcion introducida por el usuario con el tablero Interno
             if (tableroInterno.get(posicionSeleccionada) == 0) {
                 tableroVisible.set(posicionSeleccionada, DIENTESANO);
             } else {
@@ -70,14 +76,14 @@ public class pt2 {
                 juegoPerdido = true;
             }
             System.out.println(tableroVisible);
-    
-            //Cambio de jugador
+
+            // Cambio de jugador
             if (jugadorActual == JUGADOR1) {
                 jugadorActual = JUGADOR2;
             } else {
                 jugadorActual = JUGADOR1;
             }
-            
+
         }
         System.out.println(mensajeFinPrograma);
     }
