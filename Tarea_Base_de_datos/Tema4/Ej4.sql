@@ -77,26 +77,25 @@ select departamento, count(*) as cantidad_empleados from empleado group by depar
 -- 2. Calcula el salario promedio por ciudad, mostrando solo las ciudades con un salario promedio mayor a 4000.
 select avg(salario) as salario_promedio, ciudad from empleado group by ciudad having avg(salario) > 4000;
 -- 3. Encuentra el total de ventas por cada cliente.
-select cliente, sum(importe) from venta group by cliente;
+select cliente, count(*) from venta group by cliente;
 
 -- 4. Muestra los departamentos con más de 3 empleados.
-
+select departamento from empleado group by departamento having count(departamento) > 2;
 
 -- 5. Calcula el promedio de edad de los empleados por ciudad.
-
+select avg(edad) as promedio_de_edad, ciudad from empleado group by ciudad;
 -- 6. Muestra las ciudades en las que hay empleados, sin duplicados.
-
+select distinct ciudad from empleado group by ciudad having count(id) > 0;
 -- 7. Muestra el número total de ventas y la suma total de importes.
-
+select count(id) as ventas, sum(importe) as importe from venta;
 
 -- 8. Encuentra el/los cliente/clientes con la venta más baja.
-
+select * from venta where importe = (select min(importe) from venta);
 
 -- 9. Encuentra el cliente que realizó la venta de mayor importe.
-
+select * from venta where importe = (select max(importe) from venta);
 
 -- 10. Encuentra los empleados con un salario mayor al promedio de todos los salarios.
-
 
 
 
