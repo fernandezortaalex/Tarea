@@ -44,7 +44,7 @@ public class ejercicio1 {
                 System.out.println("Error introduce un numero");
                 
             }
-
+            scanner.close();
             if (opciones == 1) {
                 // Temperatura mas alta
                 temperaturaMasAlta = temperaturas.get(0);
