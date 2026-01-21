@@ -19,7 +19,7 @@ public class ejercicio5 {
         //%.2f es para indicarle que solo queremos dos decimales del numero que nos de, si ponemos mas de uno
         //hay que ponerlo en orden
         System.out.printf("Tu peso en la luna seria: %.2f" , pesoLuna);
-
+        
         scanner1.close();
     }
 }
