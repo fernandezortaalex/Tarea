@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Google Sans", sans-serif;
+}
+
+body{
+    background-color: #d9efed;
+
+}
+
+.encabezado-Bienvenida{
+    display: flex;
+    justify-content: space-between;
+    background-color: #7c90ec;
+}
+
+.relaciones > ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    
+}
+
+.enlaces > li{
+    padding: 10px;
+}
+
+.enlaces > li:hover{
+    background-color: blueviolet;
+}
+
+.enlaces a{
+    text-decoration: none;
+}

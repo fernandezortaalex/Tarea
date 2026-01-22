@@ -40,38 +40,38 @@ public class ejercicio1 {
             try {
                 System.out.println( "Que opcion quieres elegir:\n1.Mostrar la temperatura más alta registrada.\n2.Mostrar la temperatura más baja registrada.\n3.Calcular la temperatura promedio de la semana.\nSalir del programa.");
                 opciones = scanner.nextInt();
+                if (opciones == 1) {
+                    // Temperatura mas alta
+                    temperaturaMasAlta = temperaturas.get(0);
+                    for (int i = 0; i < temperaturas.size(); i++) {
+                        if (temperaturas.get(i) > temperaturaMasAlta) {
+                            temperaturaMasAlta = temperaturas.get(i);
+                        }
+                    }
+                    System.out.println(temperaturaMasAlta);
+                } else if (opciones == 2) {
+                    // Temperatura mas baja
+                    temperaturaMasBaja = temperaturas.get(0);
+                    for (int i = 0; i < temperaturas.size(); i++) {
+                        if (temperaturas.get(i) < temperaturaMasBaja) {
+                            temperaturaMasBaja = temperaturas.get(i);
+                        }
+                    }
+                    System.out.println(temperaturaMasBaja);
+                } else if (opciones == 3) {
+                    // Temperatura promedio
+                    for (Double temperaturaDouble : temperaturas) {
+                        sumaTemperaturas += temperaturaDouble;
+                    }
+                    temperaturaPromedio = sumaTemperaturas / temperaturas.size();
+                    System.out.println(temperaturaPromedio);
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Error introduce un numero");
                 
             }
-            scanner.close();
-            if (opciones == 1) {
-                // Temperatura mas alta
-                temperaturaMasAlta = temperaturas.get(0);
-                for (int i = 0; i < temperaturas.size(); i++) {
-                    if (temperaturas.get(i) > temperaturaMasAlta) {
-                        temperaturaMasAlta = temperaturas.get(i);
-                    }
-                }
-                System.out.println(temperaturaMasAlta);
-            } else if (opciones == 2) {
-                // Temperatura mas baja
-                temperaturaMasBaja = temperaturas.get(0);
-                for (int i = 0; i < temperaturas.size(); i++) {
-                    if (temperaturas.get(i) < temperaturaMasBaja) {
-                        temperaturaMasBaja = temperaturas.get(i);
-                    }
-                }
-                System.out.println(temperaturaMasBaja);
-            } else if (opciones == 3) {
-                // Temperatura promedio
-                for (Double temperaturaDouble : temperaturas) {
-                    sumaTemperaturas += temperaturaDouble;
-                }
-                temperaturaPromedio = sumaTemperaturas / temperaturas.size();
-                System.out.println(temperaturaPromedio);
-            }
         } while (opciones != 4);
+        scanner.close();
 
     }
 }
