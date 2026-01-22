@@ -25,11 +25,14 @@ public class ejercicio1 {
 
         // Pido temperatura durante 7 dias
         for (int i = 0; i < 7; i++) {
-            System.out.println("Introduce la temperatura del dia " + diaSemana);
-            datoIntroducido = scanner.nextDouble();
-            diaSemana++;
-
-            temperaturas.add(datoIntroducido);
+            try {
+                System.out.println("Introduce la temperatura del dia " + diaSemana);
+                datoIntroducido = Double.parseDouble(scanner.nextLine());
+                temperaturas.add(datoIntroducido);
+                diaSemana++;
+            } catch (NumberFormatException e) {
+                System.out.println("Opcion no valida, introduce un numero.");
+            }
 
         }
         System.out.println(temperaturas);
@@ -39,7 +42,7 @@ public class ejercicio1 {
             //Preguntar porque no funciona
             try {
                 System.out.println( "Que opcion quieres elegir:\n1.Mostrar la temperatura más alta registrada.\n2.Mostrar la temperatura más baja registrada.\n3.Calcular la temperatura promedio de la semana.\nSalir del programa.");
-                opciones = scanner.nextInt();
+                opciones = Integer.parseInt(scanner.nextLine());
                 if (opciones == 1) {
                     // Temperatura mas alta
                     temperaturaMasAlta = temperaturas.get(0);
