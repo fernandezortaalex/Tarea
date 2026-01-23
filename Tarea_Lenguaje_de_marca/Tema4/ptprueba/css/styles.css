@@ -18,6 +18,43 @@ body{
     color: white;
     background-color: #ac97fa;
 }
+
+/* Navegacion */
 .lista-navegacion{
-    
+    display: flex;
+    list-style: none;
 }
+.lista-navegacion li{
+    margin: 0 10px;
+}
+.lista-navegacion a{
+    text-decoration: none;
+    color: white;
+}
+.lista-navegacion a:hover{
+    color: black;
+}
+.active{
+    font-weight: bold;
+}
+
+/* Perfil de usuario */
+.perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+} 
+.perfil img{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+.perfil p{
+    background-color: #f8c2ff;
+    padding: 15px;
+}
+
+/* publicaciones */
