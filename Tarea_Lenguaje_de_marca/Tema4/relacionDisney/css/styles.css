@@ -14,6 +14,7 @@ body{
     justify-content: space-between;
     background-color: #7c90ec;
     color: white;
+    align-items: center;
 }
 
 .enlaces{
@@ -24,7 +25,7 @@ body{
 }
 
 .enlaces > li{
-    padding: 10px;
+    margin: 0 10px;
 }
 .enlaces a{
     color: white;
@@ -38,17 +39,20 @@ body{
     color: rgb(209, 18, 209);
 }
 
+/* Imagen */
 .mensaje-inicio{
     text-align: center;
     background-image: url(../img/mundoDisney.png);
+    padding: 5%;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
 }
 
+/* Boton header */
 .boton-descubre-mas{
     color: #d9efed;
-    border: 3px #120c5d;
+    border: none;
     background-color:#120c5d;
     /* Relleno */
     padding: 13px;
@@ -61,12 +65,13 @@ body{
     color: #d9efed;
 }
 
+/* Seccion de peliculas */
 .peliculas-destacadas {
     display: flex;
     justify-content: space-around;
     
 }
-.peliculas-destacadas h2{
+.peliculas-destacadas h3{
     margin: 13px;
     border: 50px;
     padding: 15px;
@@ -80,6 +85,7 @@ body{
     border-radius: 10px;
 }
 
+/* Peliculas */
 .personajes{
     display: flex;
     justify-content: space-around;
@@ -120,7 +126,7 @@ body{
     color: indigo;
 }
 
-/* No se como es */
-.personajes + div + h3:hover{
+
+.personajes img + h3:hover{
     color: brown;
 }

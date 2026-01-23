@@ -1,0 +1,23 @@
+/* Estilos globales */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ccc8ff;
+    font-family: "Google Sans", sans-serif;
+
+}
+
+/* Encabezado */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #ac97fa;
+}
+.lista-navegacion{
+    
+}

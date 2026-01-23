@@ -25,6 +25,11 @@ public class ejercicio2 {
         ArrayList<Integer> puntuacionJugadores= new ArrayList<>(Arrays.asList(5, 10, 15, 20));
         int opcionMenu;
 
-        System.out.println("Elige la opcion que quieras escoger:\n1.Añadir un nuevo jugador y su puntuación:\n2.Mostrar los jugadores y sus puntuaciones actuales:\n3.");
+        System.out.println("Elige la opcion que quieras escoger:\n1.Añadir un nuevo jugador y su puntuación:\n2.Mostrar los jugadores y sus puntuaciones actuales:\n3.Salir del programa:");
+        opcionMenu = scanner.nextInt();
+
+        if (opcionMenu == 1) {
+            
+        }
     }
 }
