@@ -44,7 +44,6 @@ public class ejercicio4 {
         ArrayList<Integer> cantidades = new ArrayList<>(Arrays.asList(5, 3, 1, 7));
 
         String opcion = "";
-        String libroNuevo;
         int cantidadLibroNuevo;
         String libroActualizado;
         int cantidadLibroActualizado;
