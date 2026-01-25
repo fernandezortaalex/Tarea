@@ -33,6 +33,7 @@ public class ejercicio5 {
 
         
         do {
+            //Opciones
             try {
                 System.out.println("1. Añadir estudiante.\n" + //
                                 "2. Ver media.\n" + //
@@ -58,8 +59,7 @@ public class ejercicio5 {
                 System.out.println("Calificacion: ");
                 calificacion = scanner.nextDouble();
                 calificacionesEstudiantes.add(calificacion);
-                // System.out.println(nombreEstudiantes);
-                // System.out.println(calificacionesEstudiantes);
+            // Mostrar la calificación promedio de la clase.
             }else if (opcion == 2) {
                 for (int i = 0; i < calificacionesEstudiantes.size(); i++) {
                     suma += calificacionesEstudiantes.get(i);
@@ -67,6 +67,7 @@ public class ejercicio5 {
                 promedio = suma / calificacionesEstudiantes.size();
                 System.out.println(suma);
                 System.out.println(promedio);
+            // Mostrar la calificación más alta y el nombre del estudiante correspondiente.
             }else if (opcion == 3) {
                 for (int i = 0; i < calificacionesEstudiantes.size(); i++) {
                     if (calificacionesEstudiantes.get(i) > calificacionMasAlta) {
@@ -76,6 +77,7 @@ public class ejercicio5 {
                 }
                 System.out.println(calificacionMasAlta);
                 System.out.println(nombreCalificacionMasAlta);
+            // Mostrar la calificación más baja y el nombre del estudiante correspondiente.
             }else if (opcion == 4) {
                 for (int i = 0; i < calificacionesEstudiantes.size(); i++) {
                     if (calificacionesEstudiantes.get(i) < calificacionMasBaja) {
@@ -86,7 +88,6 @@ public class ejercicio5 {
                 System.out.println(calificacionMasBaja);
                 System.out.println(nombreCalificacionMasBaja);
             }
-            
         } while (opcion != 5);
         scanner.close();
     }
