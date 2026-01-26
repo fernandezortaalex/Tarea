@@ -1,153 +1,92 @@
+-- Crear la base de datos
+DROP DATABASE IF EXISTS Gobierno;
+CREATE DATABASE Gobierno;
+USE Gobierno;
 
--- Ejercicios de MySQL - Base de Datos de Películas (Extendida)
--- drop database cine_db;
-CREATE DATABASE if not exists cine_db;
-USE cine_db;
-
--- Tabla pelicula
-CREATE TABLE pelicula (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(100) NOT NULL,
-    anio INT NOT NULL,
-    genero VARCHAR(50) NOT NULL,
-    duracion INT NOT NULL
-);
-
--- Tabla director
-CREATE TABLE director (
+-- Tabla 1: Ministerio
+CREATE TABLE Ministerio (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    pais_origen VARCHAR(50) NOT NULL,
-    anio_nacimiento INT NOT NULL
+    presupuesto DECIMAL(15, 2) NOT NULL,
+    fecha_creacion DATE NOT NULL
 );
 
--- Tabla actor
-CREATE TABLE actor (
+-- Tabla 2: Ciudadano
+CREATE TABLE Ciudadano (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    pais_origen VARCHAR(50) NOT NULL,
-    anio_nacimiento INT NOT NULL
+    nombre VARCHAR(50) NOT NULL,
+    apellido VARCHAR(50) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    ciudad VARCHAR(50),
+    ocupacion VARCHAR(50),
+    ingresos_anuales DECIMAL(10, 2)
 );
 
--- Tabla reparto
-CREATE TABLE reparto (
+-- Tabla 3: Actividad
+CREATE TABLE Actividad (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_pelicula INT NOT NULL,
-    id_actor INT NOT NULL,
-    FOREIGN KEY (id_pelicula) REFERENCES pelicula(id),
-    FOREIGN KEY (id_actor) REFERENCES actor(id)
+    descripcion VARCHAR(255) NOT NULL,
+    id_ministerio INT,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NOT NULL,
+    presupuesto_asignado DECIMAL(15, 2),
+    FOREIGN KEY (id_ministerio) REFERENCES Ministerio(id)
 );
 
--- Inserciones en la tabla pelicula
-INSERT INTO pelicula (titulo, anio, genero, duracion) VALUES
-('Inception', 2010, 'Ciencia Ficción', 148),
-('Titanic', 1997, 'Drama', 195),
-('El Padrino', 1972, 'Crimen', 175),
-('Interestelar', 2014, 'Ciencia Ficción', 169),
-('Parasite', 2019, 'Drama', 132),
-('The Dark Knight', 2008, 'Acción', 152),
-('Forrest Gump', 1994, 'Drama', 142),
-('Avengers: Endgame', 2019, 'Acción', 181),
-('The Matrix', 1999, 'Ciencia Ficción', 136),
-('Gladiator', 2000, 'Acción', 155);
+-- Insertar datos en Ministerio
+INSERT INTO Ministerio (nombre, presupuesto, fecha_creacion)
+VALUES
+('           Ministerio de Educación', 150000000.00, '1990-01-15'),
+('Ministerio de Salud', 250000000.00, '1985-06-30'),
+('           Ministerio de Transporte', 120000000.00, '2000-03-12');
 
--- Inserciones en la tabla director
-INSERT INTO director (nombre, pais_origen, anio_nacimiento) VALUES
-('Christopher Nolan', 'Reino Unido', 1970),
-('James Cameron', 'Canadá', 1954),
-('Francis Ford Coppola', 'EE.UU.', 1939),
-('Bong Joon-ho', 'Corea del Sur', 1969),
-('Ridley Scott', 'Reino Unido', 1937),
-('The Wachowskis', 'EE.UU.', 1965),
-('Robert Zemeckis', 'EE.UU.', 1952),
-('Anthony Russo', 'EE.UU.', 1970),
-('Joe Russo', 'EE.UU.', 1971),
-('Steven Spielberg', 'EE.UU.', 1946);
+-- Insertar datos en Ciudadano
+INSERT INTO Ciudadano (nombre, apellido, fecha_nacimiento, ciudad, ocupacion, ingresos_anuales)
+VALUES
+('Juan', 'Pérez', '1980-02-14', 'Madrid', 'Profesor', 35000.00),
+('Laura', 'Gómez', '1992-07-21', 'Barcelona', 'Médico', 45000.00),
+('Carlos', 'Sánchez', '1975-09-10', 'Sevilla', 'Ingeniero', 60000.00),
+('Ana', 'Fernández', '1985-03-25', 'Bilbao', 'Abogada', 55000.00),
+('Mario', 'López', '1990-05-05', 'Valencia', 'Desempleado', 0.00);
 
--- Inserciones en la tabla actor
-INSERT INTO actor (nombre, pais_origen, anio_nacimiento) VALUES
-('Leonardo DiCaprio', 'EE.UU.', 1974),
-('Kate Winslet', 'Reino Unido', 1975),
-('Al Pacino', 'EE.UU.', 1940),
-('Matthew McConaughey', 'EE.UU.', 1969),
-('Song Kang-ho', 'Corea del Sur', 1967),
-('Christian Bale', 'Reino Unido', 1974),
-('Tom Hanks', 'EE.UU.', 1956),
-('Keanu Reeves', 'Canadá', 1964),
-('Russell Crowe', 'Nueva Zelanda', 1964),
-('Scarlett Johansson', 'EE.UU.', 1984);
+-- Insertar datos en Actividad
+INSERT INTO Actividad (descripcion, id_ministerio, fecha_inicio, fecha_fin, presupuesto_asignado)
+VALUES
+('Construcción de hospitales', 2, '2023-01-01', '2025-12-31', 50000000.00),
+('Reparación de carreteras', 3, '2023-04-01', '2025-09-30', 30000000.00),
+('Capacitación docente', 1, '2023-06-01', '2025-11-30', 10000000.00);
 
--- Inserciones en la tabla reparto
-INSERT INTO reparto (id_pelicula, id_actor) VALUES
-(1, 1), -- Inception - Leonardo DiCaprio
-(2, 1), -- Titanic - Leonardo DiCaprio
-(2, 2), -- Titanic - Kate Winslet
-(3, 3), -- El Padrino - Al Pacino
-(4, 4), -- Interestelar - Matthew McConaughey
-(5, 5), -- Parasite - Song Kang-ho
-(6, 6), -- The Dark Knight - Christian Bale
-(7, 7), -- Forrest Gump - Tom Hanks
-(8, 10), -- Avengers: Endgame - Scarlett Johansson
-(9, 8), -- The Matrix - Keanu Reeves
-(10, 9); -- Gladiator - Russell Crowe
+-- Ejercicios de Funciones de Texto
+-- 1. Concatenar nombres y apellidos de los ciudadanos en un único campo "nombre_completo".
 
--- Ejercicios (Ampliados)
--- 1. Listar todos los títulos de las películas.
-select titulo from pelicula;
--- 2. Mostrar los géneros de las películas sin repetir.
-select distinct genero from pelicula ;
+-- 2. Obtener las primeras 3 letras de los nombres de los ciudadanos.
 
--- 3. Seleccionar el título y año de todas las películas estrenadas después del año 2000.
-select titulo, anio from pelicula where anio > 2000;
+-- 3. Calcular la longitud de los nombres de los ciudadanos.
 
--- 4. Listar los nombres de todos los directores y sus países de origen.
-select nombre, pais_origen from director;
+-- 4. Reemplazar la palabra "hospitales" por "clínicas" en las descripciones de actividades.
 
--- 5. Mostrar los títulos de las películas con duración mayor a 150 minutos.
-select titulo, duracion from pelicula where duracion > 150;
--- 6. Seleccionar el título de las películas del género 'Drama'.
-select titulo, genero from pelicula where genero = "drama";
-
--- 7. Mostrar los id de los actores que participan en la película 'Titanic'.
-select id_pelicula, id_actor from reparto where id_pelicula = (select id from pelicula where titulo = "Titanic");
-
--- Otro: Mostrar el nombre de los actores asociados con el id de 'Titanic'.
-select nombre from actor where id in (select id_actor from reparto where id_pelicula = (select id from pelicula where titulo = "Titanic"));
+-- 5. Eliminar espacios al inicio y al final de los nombres de los ministerios.
 
 
--- 8. Contar cuántas películas hay en cada género.
-select genero, count(titulo) as cantidad_peliculas from pelicula group by genero;
--- 9. Mostrar los directores nacidos después de 1950.
-select nombre, anio_nacimiento from director where anio_nacimiento > 1950;
+-- Ejercicios de Funciones NuEXTRACTméricas
+-- 6. Redondear el presupuesto de las actividades a millones.
 
--- 10. Listar los títulos de las películas y su duración ordenados de mayor a menor.
-select titulo, duracion from pelicula order by duracion desc;
+-- 7. Calcular la diferencia entre los ingresos anuales de cada ciudadano y el promedio de ingresos.
 
--- 12. Seleccionar las películas cuya duración está entre 120 y 180 minutos.
-select * from pelicula where duracion between 120 and 180;
+-- 8. Obtener el entero más cercano hacia abajo y hacia arriba de los presupuestos de los ministerios.
 
--- 13. Mostrar los títulos de las películas ordenados por año de estreno.
-select 
+-- 9. Generar un número aleatorio para asignar un identificador único temporal a cada actividad.
 
--- 14. Calcular el promedio de duración de las películas.
+-- Ejercicios de Funciones de Fecha y Hora
+-- 10. Calcular la antigüedad de cada ministerio en años.
 
--- 15. Mostrar los actores que no nacieron en EE.UU.
+-- 11. Formatear las fechas de inicio y fin de las actividades en formato "DD-MM-YYYY".
 
+-- 12. Calcular cuántos días faltan para que termine cada actividad.
 
--- 17. Mostrar el id de las películas que tienen más de un actor en su reparto.
+-- 13. Extraer el mes y el año de las fechas de nacimiento de los ciudadanos.
+ 
 
+-- 14. Filtrar ciudadanos nacidos después del año 1990.
 
--- 18. Calcular el número total de actores en la base de datos.
-
-
--- 19. Mostrar las películas que no tienen actores en el reparto.
-
--- 20. Seleccionar las películas estrenadas en los últimos 10 años.
-
-
--- 21. dime la mediana del año de estreno de las peliculas.
-
--- 22 dime la moda del año de nacimiento de los actores.
-select anio_nacimiento from actor group by anio_nacimiento having count(*) = (select max(cuenta) from actor group by anio_nacimiento order by anio_nacimiento desc);
-
--- 23 dime la media de edad de los actores agrupados por pais de nacimiento.
+-- 15. Calcular el tiempo total en días que dura cada actividad gubernamental.
