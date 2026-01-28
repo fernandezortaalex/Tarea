@@ -10,6 +10,7 @@ select ceil(avg(datediff(now(), fecha_nacimiento))/365) as media_edad from perso
 
 
 -- Muestra el nombre de la persona parada de más edad.
+select nombre, situacion_laboral, floor(datediff(now(), fecha_nacimiento)/365) as edad from personas where situacion_laboral = 'jubilado' ;
 -- Dime la provincia con la máxima edad media.
 -- Dime los hijos del ciudadano con id 1190
 -- Muestra los nietos del ciudadano con id = 1190
