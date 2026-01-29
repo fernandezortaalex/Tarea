@@ -17,6 +17,7 @@ body{
     align-items: center;
     color: white;
     background-color: #ac97fa;
+    height: 50px;
 }
 
 /* Navegacion */
@@ -80,6 +81,13 @@ body{
     transform: scale(1.1);
 }
     /* Usuarios */
+    /* Combertirlo en cajas */
+.usuarios{
+    /* Ajusta el ancho de la caja segun el contenido en el html */
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 #Usuario1{
     background-color:#e0c9ff;
     color:#5f202f ;
@@ -95,11 +103,6 @@ body{
     color: #86589a;
     border-style: dotted;
 }
-    /* Combertirlo en cajas */
-.usuarios{
-    display: flex;
-    justify-content: space-between;
-}
 #Usuario1:hover{
     background-color: #ffa097;
 }
@@ -113,7 +116,6 @@ body{
 /* Otros usuarios */
 .mas-usuarios{
     display: flex;
-    flex-direction: column;
 }
 .mas-usuarios img:hover{
     transform: scale(1.1);
