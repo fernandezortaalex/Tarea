@@ -1,0 +1,42 @@
+/* Estilos globajes */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #d8efbb;
+    padding: 20px;
+}
+h1, h2, h3{
+    font-family:"Google Sans", sans-serif;
+    
+}
+body p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Encabezado */
+.encabezado{
+    display: flex;
+    flex: auto;
+    justify-content: space-between;
+}
+.encabezado h1{
+    color: #cc022b;
+}
+.encabezado ul{
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+.encabezado li{
+    margin: 0 10px;
+}
+.encabezado a{
+    text-decoration: none;
+    color: white;
+}
+.encabezado a:hover{
+    color: #1da7c3;
+}
