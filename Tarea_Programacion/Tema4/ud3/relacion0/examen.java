@@ -22,16 +22,21 @@ public class examen {
     //Opcion1
     public static Double pedirNotaValida(Scanner sc) {
         Double aniadirNota;
-        mostrarMensaje("Nota del estudiante: ");
-        datoIntroducido = Double.parseDouble(sc.nextLine());
         do {
+            mostrarMensaje("Nota del estudiante: ");
+            aniadirNota = Double.parseDouble(sc.nextLine());
             
-        } while (aniadirNota <= 0 );
-        if (aniadirNota <= 0) {
-            mostrarMensaje("Introduce una nota valida: ");
-        } else {
+        } while (aniadirNota <= 0 || aniadirNota > 10);
+        return aniadirNota;
+    }
+    public static int pedirAsistenciaValida(Scanner sc) {
+        int asistenciaAniadida;
+        do {
+            mostrarMensaje("Asistencia del estudiante: ");
+            asistenciaAniadida = Integer.parseInt(sc.nextLine());
             
-        }
+        } while (asistenciaAniadida <= 0 || asistenciaAniadida > 10);
+        return asistenciaAniadida;
     }
 
     //Opcion2
@@ -103,10 +108,8 @@ public class examen {
                 //Añadir control errores 
                 System.out.println("Nombre del estudiante: ");
                 aniadirEstudiante = scanner.nextLine();
-                pedirNotaValida(scanner);
-                
-                System.out.println("Cantidad de asistencia: ");
-                aniadirAsistencia = scanner.nextInt();
+                aniadirNota = pedirNotaValida(scanner);
+                aniadirAsistencia = pedirAsistenciaValida(scanner);
                 
                 nombres.add(aniadirEstudiante);
                 notas.add(aniadirNota);
@@ -135,5 +138,6 @@ public class examen {
             }
             
         } while (opcion != 5);
+        scanner.close();
     }
 }
