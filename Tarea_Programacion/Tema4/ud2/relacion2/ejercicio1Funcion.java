@@ -52,7 +52,6 @@ public class ejercicio1Funcion {
                 valorMasAlto = array.get(i);
             }
         }
-        // mostrarMensaje("La temperatura mas alta es " + dato);
         return valorMasAlto;
     }
 
@@ -64,7 +63,6 @@ public class ejercicio1Funcion {
                 valorMasBajo = array.get(i);
             }
         }
-        // mostrarMensaje("La temperatura mas baja es: " + valorMasBajo);
         return valorMasBajo;
     }
 
