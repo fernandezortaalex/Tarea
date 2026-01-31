@@ -1,7 +1,6 @@
 package Tarea_Programacion.Tema4.ud3.relacion0.repaso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ejercicio1 {
