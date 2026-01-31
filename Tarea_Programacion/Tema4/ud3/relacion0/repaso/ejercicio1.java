@@ -86,7 +86,7 @@ public class ejercicio1 {
                 numero = -1;
             }
             
-        } while (numero < 0 || numero > array.size());
+        } while (numero < 0 || numero >= array.size());
         return numero;
     }
     public static void aptoNoApto(int numeroValidar,ArrayList<String> arrayNombresVehiculos, ArrayList<Integer>arrayPotenciaVehiculo, ArrayList<String> arrayTrabajoRealizar) {
@@ -147,9 +147,9 @@ public class ejercicio1 {
     /////////////////////////////////MAIN//////////////////////////////////////////////
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> marcas = new ArrayList<>(Arrays.asList("John Deere", "New Holland"));
-        ArrayList<Integer> arrayPotencia = new ArrayList<>(Arrays.asList(555555, 4));
-        ArrayList<String> arrayTrabajo = new ArrayList<>(Arrays.asList("Arado", "siembra"));
+        ArrayList<String> marcas = new ArrayList<>(Arrays.asList("John Deere", "New Holland", "New Holland"));
+        ArrayList<Integer> arrayPotencia = new ArrayList<>(Arrays.asList(555555, 4, 8));
+        ArrayList<String> arrayTrabajo = new ArrayList<>(Arrays.asList("Arado", "siembra", "siembra"));
 
         int opcion = 0;
         //Opcion1
@@ -177,5 +177,6 @@ public class ejercicio1 {
             }
             
         } while (opcion != 0);
+        scanner.close();
     }
 }
