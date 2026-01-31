@@ -74,19 +74,21 @@ public class ejercicio1 {
     }
     //Opcion3
     public static int evaluarTractor(ArrayList<String>array, Scanner sc) {
-        int numero = 0;
-        do {
-            try {
-                mostrarMensaje("Dime el numero del tractor que quieres validar: ");
-                numero = Integer.parseInt(sc.nextLine());
+        int numero = -1;
+        if (array.size() != 0) {
+            do {
+                try {
+                    mostrarMensaje("Dime el numero del tractor que quieres validar: ");
+                    numero = Integer.parseInt(sc.nextLine());
+                    
+                    
+                } catch (NumberFormatException e) {
+                    mostrarMensaje("Introduce un numero");
+                    numero = -1;
+                }
                 
-                
-            } catch (NumberFormatException e) {
-                mostrarMensaje("Introduce un numero");
-                numero = -1;
-            }
-            
-        } while (numero < 0 || numero >= array.size());
+            } while (numero < 0 || numero >= array.size());
+        } 
         return numero;
     }
     public static void aptoNoApto(int numeroValidar,ArrayList<String> arrayNombresVehiculos, ArrayList<Integer>arrayPotenciaVehiculo, ArrayList<String> arrayTrabajoRealizar) {
@@ -147,9 +149,9 @@ public class ejercicio1 {
     /////////////////////////////////MAIN//////////////////////////////////////////////
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> marcas = new ArrayList<>(Arrays.asList("John Deere", "New Holland", "New Holland"));
-        ArrayList<Integer> arrayPotencia = new ArrayList<>(Arrays.asList(555555, 4, 8));
-        ArrayList<String> arrayTrabajo = new ArrayList<>(Arrays.asList("Arado", "siembra", "siembra"));
+        ArrayList<String> marcas = new ArrayList<>();
+        ArrayList<Integer> arrayPotencia = new ArrayList<>();
+        ArrayList<String> arrayTrabajo = new ArrayList<>();
 
         int opcion = 0;
         //Opcion1
@@ -167,13 +169,21 @@ public class ejercicio1 {
             }else if (opcion == 2) {
                 mostrarListado(marcas, arrayPotencia, arrayTrabajo, "|");
             }else if (opcion == 3) {
-                numeroAEvaluar = 0;
+                numeroAEvaluar = -1;
                 numeroAEvaluar = evaluarTractor(marcas, scanner);
-                aptoNoApto(numeroAEvaluar,marcas, arrayPotencia, arrayTrabajo);
+                if (numeroAEvaluar != -1) {
+                    aptoNoApto(numeroAEvaluar,marcas, arrayPotencia, arrayTrabajo);
+                } else {
+                    System.out.println("No hay tractores para evaluar");
+                }
             }else if (opcion == 4) {
-                numeroAEvaluar = 0;
+                numeroAEvaluar = -1;
                 numeroAEvaluar = evaluarTractor(marcas, scanner);
-                eliminarVehiculo(numeroAEvaluar, marcas, arrayPotencia, arrayTrabajo);
+                if (numeroAEvaluar != -1) {
+                    eliminarVehiculo(numeroAEvaluar, marcas, arrayPotencia, arrayTrabajo);
+                } else {
+                    System.out.println("No hay tractores para eliminar");
+                }
             }
             
         } while (opcion != 0);
