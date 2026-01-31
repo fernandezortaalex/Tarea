@@ -21,21 +21,30 @@ public class examen {
     }
     //Opcion1
     public static Double pedirNotaValida(Scanner sc) {
-        Double aniadirNota;
+        Double aniadirNota = 0.0;
         do {
-            mostrarMensaje("Nota del estudiante: ");
-            aniadirNota = Double.parseDouble(sc.nextLine());
-            
+            try {
+                mostrarMensaje("Nota del estudiante: ");
+                aniadirNota = Double.parseDouble(sc.nextLine());
+                    
+            } catch (NumberFormatException e) {
+                mostrarMensaje("Error introduce una nota valida");
+            }
         } while (aniadirNota <= 0 || aniadirNota > 10);
         return aniadirNota;
     }
     public static int pedirAsistenciaValida(Scanner sc) {
-        int asistenciaAniadida;
+        int asistenciaAniadida = 0;
         do {
-            mostrarMensaje("Asistencia del estudiante: ");
-            asistenciaAniadida = Integer.parseInt(sc.nextLine());
+            try {
+                mostrarMensaje("Asistencia del estudiante: ");
+                asistenciaAniadida = Integer.parseInt(sc.nextLine());
+                
+            } catch (Exception e) {
+                mostrarMensaje("Error introduce un numero valido");
+            }
             
-        } while (asistenciaAniadida <= 0 || asistenciaAniadida > 10);
+        } while (asistenciaAniadida <= 0 || asistenciaAniadida > 100);
         return asistenciaAniadida;
     }
 
@@ -43,33 +52,41 @@ public class examen {
     public static void mostrarListado(ArrayList<String> arrayNombres, ArrayList<Double> arrayNotas, ArrayList<Integer> arrayAsistencias, String caracterSeparador) {
         String mensaje = "";
         //Hacer control de errores
-        for (int i = 0; i < arrayNombres.size(); i++) {
-            mensaje += arrayNombres.get(i) + caracterSeparador + "Nota: " + arrayNotas.get(i) + caracterSeparador + " Asistencia: " + arrayAsistencias.get(i) + "\n";
+        if (arrayNombres.size() == 0) {
+            mostrarMensaje("Error no hay nada en el array");
+        } else {
+            for (int i = 0; i < arrayNombres.size(); i++) {
+                mensaje += arrayNombres.get(i) + caracterSeparador + "Nota: " + arrayNotas.get(i) + caracterSeparador + " Asistencia: " + arrayAsistencias.get(i) + "\n";
+            }
+            mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
+            mostrarMensaje(mensaje);
+            
         }
-        mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
-        mostrarMensaje(mensaje);
     }
 
     //Opcion3
     public static void mostrarMejores(ArrayList<String> arrayNombres, ArrayList<Double> arrayNotas, ArrayList<Integer> arrayAsistencias) {
-        //Poner control de errores
         String mejorAlumno = arrayNombres.get(0);
         Double mejorNota = arrayNotas.get(0);
         int mayorAsistencia = arrayAsistencias.get(0);
         String alumnoMayorAsistencia = arrayNombres.get(0);
 
-        for (int i = 1; i < arrayNombres.size(); i++) {
-            if (arrayNotas.get(i) > mejorNota) {
-                mejorNota = arrayNotas.get(i);
-                mejorAlumno = arrayNombres.get(i);
+        if (arrayNombres.size() == 0) {
+            mostrarMensaje("Error no hay elementos en el array");
+        } else {
+            for (int i = 1; i < arrayNombres.size(); i++) {
+                if (arrayNotas.get(i) > mejorNota) {
+                    mejorNota = arrayNotas.get(i);
+                    mejorAlumno = arrayNombres.get(i);
+                }
+                if (arrayAsistencias.get(i) > mayorAsistencia) {
+                    mayorAsistencia = arrayAsistencias.get(i);
+                    alumnoMayorAsistencia = arrayNombres.get(i);
+                }
             }
-            if (arrayAsistencias.get(i) > mayorAsistencia) {
-                mayorAsistencia = arrayAsistencias.get(i);
-                alumnoMayorAsistencia = arrayNombres.get(i);
-            }
+            mostrarMensaje("Mejor nota: " + mejorAlumno + " (" + mejorNota + ") \n" + "Mayor asistencia: " + alumnoMayorAsistencia + " (" + mayorAsistencia + ")");
+            
         }
-
-        mostrarMensaje("Mejor nota: " + mejorAlumno + " (" + mejorNota + ") \n" + "Mayor asistencia: " + alumnoMayorAsistencia + " (" + mayorAsistencia + ")");
     }
 
     //Opcion4
