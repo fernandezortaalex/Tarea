@@ -10,6 +10,9 @@ public class ejercicio1 {
                 try {
                     mostrarMensaje( "Que opcion quieres elegir:\n1.Añadir tractor.\n2.Listar tractores\n3.Evaluar tractor (por índice).\n4.Eliminar tractor.\n0.Salir.");
                     opcion = Integer.parseInt(sc.nextLine());
+                    if (opcion > 4 || opcion < 0) {
+                        mostrarMensaje("Error el numero tiene que estar entre 0 y 4");
+                    }
                 } catch (NumberFormatException e) {
                     mostrarMensaje("Error introduce un numero");
                     opcion = -1;
