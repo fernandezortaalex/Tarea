@@ -4,23 +4,35 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ejercicio1 {
-    public static int mostrarMenuYLeerOpcion(Scanner sc) {
+    /**
+     * Para introducir un menu
+     * @param sc
+     * @param min Numero minimo que se puede introducir
+     * @param max numero maximo que se puede introducir
+     * @return Si lo has introducido bien el numero que te devuelve
+     */
+    public static int mostrarMenuYLeerOpcion(Scanner sc, int min, int max) {
         int opcion = 0;
         do {
                 try {
                     mostrarMensaje( "Que opcion quieres elegir:\n1.Añadir tractor.\n2.Listar tractores\n3.Evaluar tractor (por índice).\n4.Eliminar tractor.\n0.Salir.");
                     opcion = Integer.parseInt(sc.nextLine());
-                    if (opcion > 4 || opcion < 0) {
-                        mostrarMensaje("Error el numero tiene que estar entre 0 y 4");
+                    if (opcion > max || opcion < min) {
+                        mostrarMensaje("Error el numero tiene que estar entre " + min +  " y " + max);
                     }
                 } catch (NumberFormatException e) {
                     mostrarMensaje("Error introduce un numero");
                     opcion = -1;
                 }
-            } while (opcion < 0 || opcion > 4);
+            } while (opcion < min || opcion > max);
         return opcion;
     }
     //Opcion1
+    /**
+     * Sirve para introducir solo numeros positivos a un array
+     * @param array Array de formato numerico
+     * @param sc
+     */
     public static void validarPotencia(ArrayList<Integer>array, Scanner sc) {
         int numero;
         boolean valido = false;
@@ -41,6 +53,11 @@ public class ejercicio1 {
             
         } while (!valido);
     }
+    /**
+     * Valida que la opcion introducida sea una de las declaradas
+     * @param array Array donde se van a guardar los datos
+     * @param sc
+     */
     public static void validarTrabajo(ArrayList<String> array, Scanner sc) {
         String trabajo;
         boolean valido = false;
@@ -58,6 +75,13 @@ public class ejercicio1 {
     }
 
     //Opcion2
+    /**
+     * Muestra un listado en orden de cada array, con su respectivo elemento de otro array
+     * @param arrayNombres
+     * @param arrayPotenciaVehiculo
+     * @param arrayTrabajoRealizar
+     * @param caracterSeparador Caracter con el que quieras que se separen 
+     */
     public static void mostrarListado(ArrayList<String> arrayNombres, ArrayList<Integer> arrayPotenciaVehiculo, ArrayList<String> arrayTrabajoRealizar, String caracterSeparador) {
         String mensaje = "";
         int contador = 0;
@@ -75,7 +99,13 @@ public class ejercicio1 {
         }
     }
     //Opcion3
-    public static int evaluarTractor(ArrayList<String>array, Scanner sc) {
+    /**
+     * Sirve para verificar que el numero introducido es una posicion existente en el array
+     * @param array Array donde verificar
+     * @param sc 
+     * @return devuelve la posicion
+     */
+    public static int verificarNumeroEnArray(ArrayList<String>array, Scanner sc) {
         int numero = -1;
         if (array.size() != 0) {
             do {
@@ -161,7 +191,7 @@ public class ejercicio1 {
         int numeroAEvaluar;
         
         do {
-            opcion = mostrarMenuYLeerOpcion(scanner);
+            opcion = mostrarMenuYLeerOpcion(scanner, 0, 4);
             if (opcion == 1) {
                 System.out.println("Marca: ");
                 marcaIntroducir = scanner.nextLine();
@@ -172,7 +202,7 @@ public class ejercicio1 {
                 mostrarListado(marcas, arrayPotencia, arrayTrabajo, "|");
             }else if (opcion == 3) {
                 numeroAEvaluar = -1;
-                numeroAEvaluar = evaluarTractor(marcas, scanner);
+                numeroAEvaluar = verificarNumeroEnArray(marcas, scanner);
                 if (numeroAEvaluar != -1) {
                     aptoNoApto(numeroAEvaluar,marcas, arrayPotencia, arrayTrabajo);
                 } else {
@@ -180,7 +210,7 @@ public class ejercicio1 {
                 }
             }else if (opcion == 4) {
                 numeroAEvaluar = -1;
-                numeroAEvaluar = evaluarTractor(marcas, scanner);
+                numeroAEvaluar = verificarNumeroEnArray(marcas, scanner);
                 if (numeroAEvaluar != -1) {
                     eliminarVehiculo(numeroAEvaluar, marcas, arrayPotencia, arrayTrabajo);
                 } else {
