@@ -83,6 +83,7 @@ public class ejercicio2 {
         return precio;
     }
     //preguntar como comprobar si un caracter es un numero
+    //lo busco en el modelo ascii y le resto 0 para que me de el numero
     // public static void descuento(ArrayList<String>array) {
     //     String matriculaRevisar = array.get(array.size() - 1);
     //     char ultimoNumero = matriculaRevisar.charAt(matriculaRevisar.length() - 1);
