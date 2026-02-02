@@ -11,13 +11,13 @@ select substring(estado_civil, 1, 3) as estado_civil, municipio from personas wh
 -- 5  Cuenta el numero de personas que son padre siendo mujer o madre siendo hombre
 select id from personas where sexo = "M" and id in (select padre from personas where padre is not null) or sexo = "H" and id in (select madre from personas where madre is not null);
 -- 6  Dime la moda del estado civil
-
+select count(*) as total, estado_civil from personas group by estado_civil limit 1;
 -- 7  Dime cuantos municipios diferentes de la provincia de Cádiz aparecen en la base de datos. 
-
+-- select provincia, count(municipio) as municipios from personas group by provincia;
 -- 8  Dime la media de ingresos_anuales agrupada por estado_civil.
-
+select avg(ingresos_anuales) as media_ingresos_anuales, estado_civil from personas group by estado_civil;
 -- 9  Dime los abuelos de la persona con id 1144
-
+select 
 -- 10 Dime los nietos de la persona con id 1093
 
 -- 11 Dime la media de numero de hijos por mujer.
