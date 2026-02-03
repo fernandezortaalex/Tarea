@@ -110,11 +110,16 @@ public class ejercicio4 {
         return noTieneNumero;
     }
 
+    /**
+     * Muestra todos los elementos de un array enumerado
+     * @param array
+     * @param caracterSeparador
+     */
     public static void mostrarArray(ArrayList<?> array, String caracterSeparador) {
         String mensaje = "";
         int contador = 0;
         for (int i = 0; i < array.size(); i++) {
-            mensaje += contador + caracterSeparador + array.get(i) + caracterSeparador;
+            mensaje += contador + " -> " + array.get(i) + caracterSeparador;
             contador++;
         }
         mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
@@ -149,6 +154,23 @@ public class ejercicio4 {
         return numero;
     }
 
+    //Opcion 5
+    public static void mostrarMayoresEdad(ArrayList<String> arrayNombres, ArrayList<Integer> arrayEdad, String caracterSeparador) {
+        int contador = 0;
+        if (arrayNombres.size() == 0 || arrayEdad.size() == 0) {
+            mostrarMensaje("No hay elementos en el array");
+        }else{
+            for (int i = 0; i < arrayEdad.size(); i++) {
+                if (arrayEdad.get(i) >= 18) {
+                    mostrarMensaje(arrayNombres.get(i) + caracterSeparador + arrayEdad.get(i));
+                    contador++;
+                }
+            }
+            if (contador == 0) {
+                mostrarMensaje("No hay ninguna persona que sea mayor de edad");
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -163,7 +185,7 @@ public class ejercicio4 {
          * Arrays Candidatos
          */
         ArrayList<String> nombresCandidatos = new ArrayList<>(Arrays.asList("Lucía García", "Marcos Soler", "Elena Sanz", "Javier López"));
-        ArrayList<Integer> edadesCandidatos = new ArrayList<>(Arrays.asList(28, 34, 22, 40));
+        ArrayList<Integer> edadesCandidatos = new ArrayList<>(Arrays.asList(44,55,22,44));
         ArrayList<String> perfilesProfesionales = new ArrayList<>(Arrays.asList("programador", "marketing", "diseñador", "programador"));
         ArrayList<String> inscripcionEmpresa = new ArrayList<>(Arrays.asList("TechNova", "RetailLink", "TechNova", "TechNova"));
 
@@ -191,15 +213,24 @@ public class ejercicio4 {
                 
             } while (!comprobarString(introducirProfesion));
             perfilesProfesionales.add(introducirProfesion);
-            //incribir empresa
+            //INSCRIBIR EMPRESA
+            //Muestro las empresas que existen
             mostrarArray(nombresEmpresas, "|");
+            //Pido el numero de la empresa que quieren incribirse
             posicionEmpresas = verificarNumeroEnArray(nombresEmpresas, scanner);
+            //Si la encuentra la agrega
             if (posicionEmpresas != -1) {
                 inscripcionEmpresa.add(nombresEmpresas.get(posicionEmpresas));
             }else{
                 mostrarMensaje("No hay ninguna empresa");
             }
             System.out.println(inscripcionEmpresa);
+        }else if (opcion == 3) {
+            mostrarArray(nombresEmpresas, " | ");
+        }else if (opcion == 4) {
+            mostrarArray(nombresCandidatos, " | ");
+        }else if (opcion == 5) {
+            mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ");
         }
     }
 }
