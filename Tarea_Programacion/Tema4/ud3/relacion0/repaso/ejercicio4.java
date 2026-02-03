@@ -111,19 +111,23 @@ public class ejercicio4 {
     }
 
     /**
-     * Muestra todos los elementos de un array enumerado
+     * Muestra todos los elementos de un array de forma enumerada
      * @param array
      * @param caracterSeparador
      */
     public static void mostrarArray(ArrayList<?> array, String caracterSeparador) {
-        String mensaje = "";
-        int contador = 0;
-        for (int i = 0; i < array.size(); i++) {
-            mensaje += contador + " -> " + array.get(i) + caracterSeparador;
-            contador++;
+        if (array.isEmpty()) {
+            mostrarMensaje("No hay ningun elemento");
+        }else{
+            String mensaje = "";
+            int contador = 0;
+            for (int i = 0; i < array.size(); i++) {
+                mensaje += contador + " -> " + array.get(i) + caracterSeparador;
+                contador++;
+            }
+            mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
+            mostrarMensaje(mensaje);
         }
-        mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
-        mostrarMensaje(mensaje);
     }
 
     //INTRODUCES UN NUMERO Y SI ESTA EN EL ARRAY TE DEVUELVE ESE NUMERO, SI NO TE VUELVE 
