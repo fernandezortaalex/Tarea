@@ -155,13 +155,19 @@ public class ejercicio4 {
     }
 
     //Opcion 5
-    public static void mostrarMayoresEdad(ArrayList<String> arrayNombres, ArrayList<Integer> arrayEdad, String caracterSeparador) {
+    /**
+     * Muestra los elementos que son mayores a un numero
+     * @param arrayNombres Array a sacar informacion
+     * @param arrayEdad Array a comparar con el valor minimo
+     * @param caracterSeparador
+     */
+    public static void mostrarMayoresEdad(ArrayList<String> arrayNombres, ArrayList<Integer> arrayEdad, String caracterSeparador, int minimo) {
         int contador = 0;
-        if (arrayNombres.size() == 0 || arrayEdad.size() == 0) {
+        if (arrayNombres.isEmpty() || arrayEdad.isEmpty()) {
             mostrarMensaje("No hay elementos en el array");
         }else{
             for (int i = 0; i < arrayEdad.size(); i++) {
-                if (arrayEdad.get(i) >= 18) {
+                if (arrayEdad.get(i) >= minimo) {
                     mostrarMensaje(arrayNombres.get(i) + caracterSeparador + arrayEdad.get(i));
                     contador++;
                 }
@@ -230,7 +236,7 @@ public class ejercicio4 {
         }else if (opcion == 4) {
             mostrarArray(nombresCandidatos, " | ");
         }else if (opcion == 5) {
-            mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ");
+            mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ", 18);
         }
     }
 }
