@@ -110,6 +110,47 @@ public class ejercicio4 {
         return noTieneNumero;
     }
 
+    public static void mostrarArray(ArrayList<?> array, String caracterSeparador) {
+        String mensaje = "";
+        int contador = 0;
+        for (int i = 0; i < array.size(); i++) {
+            mensaje += contador + caracterSeparador + array.get(i) + caracterSeparador;
+            contador++;
+        }
+        mensaje = mensaje.substring(0, mensaje.length() - caracterSeparador.length());
+        mostrarMensaje(mensaje);
+    }
+
+    //INTRODUCES UN NUMERO Y SI ESTA EN EL ARRAY TE DEVUELVE ESE NUMERO, SI NO TE VUELVE 
+    //A PREGUNTAR.
+    //ESTA VACIO TE SALTA UN MENSAJE
+    /**
+     * Sirve para verificar que el numero introducido es una posicion existente en el array
+     * @param array Array donde verificar
+     * @param sc 
+     * @return devuelve la posicion
+     */
+    public static int verificarNumeroEnArray(ArrayList<String>array, Scanner sc) {
+        int numero = -1;
+        if (array.size() != 0) {
+            do {
+                try {
+                    mostrarMensaje("Dime el numero de la empresa que quieres estar: ");
+                    numero = Integer.parseInt(sc.nextLine());
+                    
+                    
+                } catch (NumberFormatException e) {
+                    mostrarMensaje("Introduce un numero");
+                    numero = -1;
+                }
+                
+            } while (numero < 0 || numero >= array.size());
+        } 
+        return numero;
+    }
+
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         /**
@@ -129,6 +170,7 @@ public class ejercicio4 {
         int opcion = 0;
         //Opcion2
         String introducirProfesion;
+        int posicionEmpresas = -1;
         
 
         opcion = mostrarMenuYLeerOpcion(scanner, 0, 8, "Que opcion quieres elegir:\n1.Añadir empresa.\n2.Añadir candidato\n3.Listar todas las empresas.\n4.Listar todos los candidatos.\n5.Mostrar candidatos mayores de edad.\n6.Buscar empresas por sector.\n7.Mostrar la empresa con más vacantes.\n8.Mostrar cuántos candidatos tiene cada empresa\n0.Salir.");
@@ -149,7 +191,15 @@ public class ejercicio4 {
                 
             } while (!comprobarString(introducirProfesion));
             perfilesProfesionales.add(introducirProfesion);
-            
+            //incribir empresa
+            mostrarArray(nombresEmpresas, "|");
+            posicionEmpresas = verificarNumeroEnArray(nombresEmpresas, scanner);
+            if (posicionEmpresas != -1) {
+                inscripcionEmpresa.add(nombresEmpresas.get(posicionEmpresas));
+            }else{
+                mostrarMensaje("No hay ninguna empresa");
+            }
+            System.out.println(inscripcionEmpresa);
         }
     }
 }
