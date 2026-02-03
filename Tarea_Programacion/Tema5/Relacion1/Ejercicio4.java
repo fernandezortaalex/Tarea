@@ -16,10 +16,12 @@ class auto {
         this.velocidadActual = velocidadActual;
     }
 
-    //Metodo para acelerar
-    int acelerar(int cantidad){
+    /**
+     * Modifico la velocidad actual para incrementarla
+     * @param cantidad Paso la cantidad de velocidad que va a aumentar
+     */
+    void acelerar(int cantidad){
         velocidadActual += cantidad;
-        return velocidadActual;
     }
 
     /**

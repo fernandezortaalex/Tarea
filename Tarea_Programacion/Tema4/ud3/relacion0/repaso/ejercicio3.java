@@ -13,12 +13,11 @@ public class ejercicio3 {
      * @param max numero maximo que se puede introducir
      * @return Si lo has introducido bien el numero que te devuelve
      */
-    public static int mostrarMenuYLeerOpcion(Scanner sc, int min, int max) {
+    public static int mostrarMenuYLeerOpcion(Scanner sc, int min, int max, String opciones) {
         int opcion = 0;
         do {
             try {
-                mostrarMensaje(
-                        "Que opcion quieres elegir:\n1.Añadir lote.\n2.Listar lotes\n3. Hacer puja (por índice).\n4.Ver ganador actual (por índice)\n5.Eliminar lote (por índice)\n0.Salir.");
+                mostrarMensaje(opciones);
                 opcion = Integer.parseInt(sc.nextLine());
                 if (opcion > max || opcion < min) {
                     mostrarMensaje("Error el numero tiene que estar entre " + min + " y " + max);
@@ -204,7 +203,7 @@ public class ejercicio3 {
 
         do {
             
-            opcion = mostrarMenuYLeerOpcion(scanner, 0, 5);
+            opcion = mostrarMenuYLeerOpcion(scanner, 0, 5, "Que opcion quieres elegir:\n1.Añadir lote.\n2.Listar lotes\n3.Hacer puja (por índice).\n4.Ver ganador actual (por índice)\n5.Eliminar lote (por índice)\n0.Salir.");
             if (opcion == 1) {
                 //Agrego una marca
                 agregarDatosArray(modelo, "Dime la marca que quieres agregar: ", scanner);

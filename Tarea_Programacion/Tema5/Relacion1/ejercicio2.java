@@ -5,13 +5,13 @@ package Tarea_Programacion.Tema5.Relacion1;
 import java.util.Scanner;
 
 //Creo la clase
-class cuentaBancaria {
+class CuentaBancaria {
     //Atributos
     String titular;
     double saldo;
     
     //Constructor
-    cuentaBancaria(String titular, double saldo){
+    CuentaBancaria(String titular, double saldo){
         this.titular = titular;
         this.saldo = saldo;
     }
@@ -22,13 +22,13 @@ class cuentaBancaria {
     }
 
     //Metodo para retirar
-    boolean retirar( double cantidadRetirar){
+    boolean retirar( double cantidad){
         //Si puedes retirar resta a saldo la cantidad a retirar y devuelve el booleano
         boolean puedesRetirar = true;
-        if (cantidadRetirar > saldo) {
+        if (cantidad > saldo) {
             puedesRetirar = false;
         }else{
-            saldo -= cantidadRetirar;
+            saldo -= cantidad;
         }
         return puedesRetirar;
     }
@@ -38,11 +38,11 @@ public class ejercicio2 {
         Scanner scanner = new Scanner(System.in);
         double ingresar, dineroRetirar;
         //Ingreso los datos de una cuenta bancaria
-        cuentaBancaria cuenta1 = new cuentaBancaria("Alex", 1000);
+        CuentaBancaria cuenta1 = new CuentaBancaria("Alex", 1000);
         
-        System.out.println("Cuanto quieres ingresar: ");
+        System.out.println("Cantidad a ingresar: ");
         ingresar = scanner.nextDouble();
-        System.out.println("Cuanto quieres retirar: ");
+        System.out.println("Cantidad a retirar: ");
         dineroRetirar = scanner.nextDouble();
 
         //Ingreso una cantidad extra
@@ -50,9 +50,9 @@ public class ejercicio2 {
 
         //Comparo con lo que me devuelva el booleano
         if (cuenta1.retirar(dineroRetirar)) {
-            System.out.println("puedes retirar el dinero y se queda: " + cuenta1.saldo);
+            System.out.println("Puedes retirar el dinero y se queda: " + cuenta1.saldo);
         }else{
-            System.out.println("no puedes retirar tienes: " + cuenta1.saldo);
+            System.out.println("No puedes retirar, tienes: " + cuenta1.saldo);
         }
 
         scanner.close();
