@@ -1,5 +1,5 @@
 use andalucia_db;
-
+select * from personas;
 -- 1 dime el nombre y apellido de los cinco malagueños (provincia) de más edad
 
 -- 2 dime el maximo de ingresos anuales que tiene una persona con estudios primarios.
@@ -16,14 +16,16 @@ select count(*) as total, estado_civil from personas group by estado_civil limit
 -- select provincia, count(municipio) as municipios from personas group by provincia;
 -- 8  Dime la media de ingresos_anuales agrupada por estado_civil.
 select avg(ingresos_anuales) as media_ingresos_anuales, estado_civil from personas group by estado_civil;
--- 9  Dime los abuelos de la persona con id 1144
-select 
+-- 9  Dime los abuelos de la persona con id 2002
+
+select id, madre, padre from personas where id = (select madre from personas where id = 2002) or id = (select padre from personas where id = 2002);
+
 -- 10 Dime los nietos de la persona con id 1093
 
 -- 11 Dime la media de numero de hijos por mujer.
-
+select avg(num_hijos) as numeroHijos, sexo from personas group by sexo having sexo = 'M';
 -- 12 Dime los 5 granadinos (provincia) que más cobran ordenados por la longitud en letras de su ocupacion. 
-
+select ingresos_anuales  from personas 
 -- 13 Dime la provincia con menos ingresos anuales de media.
 
 -- 14 Dime la provincia que tiene a los jubilados con menores ingresos anuales de media.
