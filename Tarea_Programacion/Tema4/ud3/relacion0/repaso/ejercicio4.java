@@ -37,7 +37,7 @@ public class ejercicio4 {
 
     //Opcion 1
     /**
-     * Pide un String para añadir en un array hasta que no este duplicado
+     * Pide un String para añadir en un array hasta que no este duplicado o no este vacio
      * @param array Array donde guardar la informacion
      * @param mensaje mensaje a mostrar
      * @param sc
@@ -46,6 +46,7 @@ public class ejercicio4 {
         boolean duplicadosEncontrado = false;
         String nombreAniadir;
         do {
+            duplicadosEncontrado = false;
             mostrarMensaje(mensaje);
             nombreAniadir = sc.nextLine();
             for (int i = 0; i < array.size() && !duplicadosEncontrado; i++) {
@@ -55,10 +56,12 @@ public class ejercicio4 {
             }
             if (!duplicadosEncontrado) {
                 array.add(nombreAniadir);
-            } else {
+            }else if (nombreAniadir.isEmpty()) {
+                mostrarMensaje("Debes introducir algo");
+            }else {
                 mostrarMensaje("\nNo se añade " + nombreAniadir + " ya que está en el array");
             }
-        } while (duplicadosEncontrado);
+        } while (duplicadosEncontrado || nombreAniadir.isEmpty());
     }
     
     /**
@@ -311,7 +314,7 @@ public class ejercicio4 {
             }else{
                 mostrarMensaje("No hay ninguna empresa");
             }
-            System.out.println(inscripcionEmpresa);
+            
         }else if (opcion == 3) {
             mostrarArray(nombresEmpresas, " | ");
         }else if (opcion == 4) {
@@ -319,8 +322,10 @@ public class ejercicio4 {
         }else if (opcion == 5) {
             mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ", 18);
         }else if (opcion == 6) {
-            System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
-            sectorEmpresaBuscar = scanner.nextLine();
+            do {
+                System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
+                sectorEmpresaBuscar = scanner.nextLine();
+            } while (sectorEmpresaBuscar.isEmpty());
             comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar, "Las empresas con esas bacantes son: ");
         }else if (opcion == 7) {
             if (vacantesDisponibles.isEmpty()) {
