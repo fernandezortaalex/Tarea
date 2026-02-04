@@ -37,31 +37,50 @@ public class ejercicio4 {
 
     //Opcion 1
     /**
-     * Pide un String para añadir en un array hasta que no este duplicado o no este vacio
+     * Lee un string y comprueba que no este vacio
+     * @param mensaje
+     * @param sc
+     * @return devuelve el string
+     */
+    public static String leerStringNoVacio(String mensaje, Scanner sc) {
+        String texto;
+
+        do {
+            mostrarMensaje(mensaje);
+            texto = sc.nextLine();
+
+            if (texto.isEmpty()) {
+                mostrarMensaje("Por favor introduzca texto y no lo dejes vacio");
+            }
+
+        } while (texto.isEmpty());
+
+        return texto;
+    }
+    /**
+     * Pide un String para añadir en un array hasta que no este duplicado 
      * @param array Array donde guardar la informacion
      * @param mensaje mensaje a mostrar
      * @param sc
      */
     public static void aniadirSinDuplicados( ArrayList<String> array, String mensaje, Scanner sc) {
         boolean duplicadosEncontrado = false;
-        String nombreAniadir;
+        
         do {
             duplicadosEncontrado = false;
-            mostrarMensaje(mensaje);
-            nombreAniadir = sc.nextLine();
+            leerStringNoVacio(mensaje, sc);
             for (int i = 0; i < array.size() && !duplicadosEncontrado; i++) {
-                if (array.get(i).equalsIgnoreCase(nombreAniadir)) {
+                if (array.get(i).equalsIgnoreCase(mensaje)) {
                     duplicadosEncontrado = true;
                 }
             }
             if (!duplicadosEncontrado) {
-                array.add(nombreAniadir);
-            }else if (nombreAniadir.isEmpty()) {
-                mostrarMensaje("Debes introducir algo");
-            }else {
-                mostrarMensaje("\nNo se añade " + nombreAniadir + " ya que está en el array");
+                array.add(mensaje);
             }
-        } while (duplicadosEncontrado || nombreAniadir.isEmpty());
+            else {
+                mostrarMensaje("\nNo se añade " + mensaje + " ya que está en el array");
+            }
+        } while (duplicadosEncontrado);
     }
     
     /**
@@ -285,58 +304,60 @@ public class ejercicio4 {
         int numeroMayoresVacantes;
 
         do {
-        opcion = mostrarMenuYLeerOpcion(scanner, 0, 8, "Que opcion quieres elegir:\n1.Añadir empresa.\n2.Añadir candidato\n3.Listar todas las empresas.\n4.Listar todos los candidatos.\n5.Mostrar candidatos mayores de edad.\n6.Buscar empresas por sector.\n7.Mostrar la empresa con más vacantes.\n8.Mostrar cuántos candidatos tiene cada empresa\n0.Salir.");
+            opcion = mostrarMenuYLeerOpcion(scanner, 0, 8, "Que opcion quieres elegir:\n1.Añadir empresa.\n2.Añadir candidato\n3.Listar todas las empresas.\n4.Listar todos los candidatos.\n5.Mostrar candidatos mayores de edad.\n6.Buscar empresas por sector.\n7.Mostrar la empresa con más vacantes.\n8.Mostrar cuántos candidatos tiene cada empresa\n0.Salir.");
 
-        if (opcion == 1) {
-            //Mientras que este en el array pide que ingreses el nombre
-            aniadirSinDuplicados(nombresEmpresas, "Dime el nombre de la empresa a añadir: ", scanner);
-            aniadirSinDuplicados(sectoresEmpresas, "Dime el nombre del sector de la empresa a añadir: ", scanner);
-            //Añado el numero de vacantes
-            validarPotencia(vacantesDisponibles, scanner, "Cuantas vacantes libres va a tener esta empresa: ");
-        }else if (opcion == 2) {
-            aniadirSinDuplicados(nombresCandidatos, "Dime el nombre del candidato a introducir: ", scanner);
-            validarPotencia(edadesCandidatos, scanner, "Dime su edad: ");
-            //Compruebo que no tenga numero el perfil a introducir
-            do {
-                mostrarMensaje("Dime su profesion: ");
-                introducirProfesion = scanner.nextLine();
+            if (opcion == 1) {
+                //Mientras que este en el array pide que ingreses el nombre
                 
-            } while (!comprobarString(introducirProfesion));
-            perfilesProfesionales.add(introducirProfesion);
-            //INSCRIBIR EMPRESA
-            //Muestro las empresas que existen
-            mostrarArray(nombresEmpresas, "|");
-            //Pido el numero de la empresa que quieren incribirse
-            posicionEmpresas = verificarNumeroEnArray(nombresEmpresas, scanner);
-            //Si la encuentra la agrega
-            if (posicionEmpresas != -1) {
-                inscripcionEmpresa.add(nombresEmpresas.get(posicionEmpresas));
-            }else{
-                mostrarMensaje("No hay ninguna empresa");
+                aniadirSinDuplicados(nombresEmpresas, "Dime el nombre de la empresa a añadir: ", scanner);
+                aniadirSinDuplicados(sectoresEmpresas, "Dime el nombre del sector de la empresa a añadir: ", scanner);
+                //Añado el numero de vacantes
+                validarPotencia(vacantesDisponibles, scanner, "Cuantas vacantes libres va a tener esta empresa: ");
+            }else if (opcion == 2) {
+                aniadirSinDuplicados(nombresCandidatos, "Dime el nombre del candidato a introducir: ", scanner);
+                validarPotencia(edadesCandidatos, scanner, "Dime su edad: ");
+                //Compruebo que no tenga numero el perfil a introducir
+                do {
+                    mostrarMensaje("Dime su profesion: ");
+                    introducirProfesion = scanner.nextLine();
+                    
+                } while (!comprobarString(introducirProfesion));
+                perfilesProfesionales.add(introducirProfesion);
+                //INSCRIBIR EMPRESA
+                //Muestro las empresas que existen
+                mostrarArray(nombresEmpresas, "|");
+                //Pido el numero de la empresa que quieren incribirse
+                posicionEmpresas = verificarNumeroEnArray(nombresEmpresas, scanner);
+                //Si la encuentra la agrega
+                if (posicionEmpresas != -1) {
+                    inscripcionEmpresa.add(nombresEmpresas.get(posicionEmpresas));
+                }else{
+                    mostrarMensaje("No hay ninguna empresa");
+                }
+                
+            }else if (opcion == 3) {
+                mostrarArray(nombresEmpresas, " | ");
+            }else if (opcion == 4) {
+                mostrarArray(nombresCandidatos, " | ");
+            }else if (opcion == 5) {
+                mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ", 18);
+            }else if (opcion == 6) {
+                do {
+                    System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
+                    sectorEmpresaBuscar = scanner.nextLine();
+                } while (sectorEmpresaBuscar.isEmpty());
+                comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar, "Las empresas con esas bacantes son: ");
+            }else if (opcion == 7) {
+                if (vacantesDisponibles.isEmpty()) {
+                    mostrarMensaje("Error el array esta vacio");
+                }else{
+                    numeroMayoresVacantes = obtenerPosicionMayor(vacantesDisponibles);
+                    mostrarMensaje("La empresa con mas vacantes es: " + nombresEmpresas.get(numeroMayoresVacantes));
+                }
+            }else if (opcion == 8) {
+                contarCandidatos(nombresEmpresas, inscripcionEmpresa);
             }
-            
-        }else if (opcion == 3) {
-            mostrarArray(nombresEmpresas, " | ");
-        }else if (opcion == 4) {
-            mostrarArray(nombresCandidatos, " | ");
-        }else if (opcion == 5) {
-            mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ", 18);
-        }else if (opcion == 6) {
-            do {
-                System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
-                sectorEmpresaBuscar = scanner.nextLine();
-            } while (sectorEmpresaBuscar.isEmpty());
-            comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar, "Las empresas con esas bacantes son: ");
-        }else if (opcion == 7) {
-            if (vacantesDisponibles.isEmpty()) {
-                mostrarMensaje("Error el array esta vacio");
-            }else{
-                numeroMayoresVacantes = obtenerPosicionMayor(vacantesDisponibles);
-                mostrarMensaje("La empresa con mas vacantes es: " + nombresEmpresas.get(numeroMayoresVacantes));
-            }
-        }else if (opcion == 8) {
-            contarCandidatos(nombresEmpresas, inscripcionEmpresa);
-        }
         } while (opcion >= 0);
+        scanner.close();
     }
 }
