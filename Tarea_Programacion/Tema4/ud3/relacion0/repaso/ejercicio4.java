@@ -182,6 +182,20 @@ public class ejercicio4 {
         }
     }
 
+    //Opcion 6
+    public static void comprobarStringArray(ArrayList<String>arrayNombresEmpresas,ArrayList<String>arraySectoresEmpresas, String buscar) {
+    
+        ArrayList<String> nombresEmpresas = new ArrayList<>();
+        for (int i = 0; i < arraySectoresEmpresas.size(); i++) {
+            if (arraySectoresEmpresas.get(i).equalsIgnoreCase(buscar)) {
+                nombresEmpresas.add(arrayNombresEmpresas.get(i));
+            } 
+        }
+        for (String nombre : nombresEmpresas) {
+            mostrarMensaje(nombre);
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -189,7 +203,7 @@ public class ejercicio4 {
          * Arrays empresas
          */
         ArrayList<String> nombresEmpresas = new ArrayList<>(Arrays.asList("TechNova", "BioSalud", "EducaPlus", "RetailLink"));
-        ArrayList<String> sectoresEmpresas = new ArrayList<>(Arrays.asList("tecnología", "salud", "educación", "comercio"));
+        ArrayList<String> sectoresEmpresas = new ArrayList<>(Arrays.asList("salud", "salud", "educacion", "salud"));
         ArrayList<Integer> vacantesDisponibles = new ArrayList<>(Arrays.asList(3, 1, 5, 2));
         /**
          * Arrays Candidatos
@@ -203,6 +217,8 @@ public class ejercicio4 {
         //Opcion2
         String introducirProfesion;
         int posicionEmpresas = -1;
+        //Opcion 6
+        String sectorEmpresaBuscar;
         
 
         opcion = mostrarMenuYLeerOpcion(scanner, 0, 8, "Que opcion quieres elegir:\n1.Añadir empresa.\n2.Añadir candidato\n3.Listar todas las empresas.\n4.Listar todos los candidatos.\n5.Mostrar candidatos mayores de edad.\n6.Buscar empresas por sector.\n7.Mostrar la empresa con más vacantes.\n8.Mostrar cuántos candidatos tiene cada empresa\n0.Salir.");
@@ -241,6 +257,10 @@ public class ejercicio4 {
             mostrarArray(nombresCandidatos, " | ");
         }else if (opcion == 5) {
             mostrarMayoresEdad(nombresCandidatos, edadesCandidatos, " -> ", 18);
+        }else if (opcion == 6) {
+            System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
+            sectorEmpresaBuscar = scanner.nextLine();
+            comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar);
         }
     }
 }
