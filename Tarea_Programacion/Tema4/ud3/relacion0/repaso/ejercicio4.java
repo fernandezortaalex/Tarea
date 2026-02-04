@@ -183,20 +183,79 @@ public class ejercicio4 {
     }
 
     //Opcion 6
-    public static void comprobarStringArray(ArrayList<String>arrayNombresEmpresas,ArrayList<String>arraySectoresEmpresas, String buscar) {
-    
+    /**
+     * Sirve para verificar que un elemento este en un array
+     * @param arrayNombresEmpresas Array donde se muestra la informacion a guardar si se encuentra
+     * @param arraySectoresEmpresas Array para comprobar si el sato introducido coincide con el parametro a introducir
+     * @param buscar parametro a buscar 
+     * @param mensaje Mensaje a introcuir si hay coincidencia
+     */
+    public static void comprobarStringArray(ArrayList<String>arrayNombresEmpresas,ArrayList<String>arraySectoresEmpresas, String buscar, String mensaje) {
         ArrayList<String> nombresEmpresas = new ArrayList<>();
-        for (int i = 0; i < arraySectoresEmpresas.size(); i++) {
-            if (arraySectoresEmpresas.get(i).equalsIgnoreCase(buscar)) {
-                nombresEmpresas.add(arrayNombresEmpresas.get(i));
-            } 
-        }
-        for (String nombre : nombresEmpresas) {
-            mostrarMensaje(nombre);
+        if (arrayNombresEmpresas.isEmpty() || arrayNombresEmpresas.isEmpty()) {
+            mostrarMensaje("No hay elementos en el array");
+        }else{
+            for (int i = 0; i < arraySectoresEmpresas.size(); i++) {
+                if (arraySectoresEmpresas.get(i).equalsIgnoreCase(buscar)) {
+                    nombresEmpresas.add(arrayNombresEmpresas.get(i));
+                } 
+            }
+            if (nombresEmpresas.isEmpty()) {
+                mostrarMensaje("Ningun elemento coincide");
+            }else{
+                for (String nombre : nombresEmpresas) {
+                    mostrarMensaje(mensaje + nombre);
+                }
+            }
+            
         }
     }
 
+    //Opcion 7
+    /**
+     * Para obtener la posicion en el array del numero mayor
+     * @param array
+     * @return devuelve la posicion
+     */
+    public static int obtenerPosicionMayor(ArrayList<Integer> array) {
+        int mayor = array.get(0);
+        int posicionMayor = 0;
+            for (int i = 1; i < array.size(); i++) {
+                if (array.get(i) > mayor) {
+                    mayor = array.get(i);
+                    posicionMayor = i;
+                }
+            }
+        
 
+        return posicionMayor;
+    }
+
+    //Opcion 8
+    /**
+     * Cuenta para cada elemento del arrayNombresEmpresas el numero de  arrayInscripcionEmpresas que coincida con ese elemento
+     * @param arrayNombresEmpresas Array donde contar 
+     * @param arrayInscripcionEmpresas Array donde se compara cada elemento con cada elemento del arrayNombresEmpresas 
+     */
+    public static void contarCandidatos(ArrayList<String>arrayNombresEmpresas, ArrayList<String>arrayInscripcionEmpresas) {
+        int numeroInscripciones = 0;
+        if (arrayNombresEmpresas.isEmpty()) {
+            mostrarMensaje("No existen empresas");
+        }else if (arrayInscripcionEmpresas.isEmpty()) {
+            mostrarMensaje("No existen inscripciones");
+        }else{
+            for (int i = 0; i < arrayNombresEmpresas.size(); i++) {
+                numeroInscripciones = 0;
+                for (int j = 0; j < arrayInscripcionEmpresas.size(); j++) {
+                    if (arrayNombresEmpresas.get(i).equalsIgnoreCase(arrayInscripcionEmpresas.get(j))) {
+                        numeroInscripciones++;
+                    }
+                    
+                }
+                mostrarMensaje(arrayNombresEmpresas.get(i) + " tiene " + numeroInscripciones + " candidatos.");
+            }
+        }
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         /**
@@ -204,7 +263,7 @@ public class ejercicio4 {
          */
         ArrayList<String> nombresEmpresas = new ArrayList<>(Arrays.asList("TechNova", "BioSalud", "EducaPlus", "RetailLink"));
         ArrayList<String> sectoresEmpresas = new ArrayList<>(Arrays.asList("salud", "salud", "educacion", "salud"));
-        ArrayList<Integer> vacantesDisponibles = new ArrayList<>(Arrays.asList(3, 1, 5, 2));
+        ArrayList<Integer> vacantesDisponibles = new ArrayList<>(Arrays.asList(6, 7, 3, 5));
         /**
          * Arrays Candidatos
          */
@@ -219,8 +278,10 @@ public class ejercicio4 {
         int posicionEmpresas = -1;
         //Opcion 6
         String sectorEmpresaBuscar;
-        
+        //Opcion7
+        int numeroMayoresVacantes;
 
+        do {
         opcion = mostrarMenuYLeerOpcion(scanner, 0, 8, "Que opcion quieres elegir:\n1.Añadir empresa.\n2.Añadir candidato\n3.Listar todas las empresas.\n4.Listar todos los candidatos.\n5.Mostrar candidatos mayores de edad.\n6.Buscar empresas por sector.\n7.Mostrar la empresa con más vacantes.\n8.Mostrar cuántos candidatos tiene cada empresa\n0.Salir.");
 
         if (opcion == 1) {
@@ -260,7 +321,17 @@ public class ejercicio4 {
         }else if (opcion == 6) {
             System.out.println("Introduce el sector al que quieres que pertenezca la empresa: ");
             sectorEmpresaBuscar = scanner.nextLine();
-            comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar);
+            comprobarStringArray(nombresEmpresas, sectoresEmpresas, sectorEmpresaBuscar, "Las empresas con esas bacantes son: ");
+        }else if (opcion == 7) {
+            if (vacantesDisponibles.isEmpty()) {
+                mostrarMensaje("Error el array esta vacio");
+            }else{
+                numeroMayoresVacantes = obtenerPosicionMayor(vacantesDisponibles);
+                mostrarMensaje("La empresa con mas vacantes es: " + nombresEmpresas.get(numeroMayoresVacantes));
+            }
+        }else if (opcion == 8) {
+            contarCandidatos(nombresEmpresas, inscripcionEmpresa);
         }
+        } while (opcion >= 0);
     }
 }
