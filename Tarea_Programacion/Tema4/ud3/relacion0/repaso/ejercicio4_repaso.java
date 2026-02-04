@@ -115,7 +115,7 @@ public class ejercicio4_repaso {
         int contador = 0;
         String mensaje = "";
         //Hacer control de errores
-        if (arrayNombres.size() == 0) {
+        if (arrayNombres.isEmpty()) {
             mostrarMensaje("Error no hay nada en el array");
         } else {
             for (int i = 0; i < arrayNombres.size(); i++) {
@@ -220,7 +220,6 @@ public class ejercicio4_repaso {
 
         int opcion = 0;
         //Opcion1
-        String aniadirRuta;
         int numeroAEvaluar = 0;
 
         do {
