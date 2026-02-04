@@ -163,14 +163,15 @@ public class ejercicio4_repaso {
         double litrosNecesariosLlano = arrayKilometros.get(numeroValidar) * 0.12;
         double litrosNecesariosMixto = arrayKilometros.get(numeroValidar) * 0.18;
         double litrosNecesariosMontaña = arrayKilometros.get(numeroValidar) * 0.25;
+        String mensaje = arrayNombres.get(numeroValidar) + " Apto " + obtenerFraseApto();
         if (arrayTerreno.get(numeroValidar).equalsIgnoreCase("llano") && litrosNecesariosLlano <= arrayLitros.get(numeroValidar)) {
-            mostrarMensaje(arrayNombres.get(numeroValidar) + " Apto " + obtenerFraseApto());
+            mostrarMensaje(mensaje);
             
         }else if (arrayTerreno.get(numeroValidar).equalsIgnoreCase("mixto") && litrosNecesariosMixto <= arrayLitros.get(numeroValidar)) {
-            mostrarMensaje(arrayNombres.get(numeroValidar) + " Apto " + obtenerFraseApto());
+            mostrarMensaje(mensaje);
             
         }else if (arrayTerreno.get(numeroValidar).equalsIgnoreCase("montaña") && litrosNecesariosMontaña <= arrayLitros.get(numeroValidar)) {
-            mostrarMensaje(arrayNombres.get(numeroValidar) + " Apto " + obtenerFraseApto());
+            mostrarMensaje(mensaje);
             
         }else{
             mostrarMensaje(arrayNombres.get(numeroValidar) + " no Apto " + obtenerFraseNoApto());
