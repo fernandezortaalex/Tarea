@@ -18,16 +18,14 @@ select municipio from personas where provincia = "Cádiz" group by municipio;
 -- 8  Dime la media de ingresos_anuales agrupada por estado_civil.
 select avg(ingresos_anuales) as media_ingresos_anuales, estado_civil from personas group by estado_civil;
 -- 9  Dime los abuelos de la persona con id 2002
-SELECT * FROM personas 
-WHERE id IN (
-    SELECT padre FROM personas WHERE id IN (SELECT padre FROM personas WHERE id = 2002 UNION SELECT madre FROM personas WHERE id = 2002)
-    UNION
-    SELECT madre FROM personas WHERE id IN (SELECT padre FROM personas WHERE id = 2002 UNION SELECT madre FROM personas WHERE id = 2002)
-);
+
 select id, madre, padre from personas where id = (select madre from personas where id = 2002) or id = (select padre from personas where id = 2002);
 
 -- 10 Dime los nietos de la persona con id 1093
--- select * from personas where padre in (select id from personas where padre = 1093) or madre in (select id from personas where padre = 1093)
+select * from personas where padre in 
+(select id from personas where padre = 1093 or madre = 1093 ) or
+madre in 
+(select id from personas where padre = 1093 or madre = 1093);
 -- 11 Dime la media de numero de hijos por mujer.
 select avg(num_hijos) as numeroHijos, sexo from personas group by sexo having sexo = 'M';
 -- 12 Dime los 5 granadinos (provincia) que más cobran ordenados por la longitud en letras de su ocupacion. 
@@ -61,11 +59,10 @@ FROM personas
 WHERE id IN (SELECT padre FROM personas WHERE nombre LIKE 'L%')
    OR id IN (SELECT madre FROM personas WHERE nombre LIKE 'L%');
 -- 17 Dime la edad media de las personas que sean hermanas (de padre o de madre) de las personas de Málaga municipio.
-SELECT AVG(DATEDIFF(NOW(), fecha_nacimiento) / 365) 
+SELECT AVG(DATEDIFF(NOW(), fecha_nacimiento) / 365) as edad_media
 FROM personas 
 WHERE (madre IN (SELECT madre FROM personas WHERE municipio = 'Málaga') 
-   OR padre IN (SELECT padre FROM personas WHERE municipio = 'Málaga'))
-   AND municipio <> 'Málaga';
+   OR padre IN (SELECT padre FROM personas WHERE municipio = 'Málaga'));
 -- 18 Dime la media de salarios anuales agrupados por el dia del mes en el que nacieron.
 SELECT EXTRACT(DAY FROM fecha_nacimiento) AS dia, AVG(ingresos_anuales) 
 FROM personas 
@@ -89,7 +86,7 @@ LIMIT 3;
 -- 22. Muestra el municipio (o municipios) con más personas paradas.
 SELECT municipio 
 FROM personas 
-WHERE ocupacion = 'Parado' 
+WHERE situacion_laboral = 'Parado' 
 GROUP BY municipio 
 ORDER BY COUNT(*) DESC 
 LIMIT 1;
