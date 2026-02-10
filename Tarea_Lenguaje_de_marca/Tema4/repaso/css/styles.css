@@ -6,7 +6,7 @@
 }
 body{
     background-color: #d8efbb;
-    padding: 20px;
+    /* padding: 20px; */
 }
 h1, h2, h3{
     font-family:"Google Sans", sans-serif;
@@ -19,11 +19,18 @@ body p{
 /* Encabezado */
 .encabezado{
     display: flex;
+    align-items: center;
     flex: auto;
     justify-content: space-between;
+    background-color: brown;
+    padding: 10px; /*Espacio entre el contenido y el borde*/
 }
 .encabezado h1{
     color: #cc022b;
+    flex: 1 1 auto;
+}
+.encabezado nav{
+    flex: 2 1 auto;
 }
 .encabezado ul{
     display: flex;
@@ -39,4 +46,23 @@ body p{
 }
 .encabezado a:hover{
     color: #1da7c3;
+}
+#inicio{
+    font-weight: bold;
+}
+
+/*Seccion principal*/
+.seccion_principal{
+    margin: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center; /*Alinear los elementos al centro*/
+    align-items: center; /*Alineo los elementos al centro de forma vertical*/
+    flex-direction: column; /*Alineo los elementos para que esten unos debajo de otros*/
+    background-image:url(../img/fotoAntipirateria.png); /*Añadir imagen*/
+    background-size:auto; /*Tamaño de la imagen de fondo*/
+    background-position: center; /*Posicion de la imagen*/
+}
+.seccion_principal h2{
+    
 }
