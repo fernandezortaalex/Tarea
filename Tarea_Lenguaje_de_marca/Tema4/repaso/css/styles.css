@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #d8efbb;
+    background-color: #f8efbc;
     /* padding: 20px; */
 }
 h1, h2, h3{
@@ -26,7 +26,7 @@ body p{
     padding: 10px; /*Espacio entre el contenido y el borde*/
 }
 .encabezado h1{
-    color: #cc022b;
+    color: white;
     flex: 1 1 auto;
 }
 .encabezado nav{
@@ -53,16 +53,97 @@ body p{
 
 /*Seccion principal*/
 .seccion_principal{
-    margin: 20px;
-    padding: 40px;
     display: flex;
-    justify-content: center; /*Alinear los elementos al centro*/
+    justify-content: flex-end; /*Alinear los elementos al centro*/
     align-items: center; /*Alineo los elementos al centro de forma vertical*/
     flex-direction: column; /*Alineo los elementos para que esten unos debajo de otros*/
-    background-image:url(../img/fotoAntipirateria.png); /*Añadir imagen*/
-    background-size:auto; /*Tamaño de la imagen de fondo*/
+    background-image:url(../img/VideoPiracy_Blog-Header-768x512.jpg); /*Añadir imagen*/
+    padding: 9%;
     background-position: center; /*Posicion de la imagen*/
+    background-size: cover; /*Tamaño de la imagen de fondo*/
+    background-repeat: no-repeat;
+
 }
 .seccion_principal h2{
-    
+    color: #cc022b;
+}
+.seccion_principal p{
+    color:white;
+}
+.seccion_principal button{
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.seccion_principal button:hover{
+    transform: scale(1.1);
+    background-color:#db4413;
+    cursor: pointer;
+}
+
+/*Seccion-secundaria*/
+.seccion_secundaria{
+    display: flex;
+}
+.seccion_secundaria > h2{
+    margin: 20px;
+}
+    /*Ajustar gran mayoria de parametros*/
+.seccion_secundaria > div{
+    margin: 50px;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    border-style:dashed ;
+    border-color: #ecc958;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+}
+    /*Borde de las imagenes*/
+.seccion_secundaria > div > img{
+    border-radius: 20px;
+}
+.seccion_secundaria h3{
+    color: #cc022b;
+}
+.seccion_secundaria button{
+    background-color: #f8efed;
+    padding: 5px;
+    margin: 5px;
+    width: 100px;
+    border-radius: 20px;
+}
+    /*Al pasar el raton por encima*/
+.seccion_secundaria button:hover{
+    background-color:#db4413 ;
+    color: aliceblue;
+}
+
+/*Seccion terciaria*/
+.seccion_terciaria{
+    display: flex;
+}
+.seccion_terciaria > h2{
+    margin: 20px;
+}
+    /*Ajustar gran mayoria de parametros*/
+.seccion_terciaria > div{
+    margin: 50px;
+    justify-content: space-between;
+    background-color:#b2b0b2;
+    color:black;
+    border-radius: 15px;
+    padding: 2%;
+    text-align: center;
+    border: 4px dotted  #ecc958;
+}
+.seccion_terciaria img{
+    border-radius: 20px;
+}
+.seccion_terciaria div:hover{
+    background-color: red;
+    color: white;
 }
