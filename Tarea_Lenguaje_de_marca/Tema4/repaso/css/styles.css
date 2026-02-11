@@ -62,6 +62,7 @@ body p{
     background-position: center; /*Posicion de la imagen*/
     background-size: cover; /*Tamaño de la imagen de fondo*/
     background-repeat: no-repeat;
+    
 
 }
 .seccion_principal h2{
@@ -147,3 +148,7 @@ body p{
     background-color: red;
     color: white;
 }
+.seccion_terciaria > div > img:hover + h3{
+    color: #1da7c3;
+}
+
