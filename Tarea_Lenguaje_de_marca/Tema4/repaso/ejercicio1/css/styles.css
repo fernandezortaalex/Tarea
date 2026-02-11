@@ -5,8 +5,9 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #f8efbc;
-    /* padding: 20px; */
+    /* background-color: #f8efbc; */
+    background: linear-gradient( red,#f8efbc);
+    background-repeat: no-repeat;
 }
 h1, h2, h3{
     font-family:"Google Sans", sans-serif;
@@ -24,6 +25,7 @@ body p{
     justify-content: space-between;
     background-color: brown;
     padding: 10px; /*Espacio entre el contenido y el borde*/
+    border-bottom:3px solid blue;
 }
 .encabezado h1{
     color: white;
@@ -67,6 +69,7 @@ body p{
 }
 .seccion_principal h2{
     color: #cc022b;
+    
 }
 .seccion_principal p{
     color:white;
@@ -90,9 +93,13 @@ body p{
 }
 .seccion_secundaria > h2{
     margin: 20px;
+    
+    /* flex: 2 2 auto; */
 }
-    /*Ajustar gran mayoria de parametros*/
+/*Ajustar gran mayoria de parametros*/
 .seccion_secundaria > div{
+    /* flex-wrap: wrap; */
+    /* flex: 1 1 auto; */
     margin: 50px;
     justify-content: space-between;
     background-color: black;
@@ -107,7 +114,7 @@ body p{
 .seccion_secundaria > div > img{
     border-radius: 20px;
 }
-.seccion_secundaria h3{
+.seccion_secundaria div > h3{
     color: #cc022b;
 }
 .seccion_secundaria button{
@@ -121,6 +128,17 @@ body p{
 .seccion_secundaria button:hover{
     background-color:#db4413 ;
     color: aliceblue;
+}
+#primerCaso{
+    flex: 2 1 auto;
+}
+#segundoCaso{
+    flex: 1 2 auto;
+    
+}
+#tercerCaso{
+    flex: 1 1 auto;
+    
 }
 
 /*Seccion terciaria*/
@@ -148,7 +166,71 @@ body p{
     background-color: red;
     color: white;
 }
+    /*Cambio de color de los nombres al pasar por la imagen*/
 .seccion_terciaria > div > img:hover + h3{
     color: #1da7c3;
+}
+
+/*seccion_quaternaria*/
+.seccion_quaternaria{
+    /*Ajusta el ancho de la caja segun el contenido en el html*/
+    display: inline-flex;
+    /*Lo ajusto de arriba a abajo en columnas*/
+    flex-direction: column;
+}
+    /*Formato por defecto*/
+.seccion_quaternaria > ul > li{
+    flex: 1 1 auto;
+    list-style: none;
+    border: 5px  double #db4413;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 5px;
+    
+}
+.seccion_quaternaria time{
+    font-weight: bold;
+}
+    /*Formato al primer y ultimo cajon*/
+#charlas_educativas, #jornada_laboral{
+    background-color: #cc9045;
+}
+#charlas_educativas:hover, #jornada_laboral:hover{
+    background-color:#db4413 ;
+    color: aliceblue;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+    /*Formato del segundo cajon*/
+#campana_redes{
+    background-color: red;
+    color: white;
+}
+#campana_redes:hover{
+    background-color:black ;
+    color: aliceblue;
+    border: 5px  double red;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+/*Pie de pagina*/
+.pie_pagina{
+    display: flex;
+    background-color: #cc9045;
+    color: beige;
+}
+.pie_pagina > p{
+    font-weight: bold;
+}
+.pie_pagina > ul{
+    display: flex;
+    list-style: none;
+}
+.pie_pagina > ul > li{
+    margin: 0 10px;
+}
+.pie_pagina > ul > li > a:hover{
+    color:aqua;
 }
 
