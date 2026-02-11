@@ -11,11 +11,11 @@ body{
     margin-bottom: 13px white;
 }
 h1, h2, h3{
-    font-family:"Google Sans", sans-serif;
-    
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
 }
 body p{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* Encabezado */
@@ -45,9 +45,15 @@ body p{
 .encabezado a{
     text-decoration: none;
     color: white;
+    border: 1px solid white;
+    background-color: red;
+    padding: 7px;
 }
 .encabezado a:hover{
     color: black;
+    border: 1px solid rgba(255, 59, 59, 0.20);
+    background-color: rgba(255, 59, 59, 0.20);
+    padding: 7px;
 }
 #inicio{
     font-weight: bold;
@@ -130,8 +136,20 @@ body p{
 .personajes{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.personajes > h2{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 .personajes > div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+    width: 11%;
     background-color: #0aa08f;
     margin: 10px;
     padding: 10px;
@@ -144,11 +162,24 @@ body p{
 }
 
 /*eventos*/
-.eventos{
-    display: inline-flex;
+
+.eventos > ul{
+    display: flex;
     flex-direction: column;
+    align-items: start;
+    width: 100%;
 }
+.eventos > ul > li:hover{
+    background-color:#cc9045;
+
+}
+.eventos > ul > li:hover > h3{
+    color: #364b71;
+
+}
+
 .eventos > ul > li{
+    text-align: center;
     list-style: none;
     border: 4px dashed  #ecc958;
     background-color: #4ed48e;
