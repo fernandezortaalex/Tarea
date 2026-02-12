@@ -1,3 +1,5 @@
+package Tarea_Programacion.Tema5.Relacion2;
+
 public class Estudiante {
 
     private String nombre;

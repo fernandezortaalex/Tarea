@@ -1,24 +1,20 @@
 package Tarea_Programacion.Tema5.Relacion2;
-class Estudiante {
-    private String nombre;
-    private int edad;
-    private String numeroMatricula;
 
-    public Estudiante(String nombre, int edad, String numeroMatricula) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.numeroMatricula = numeroMatricula;
-    }
-
-    public String getNombre(){
-        return nombre;
-    }
-    
-}
+//Crea una clase Estudiante con atributos nombre, edad y número de matrícula. 
+// Implementa los métodos get y set para cada atributo, así como el método toString()
 
 public class Ejercicio1 {
+
     public static void main(String[] args) {
-        Estudiante estudiante1 = new Estudiante("Alex", 21, "4354353B");
-        
+
+        Estudiante estudiante1 = new Estudiante("Carlota", 5, "STEM0067");  
+        Estudiante estudiante2 = new Estudiante("Miguel", 25);
+        Estudiante estudiante3 = new Estudiante("Raul", "STE0068");
+
+        Universidad uni = new Universidad();
+        uni.agregarEstudiante(estudiante1);
+        uni.agregarEstudiante(estudiante2);
+        uni.agregarEstudiante(estudiante3);
+        System.out.println(uni.mostrarAlumnado());
     }
 }
