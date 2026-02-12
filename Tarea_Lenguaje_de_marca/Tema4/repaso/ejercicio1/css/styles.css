@@ -62,14 +62,14 @@ body p{
     background-image:url(../img/VideoPiracy_Blog-Header-768x512.jpg); /*Añadir imagen*/
     padding: 9%;
     background-position: center; /*Posicion de la imagen*/
-    background-size: cover; /*Tamaño de la imagen de fondo*/
+    background-size:contain; /*Tamaño de la imagen de fondo*/
     background-repeat: no-repeat;
     
 
 }
 .seccion_principal h2{
     color: #cc022b;
-    
+    margin-top: 20%
 }
 .seccion_principal p{
     color:white;
