@@ -1,4 +1,4 @@
-package Tarea_Programacion.Tema5.Relacion2;
+package Tarea_Programacion.Tema5.Relacion2.Ejercicio1;
 import java.util.ArrayList;
 
 // Luego, crea una clase Universidad que tenga un array de estudiantes y métodos para:

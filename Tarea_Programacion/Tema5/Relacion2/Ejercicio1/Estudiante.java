@@ -1,4 +1,4 @@
-package Tarea_Programacion.Tema5.Relacion2;
+package Tarea_Programacion.Tema5.Relacion2.Ejercicio1;
 
 public class Estudiante {
 
