@@ -1,5 +1,5 @@
 -- elimina la base de datos si ya existe
-drop database if exists techcorp_db;
+-- drop database if exists techcorp_db;
 
 -- crea la base de datos
 create database techcorp_db;
