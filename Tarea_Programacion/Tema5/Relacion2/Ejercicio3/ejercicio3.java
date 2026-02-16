@@ -1,22 +1,35 @@
-package Ejercicio3;
+package ejercicio3;
 
-public class ejercicio3 {
+public class Ejercicio3 {
+
     public static void main(String[] args) {
-        Producto champuPantene = new Producto( "Champu Pantene", "olor a menta", 3.49, 100);
-        Producto champuHys = new Producto("hys", "", 2.25, 20);
 
-        if(!champuHys.setPrecio(-10)){
-            System.out.println("uepa cabesa que no se pueden negativos");
+        Producto champuHS = new Producto("Champú HS",
+                "Olor a limón",
+                3.49,
+                100);
+
+        if (!champuHS.setPrecio(-8.01)) {
+            System.err.println("Ha habido un error actualizando el precio");
+        }
+        if (!champuHS.setPrecio(8)) {
+            System.err.println("Ha habido un error actualizando el precio");
         }
 
-        System.out.println(champuHys + "\n");
+        System.out.println(champuHS.getPrecio());
 
-        if(champuPantene.setPrecio(40)){
-            System.out.println("Precio cambiado correctamente");
+        if (!champuHS.setCantidadEnStock(-8)) {
+            System.err.println("Ha habido un error actualizando la cantidad");
         }
 
-        System.out.println(champuPantene);
+        if (!champuHS.setCantidadEnStock(50)) {
+            System.err.println("Ha habido un error actualizando la cantidad");
+        }
 
+        System.out.println(champuHS.getCantidadEnStock());
+
+        //Supermercado
         
     }
+
 }
