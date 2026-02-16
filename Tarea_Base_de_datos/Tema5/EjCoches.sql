@@ -163,3 +163,11 @@ from personas
 INNER JOIN coches
 ON personas.id = coches.id_dueño 
 WHERE TIMESTAMPDIFF(YEAR, personas.fecha_nacimiento, CURDATE()) > 30;
+
+-- Nivel 3: JOINS con Agregaciones
+-- 11. Número de coches por persona
+
+-- 12. Marca más común entre personas de cada provincia
+-- 13. Promedio de edad de dueños por marca de coche
+-- 14. Total de ingresos de dueños por color de coche
+-- 15. Municipios con más coches
