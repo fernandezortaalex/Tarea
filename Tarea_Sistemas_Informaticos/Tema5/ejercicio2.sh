@@ -1,6 +1,6 @@
 #!/bin/bash
 area_circulo(){
-    resultado=$((3,14 * ($1 * 2)))
+    resultado=$((3.14 * ($1 * 2)))
     echo $resultado
 }
 
