@@ -166,8 +166,17 @@ WHERE TIMESTAMPDIFF(YEAR, personas.fecha_nacimiento, CURDATE()) > 30;
 
 -- Nivel 3: JOINS con Agregaciones
 -- 11. Número de coches por persona
-
+SELECT COUNT(coches.marca) as numeroCoches, personas.nombre 
+FROM coches 
+INNER JOIN personas
+ON coches.id_dueño = personas.id
+GROUP BY personas.nombre;
 -- 12. Marca más común entre personas de cada provincia
+SELECT AVG(coches.marca) as mediaCoches, personas.provincia
+FROM coches
+INNER JOIN personas
+ON coches.id_dueño = personas.id;
+
 -- 13. Promedio de edad de dueños por marca de coche
 -- 14. Total de ingresos de dueños por color de coche
 -- 15. Municipios con más coches
