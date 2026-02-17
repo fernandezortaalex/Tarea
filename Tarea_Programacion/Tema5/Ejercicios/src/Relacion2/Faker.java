@@ -1,4 +1,4 @@
-package Ejercicios.src.Relacion2.Ejercicio1;
+package Ejercicios.src.Relacion2;
 import java.util.ArrayList;
 import java.util.Arrays;
 

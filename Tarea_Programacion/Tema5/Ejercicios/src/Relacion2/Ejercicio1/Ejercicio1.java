@@ -6,6 +6,8 @@ package Ejercicios.src.Relacion2.Ejercicio1;
 
 import java.util.Scanner;
 
+import Ejercicios.src.Relacion2.Faker;
+
 
 //Crea una clase Estudiante con atributos nombre, edad y número de matrícula. 
 // Implementa los métodos get y set para cada atributo, así como el método toString()
