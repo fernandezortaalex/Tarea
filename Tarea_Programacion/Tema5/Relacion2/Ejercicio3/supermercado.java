@@ -2,37 +2,57 @@ import java.util.ArrayList;
 
 import Tarea_Programacion.Tema5.Relacion2.Ejercicio1.Estudiante;
 
-public class supermercado {
+public class Supermercado {
     
-    ArrayList<Productos> producto;
+    ArrayList<Producto> articulos;
+
+    /**
+     * Creo el constructor
+     * @param producto
+     */
+    public Supermercado(ArrayList<Producto> articulos) {
+        this.articulos = articulos;
+    }
 
     /**
      * Construyo un nuevo array
      */
-    public supermercado(){
-        this.producto = new ArrayList<>();
+    public Supermercado() {
+        articulos = new ArrayList<>();
+    }
+
+
+    /**
+     * Agrego un producto al array de Producto
+     * @param alimento
+     */
+    public void agregarArticulo(Producto producto) {
+        articulos.add(producto);
     }
 
     /**
-     * Agrego un alimento al array de producto
-     * @param alimento
+     * Si en el array esta el producto (se busca el producto entero),
+     * Creo una variable en la cual le guardo la cantidad que se introdujo en el objeto y se le resta 
+     * a cantidad compra.
+     * Si la cantidad restante es mayor o igual a 0 llamas a la clase cantidadStock con la cantidad restante
+     * para actualizar la cantidad en stock.
+     * @param producto Le pasas el objeto 
+     * @param cantidadComprar cantidad ah vender 
      */
-    public void agregarProducto(Producto alimento){
-        producto.add(alimento);
+    public void venderArticulo(Producto producto, int cantidadComprar) {
+        if (articulos.contains(producto)) {
+            int cantidadRestante=producto.getCantidadStock()-cantidadComprar;
+            if (cantidadRestante>=0) {
+                producto.setCantidadStock(cantidadRestante);
+            }
+        }
     }
-
-    /**
-     * Eliminar un alimento del array
-     * @param alimento
-     */
-    public void venderProducto(Producto alimento){
-        producto.remove(alimento);
-    } 
 
     public String mostrarInventario(){
         String stringInventario = "";
-        for (Productos alimento : producto) {
-            stringInventario += "--" + alimento + "\n";
+        for (int i = 1; i <= producto.size(); i++) {
+            stringInventario += "Supermercado --> articulo" + i + ":" + producto.get(i - 1) + "\n";
+            
         }
         return stringInventario;
     }

@@ -62,6 +62,12 @@ public class Producto {
         return cantidadEnStock;
     }
 
+    /**
+     * Si ese numero es mayor o igual a 0 cantidad en stock
+     * actualizo el atributo cantidadEnStock
+     * @param cantidadEnStock Le llega un numero
+     * @return
+     */
     public boolean setCantidadEnStock(int cantidadEnStock) {
         boolean cantidadEnStockCorrecto = false;
         if (cantidadEnStock >= 0) {
