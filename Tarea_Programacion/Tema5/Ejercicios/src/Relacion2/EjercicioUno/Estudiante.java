@@ -1,9 +1,9 @@
 package Ejercicios.src.Relacion2.EjercicioUno;
 
 public class Estudiante {
-    String nombre;
-    int edad;
-    String numeroMatricula;
+    private String nombre;
+    private int edad;
+    private String numeroMatricula;
     
     public Estudiante(String nombre, int edad, String numeroMatricula){
         setNombre(nombre);
