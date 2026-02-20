@@ -9,7 +9,12 @@ const elementboton = document.getElementById("resaltarAnimales")
 for (const element of elemento) {
     element.style.backgroundColor = "lightyellow"
 }
-for (const element of elementboton) {
+/**
+ * Asociamos a la constante creada para el boton que si escucha un evento de tipo
+ * "click" cambie el color de fondo para cada elemento de esa clase
+ */
+elementboton.addEventListener("click", function (){
+    for (const element of elemento) {
     element.style.backgroundColor = "red"
-    
 }
+} )
