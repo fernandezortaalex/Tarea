@@ -22,10 +22,10 @@ public class Embarcacion {
     public Embarcacion(String matricula, String nombre, double eslora, String tipo, String propietario, int anioFabricacion, double valorEstimado) {
         setMatricula(matricula);
         this.nombre = nombre;
-        this.eslora = eslora;
-        this.tipo = tipo;
+        setEslora(eslora);
+        setTipo(tipo);
         this.propietario = propietario;
-        this.anioFabricacion = anioFabricacion;
+        setAnioFabricacion(anioFabricacion);
         this.valorEstimado = valorEstimado;
     }
 
@@ -37,7 +37,7 @@ public class Embarcacion {
     }
     public boolean setMatricula(String matricula){
         boolean aplicado = false;
-        if (matricula != null && matricula.length() != 0) {
+        if (matricula != null && !matricula.isBlank()) {
             this.matricula = matricula;
             aplicado = true;
         }
@@ -74,7 +74,9 @@ public class Embarcacion {
         return tipo;
     }
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        if (tipo.toLowerCase() == "velero" || tipo.toLowerCase() == "yate" || tipo.toLowerCase() == "catamaran" || tipo.toLowerCase() == "moto de agua") {
+            this.tipo = tipo.toLowerCase();
+        }
     }
     
     /**
@@ -103,17 +105,17 @@ public class Embarcacion {
     @Override
     public String toString() {
         String mensaje;
-        mensaje = "numero de matricula: " + matricula + nombre + eslora + tipo + propietario + anioFabricacion + valorEstimado;
-        if (matricula == null) {
-            mensaje = "Debes poner una matricula valida";
-        }
+        mensaje = "Embarcacion: " + 
+                    "\n Matricula:" + matricula +
+                    "\n Nombre: " + nombre + 
+                    "\n eslora: " + eslora + 
+                    "\n tipo: " + tipo + 
+                    "\n propietario: " + propietario + 
+                    "\n año fabricacion: " + anioFabricacion + 
+                    "\n Valor estimado: " + valorEstimado;
+        
         return mensaje;
     }
-
-
-
-
-
 
     
 }
