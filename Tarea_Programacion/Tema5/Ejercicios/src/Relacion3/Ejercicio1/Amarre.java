@@ -3,15 +3,21 @@ package Ejercicios.src.Relacion3.Ejercicio1;
 public class Amarre {
     private int numero;
     private double longitudMaxima;
-    public double precioDia;
+    //Al tener restricciones cambio a privada
+    private double precioDia;
     private boolean ocupado;
-    public String tipoAmarre;
+    //Al tener restricciones cambio a privada
+    private String tipoAmarre;
+    
 
-    public Amarre(int numero, double longitudMaxima, boolean ocupado, String tipoAmarre) {
+    public Amarre(int numero, double longitudMaxima, double precioDia, boolean ocupado, String tipoAmarre) {
         setNumero(numero);
         setLongitudMaxima(longitudMaxima);
+        this.precioDia = precioDia;
         setOcupado(ocupado);
+        this.tipoAmarre = tipoAmarre;
     }
+
 
     /**
      * Numero

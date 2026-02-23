@@ -1,5 +1,7 @@
 package Ejercicios.src.Relacion3.Ejercicio1;
 
+import java.time.Year;
+
 public class Embarcacion {
     private String matricula;
     private String nombre;
@@ -96,7 +98,7 @@ public class Embarcacion {
         return anioFabricacion;
     }
     public void setAnioFabricacion(int anioFabricacion){        
-        if (anioFabricacion >= 1950 || anioFabricacion <= 2026) {
+        if (anioFabricacion >= 1950 || anioFabricacion <= Year.now().getValue()) {
             this.anioFabricacion = anioFabricacion;
         }
     }
