@@ -178,5 +178,31 @@ INNER JOIN personas
 ON coches.id_dueño = personas.id;
 
 -- 13. Promedio de edad de dueños por marca de coche
+SELECT AVG(TIMESTAMPDIFF(YEAR, personas.fecha_nacimiento, CURDATE())) as media_edad
+FROM personas 
+INNER JOIN coches
+ON personas.id = coches.id_dueño;
 -- 14. Total de ingresos de dueños por color de coche
+SELECT SUM(personas.ingresos_anuales) as total_ingresos, coches.color
+FROM personas
+INNER JOIN coches
+on personas.id = coches.id_dueño
+GROUP BY coches.color;
 -- 15. Municipios con más coches
+SELECT COUNT(*) as numero_coches, personas.municipio
+FROM coches
+INNER JOIN personas
+ON coches.id_dueño = personas.id
+GROUP BY personas.municipio;
+
+-- NIVEL 2 LEFT JOIN
+-- 6. Todas las personas y sus coches (incluyendo sin coches)
+SELECT personas.*, coches.*
+FROM personas
+LEFT JOIN coches
+on personas.id = coches.id_dueño;
+-- 7. Personas sin coches registrados
+
+-- 8. Provincias con y sin representación de coches
+-- 9. Nivel de estudios de las personas sin coche
+-- 10. Personas jubiladas con sus vehículos
