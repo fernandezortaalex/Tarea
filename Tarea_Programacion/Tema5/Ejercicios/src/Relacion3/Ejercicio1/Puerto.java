@@ -25,23 +25,22 @@ public class Puerto {
         this.matriculasAmarradas =  new ArrayList<>();
     }
 
+//Nombre
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    
 
-//Capacidad maxima
     private void imprimirMensajeError(String mensajeError) {
         System.err.println(mensajeError);
     }
     private void imprimirMensaje(String mensajeError) {
         System.out.println(mensajeError);
     }
+//Capacidad maxima
     public int getCapacidadMaxima() {
         if (capacidadMaxima == -1) {
             imprimirMensajeError("No puedes introducir esa capacidad, tiene que estar entre 0 y " + MAXIMO);
@@ -60,7 +59,12 @@ public class Puerto {
     public ArrayList<Amarre> getAmarres() {
         return amarres;
     }
-    
+    public void setAmarres(ArrayList<Amarre> amarres) {
+        if (amarres.size() <= capacidadMaxima) {
+            this.amarres = amarres;
+            
+        }
+    }
 
     public ArrayList<Embarcacion> getEmbarcaciones() {
         return embarcaciones;
