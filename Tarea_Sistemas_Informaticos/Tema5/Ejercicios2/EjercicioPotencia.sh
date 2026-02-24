@@ -1,3 +1,4 @@
+#!/bin/bash
 comprobarNumero(){
 # Si la cantidad de parametros no es igual al numero que deberia haber termina
     if [ $1 -ne $2 ]; then
