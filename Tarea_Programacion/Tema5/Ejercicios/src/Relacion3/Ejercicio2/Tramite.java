@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Tramite {
-    private final static ArrayList<String> TIPOSVALIDOS = new ArrayList<>(Arrays.asList("TRAMITE DE EXTRANJERIA", "GESTION DE HERENCIAS", "CONSTITUCION DE SOCIEDAD"));
+    private final static ArrayList<String> TIPOSVALIDOS = new ArrayList<>(
+            Arrays.asList("TRAMITE DE EXTRANJERIA", "GESTION DE HERENCIAS", "CONSTITUCION DE SOCIEDAD"));
     private static int numeroCodigo = 1;
     private String codigo;
     private String nombreTramite;
     private double precioBase;
     private boolean requiereCita;
     private int duracionDias;
-    
+
     public Tramite(String nombreTramite, double precioBase, int duracionDias) {
         setCodigo(codigo);
         numeroCodigo++;
@@ -25,14 +26,16 @@ public class Tramite {
     public String getCodigo() {
         return codigo;
     }
+
     public void setCodigo(String codigo) {
         this.codigo = "T-" + numeroCodigo;
-        
+
     }
 
     public String getNombreTramite() {
         return nombreTramite;
     }
+
     public void setNombreTramite(String nombreTramite) {
         this.nombreTramite = nombreTramite;
     }
@@ -47,11 +50,12 @@ public class Tramite {
         }
         return precioBase;
     }
+
     public void setPrecioBase(double precioBase) {
         if (precioBase >= 0) {
             this.precioBase = precioBase;
-            
-        }else{
+
+        } else {
             this.precioBase = -1;
         }
     }
@@ -59,11 +63,12 @@ public class Tramite {
     public boolean isRequiereCita() {
         return requiereCita;
     }
+
     public void setRequiereCita(boolean requiereCita) {
         if (TIPOSVALIDOS.contains(nombreTramite.toUpperCase())) {
             this.requiereCita = true;
-            
-        }else{
+
+        } else {
             this.requiereCita = false;
         }
     }
@@ -74,19 +79,23 @@ public class Tramite {
         }
         return duracionDias;
     }
+
     public void setDuracionDias(int duracionDias) {
         if (duracionDias >= 1) {
             this.duracionDias = duracionDias;
-            
-        }else{
+
+        } else {
             this.duracionDias = -1;
         }
     }
 
     @Override
     public String toString() {
-        return "Tramite [codigo=" + codigo + ", nombreTramite=" + nombreTramite + ", precioBase=" + getPrecioBase()
-                + ", requiereCita=" + requiereCita + ", duracionDias=" + getDuracionDias() + "]";
+
+        return "\n TRÁMITE: " + nombreTramite + " [" + codigo + "]" +
+                "\n   Precio:    " + getPrecioBase() + "€" +
+                "\n   Duración:  " + getDuracionDias() + " días" +
+                "\n   Cita requiere:  " + requiereCita;
     }
-    
+
 }
