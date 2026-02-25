@@ -61,5 +61,7 @@ public class Ejercicio2 {
                 
             }
         } while (opcion != 8);
+
+        scanner.close();
     }
 }
