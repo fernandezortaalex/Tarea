@@ -1,10 +1,12 @@
 package Ejercicios.src.EjercicioExamen;
 
 public class Animal {
+
     private String nombre;
     private String codigo;
     private int cantidad;
     private double precio;
+    private static int numeroCodigo = 1;
 
     /**
      * Constructor
@@ -13,9 +15,10 @@ public class Animal {
      * @param cantidad
      * @param precio
      */
-    public Animal(String nombre, String codigo, int cantidad, double precio) {
+    public Animal(String nombre, int cantidad, double precio) {
         this.nombre = nombre;
-        this.codigo = codigo;
+        setCodigo(codigo);
+        numeroCodigo++;
         this.cantidad = cantidad;
         this.precio = precio;
     }
@@ -31,9 +34,12 @@ public class Animal {
     public String getCodigo() {
         return codigo;
     }
-
+    /**
+     * Creo el codigo de forma automatica
+     * @param codigo
+     */
     public void setCodigo(String codigo) {
-        this.codigo = codigo;
+        this.codigo = "A" + numeroCodigo;
     }
 
     public int getCantidad() {
@@ -52,11 +58,7 @@ public class Animal {
         this.precio = precio;
     }
 
-    @Override
-    public String toString() {
-        return "Animal [nombre=" + nombre + ", codigo=" + codigo + ", cantidad=" + cantidad + ", precio=" + precio
-                + "]";
-    }
+    
 
     
 }
