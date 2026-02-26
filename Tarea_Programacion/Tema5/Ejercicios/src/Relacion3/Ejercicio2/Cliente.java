@@ -12,7 +12,7 @@ public class Cliente {
     public Cliente(String nombre, String dni, String telefono, String email, String direccion) {
         setId(id);
         numeroId++;
-        
+
         this.nombre = nombre;
         setDni(dni);
         setTelefono(telefono);
@@ -43,8 +43,8 @@ public class Cliente {
     public void setDni(String dni) {
         if (!dni.isBlank() && dni != null) {
             this.dni = dni;
-            
-        }else{
+
+        } else {
             this.dni = "DNI FALTA POR VALIDAR";
         }
     }
@@ -56,8 +56,8 @@ public class Cliente {
     public void setTelefono(String telefono) {
         if (telefono.length() >= 9) {
             this.telefono = telefono;
-            
-        }else{
+
+        } else {
             this.telefono = "TELEFONO FALTA POR VALIDAR";
         }
     }
@@ -69,8 +69,8 @@ public class Cliente {
     public void setEmail(String email) {
         if (email.equals("@")) {
             this.email = email;
-            
-        }else{
+
+        } else {
             this.email = "EMAIL FALTA POR VALIDAR";
         }
     }
@@ -85,10 +85,12 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente [id=" + id + ", nombre=" + nombre + ", dni=" + dni + ", telefono=" + telefono + ", email="
-                + email + ", direccion=" + direccion + "]";
+        
+        return "\n CLIENTE: " + nombre + " (ID: " + id + ")" +
+                "\n   DNI:       " + dni +
+                "\n   Teléfono:  " + telefono +
+                "\n   Email:     " + email +
+                "\n   Dirección: " + direccion;
     }
-
-    
 
 }
