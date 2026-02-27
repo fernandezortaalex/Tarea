@@ -43,7 +43,7 @@ public class Zoologico {
 
     public void mostrarAnimalCodigo(String codigo){
         for (int i = 0; i < animales.size(); i++) {
-            if (animales.getCo(i)) {
+            if (animales.get(i).getCodigo().equalsIgnoreCase(codigo)) {
                 
             }
         }
