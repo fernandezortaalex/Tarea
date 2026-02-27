@@ -58,6 +58,11 @@ public class Animal {
         this.precio = precio;
     }
 
+    @Override
+    public String toString() {
+        return "Codigo: " + codigo  + " | Nombre: " + nombre  + "  | Cantidad: " + cantidad + " | Precio: " + precio + "\n";
+    }
+
     
 
     

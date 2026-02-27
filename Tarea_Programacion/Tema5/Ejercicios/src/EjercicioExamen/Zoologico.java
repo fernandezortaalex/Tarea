@@ -5,25 +5,27 @@ import java.util.ArrayList;
 public class Zoologico {
     private ArrayList<Animal> animales;
 
+    /**
+     * Constructor
+     * @param animales
+     */
     public Zoologico(ArrayList<Animal> animales) {
         setAnimales(animales);
     }
-    public Zoologico() {
-        setAnimales(animales);
-    }
 
 
+    /**
+     * Devuelvo el animal
+     * @return
+     */
     public ArrayList<Animal> getAnimales() {
         return animales;
     }
 
     public void setAnimales(ArrayList<Animal> animales) {
         
-        if (animales == null) {
-            this.animales = new ArrayList<>();
-        } else {
-            this.animales = animales;
-        }
+        this.animales = animales;
+        
     }
     
     /**
@@ -31,17 +33,19 @@ public class Zoologico {
      * @param separador Elemento que hace de separador
      * @return Devuelve un string de informacion del animal
      */
-    public String mostrarAnimales(String separador){
+    public String mostrarAnimales(){
         String mensaje= "";
         for (Animal animal : animales) {
-            mensaje += "Codigo: " + animal.getCodigo() + separador + " Nombre: " + animal.getNombre() + separador + " Cantidad: " + animal.getCantidad() + separador + " Precio: " + animal.getPrecio() + "\n";
+            mensaje += animal;
         }
         return mensaje;
     }
 
     public void mostrarAnimalCodigo(String codigo){
         for (int i = 0; i < animales.size(); i++) {
-            
+            if (animales.getCo(i)) {
+                
+            }
         }
     }
 }

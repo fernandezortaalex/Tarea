@@ -23,11 +23,17 @@ public class Gestoria {
         this.direccion = direccion;
         this.telefono = telefono;
         setHorario(horario);
-        setClientes(clientes);
+        inicializarClientes();
         setTramites(tramites);
         setExpedientes(expedientes);
     }
-
+    
+    /**
+     * Para inicializarlo
+     */
+    private void inicializarClientes(){
+        clientes = new ArrayList<>();
+    }
     public String getNombre() {
         return nombre;
     }

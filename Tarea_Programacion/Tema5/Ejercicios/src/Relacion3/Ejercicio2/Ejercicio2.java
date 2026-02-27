@@ -17,6 +17,7 @@ public class Ejercicio2 {
         Expediente expediente1 = new Expediente(cliente1, tramite1, null);
         // System.out.println(expediente1);
 
+        //En este punto no se me añaden las clases porque no se las estoy pasando, aparecen porque despues le hago el alta 
         Gestoria gestoria1 = new Gestoria("Gestoria Alex", "calle panama", "2423423", "22:30");
 
         /**

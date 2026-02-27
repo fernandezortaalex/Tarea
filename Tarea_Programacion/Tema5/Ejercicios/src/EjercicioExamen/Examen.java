@@ -26,10 +26,11 @@ public class Examen {
         //Creo el nuevo zoologico y le paso el array con todos los animales introducidos
         Zoologico zoologico1 = new Zoologico(animales);
 
+        //Menu
         System.out.println("Dime la opcion a elegir: ");
         opcion = scanner.nextInt();
         if (opcion == 1) {
-            mostrarMensaje(zoologico1.mostrarAnimales("|"));
+            mostrarMensaje(zoologico1.mostrarAnimales());
         }else if (opcion == 2) {
             
         }
