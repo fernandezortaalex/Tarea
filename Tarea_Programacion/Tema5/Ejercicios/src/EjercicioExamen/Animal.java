@@ -6,7 +6,6 @@ public class Animal {
     private String codigo;
     private int cantidad;
     private double precio;
-    private static int numeroCodigo = 1;
 
     /**
      * Constructor
@@ -18,7 +17,6 @@ public class Animal {
     public Animal(String nombre, int cantidad, double precio) {
         this.nombre = nombre;
         setCodigo(codigo);
-        numeroCodigo++;
         this.cantidad = cantidad;
         this.precio = precio;
     }
@@ -39,7 +37,7 @@ public class Animal {
      * @param codigo
      */
     public void setCodigo(String codigo) {
-        this.codigo = "A" + numeroCodigo;
+        this.codigo = Faker.codigoAnimal();
     }
 
     public int getCantidad() {
