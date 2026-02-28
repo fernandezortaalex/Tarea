@@ -33,7 +33,7 @@ public class Puerto {
     }
 
     public Puerto(String ubicacion, int capacidadMaxima, String telefonoContacto, ArrayList<Amarre> amarres) {
-        this(ubicacion, capacidadMaxima, telefonoContacto, amarres, new ArrayList<>());
+        // this(ubicacion, capacidadMaxima, telefonoContacto, amarres, new ArrayList<>());
     }
 
     public String getNombre() {
