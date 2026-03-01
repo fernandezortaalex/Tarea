@@ -68,20 +68,21 @@ public class Examen {
         String nombreAnimales;
         int cantidadAnimales;
         double precioAnimales;
-        while (contadorAnimales < numeroAnimalesAniadir) {
+        for (int i = 0; i < numeroAnimalesAniadir && contadorAnimales <= numeroAnimalesAniadir ; i++) {
             nombreAnimales = Faker.nombreAnimal();
-            precioAnimales = Faker.precioAnimal();
             do {
                 cantidadAnimales = Faker.cantidadAnimal();
-            } while (cantidadAnimales == 0);
-
-            if (contadorAnimales + cantidadAnimales > numeroAnimalesAniadir) {
-                cantidadAnimales = numeroAnimalesAniadir - contadorAnimales;
+                
+            } while (cantidadAnimales <= 0);
+            contadorAnimales += cantidadAnimales;
+            if (contadorAnimales >= numeroAnimalesAniadir) {
+                cantidadAnimales -= contadorAnimales - numeroAnimalesAniadir;
             }
-            contadorAnimales+=cantidadAnimales;
-            Animal animal = new Animal(nombreAnimales, cantidadAnimales, precioAnimales);  
+            precioAnimales = Faker.precioAnimal();
+
+            Animal animal = new Animal(nombreAnimales, cantidadAnimales, precioAnimales);
             ArrayAnimalesAniadir.add(animal);
-            
+
         }
     }
 
@@ -108,10 +109,12 @@ public class Examen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
+        //Defino el numero de animales a añadir
         final int NUMEROANIMALES = 1000;
+        // Creo un array de los animales creados
         ArrayList<Animal> animalesEnZoo = new ArrayList<>();
         aniadirAnimales(NUMEROANIMALES, animalesEnZoo);
-
+        //añado el array de los animales al zoologico
         Zoologico zoologico1 = new Zoologico(animalesEnZoo);
 
         int opcion = 0;
