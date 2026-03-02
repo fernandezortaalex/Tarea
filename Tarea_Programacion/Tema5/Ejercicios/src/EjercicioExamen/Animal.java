@@ -45,7 +45,10 @@ public class Animal {
     }
 
     public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+        if (cantidad >= 0) {
+            this.cantidad = cantidad;
+            
+        }
     }
 
     public double getPrecio() {
@@ -53,7 +56,10 @@ public class Animal {
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        if (precio >= 0.0) {
+            this.precio = precio;
+            
+        }
     }
 
     @Override
