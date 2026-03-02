@@ -2,7 +2,6 @@ package Ejercicios.src.Relacion3.Ejercicio4;
 
 import java.util.ArrayList;
 
-import Ejercicios.src.EjercicioExamen.Animal;
 import Ejercicios.src.Relacion3.Faker;
 
 public class Ejercicio4 {
@@ -15,9 +14,10 @@ public class Ejercicio4 {
         }
         ArrayList<Stream> streams = new ArrayList<>();
         for (int i = 0; i < 11; i++) {
-            Stream stream1 = new Stream(streamers.get(i), null, Faker., null, i, null, false)
-            streamers.add(streamer1);
+            Stream stream1 = new Stream(streamers.get(i), Faker.loremCorto(), Faker.entero(3, 100), Faker.categoriaTwitch(), Faker.entero(5, 40), Faker.fechaYYYYMMDD(2004, 2026));
+            streams.add(stream1);
         }
-        System.out.println(streamers);
+        System.out.println(streams);
+
     }
 }

@@ -11,9 +11,9 @@ public class Stream {
     private int mediaViewers;
     private String fecha;
     private boolean activo;
-    
-    public Stream( Streamer streamer, String titulo, int duracionMin, String categoria, int mediaViewers,
-            String fecha, boolean activo) {
+
+    public Stream(Streamer streamer, String titulo, int duracionMin, String categoria, int mediaViewers,
+            String fecha) {
         numeroStreams++;
         setId(id);
         this.streamer = streamer;
@@ -22,9 +22,8 @@ public class Stream {
         this.categoria = categoria;
         this.mediaViewers = mediaViewers;
         this.fecha = fecha;
-        this.activo = activo;
+        this.activo = true;
     }
-
 
     public int getId() {
         return id;
@@ -90,5 +89,18 @@ public class Stream {
         this.activo = activo;
     }
 
-    
+    @Override
+    public String toString() {
+        return "\n--- DATOS DEL STREAM ---" +
+                "\nID:          " + id +
+                "\nStreamer:    " + streamer.getNombreCanal() +
+                "\nTítulo:      " + titulo +
+                "\nCategoría:   " + categoria +
+                "\nDuración:    " + duracionMin + " min" +
+                "\nAudiencia:   " + mediaViewers + " personas" +
+                "\nFecha:       " + fecha +
+                "\nEstado:      " + (activo ? "En Directo" : "Finalizado") +
+                "\n------------------------";
     }
+
+}
