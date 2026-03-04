@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="FcyN-EPMs1CHIANmYXrz" name="01-biblioteca">
-        <mxGraphModel dx="126" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="942" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -345,7 +345,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="epUo9CexI027NfjYwKmn" name="06-plataforma-comercio-electronico">
-        <mxGraphModel dx="931" dy="587" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+        <mxGraphModel dx="1326" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -600,7 +600,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="tg9HrouwWHR5x_tDJlc5-1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+                <mxCell id="tg9HrouwWHR5x_tDJlc5-1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="519.232558139535" y="753" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
