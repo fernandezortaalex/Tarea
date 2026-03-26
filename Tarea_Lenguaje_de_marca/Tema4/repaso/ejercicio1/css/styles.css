@@ -18,7 +18,7 @@ body p{
 }
 
 /* Encabezado */
-.encabezado{
+/* .encabezado{
     display: flex;
     align-items: center;
     flex: auto;
@@ -26,14 +26,14 @@ body p{
     background-color: brown;
     padding: 10px; /*Espacio entre el contenido y el borde*/
     border-bottom:3px solid blue;
-}
-.encabezado h1{
+} */
+/* .encabezado h1{
     color: white;
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
 }
 .encabezado nav{
-    flex: 2 1 auto;
-}
+    /* flex: 2 1 auto; */
+} */
 .encabezado ul{
     display: flex;
     justify-content: flex-end;
