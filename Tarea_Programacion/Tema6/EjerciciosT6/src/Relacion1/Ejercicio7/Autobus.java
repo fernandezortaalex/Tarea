@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio7;
+package src.Relacion1.Ejercicio7;
 
 public class Autobus implements Transporte {
     String horaParada;

@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio7;
+package src.Relacion1.Ejercicio7;
 
 // Define una interfaz Transporte con los métodos arrancar() y detener(). Cada método debe devolver una cadena indicando la acción realizada.
 

@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio14;
+package src.Relacion1.Ejercicio14;
 
 public class Ropa extends Producto {
     private String talla;

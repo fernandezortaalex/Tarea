@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio4;
+package src.Relacion1.Ejercicio4;
 
 public class Animales {
     protected String nombre;

@@ -1,4 +1,5 @@
-package EjerciciosT6.src.Relacion1.Ejercicio4;
+package src.Relacion1.Ejercicio4;
+
 
 class Domestico extends Animales {
     private String dueno;

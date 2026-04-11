@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio2;
+package src.Relacion1.Ejercicio2;
 
 public class Empleado {
     public String nombre;

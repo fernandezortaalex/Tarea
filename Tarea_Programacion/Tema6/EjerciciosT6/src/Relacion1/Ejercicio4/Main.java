@@ -1,4 +1,5 @@
-package EjerciciosT6.src.Relacion1.Ejercicio4;
+package src.Relacion1.Ejercicio4;
+
 // ### 4. Animales Domésticos y Salvajes
 // **Enunciado:**  
 // Crea una clase `Animal` con los atributos `nombre` y `tipoAlimentacion`. 

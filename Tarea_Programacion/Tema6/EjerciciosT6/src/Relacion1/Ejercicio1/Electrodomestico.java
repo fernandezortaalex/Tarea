@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio1;
+package src.Relacion1.Ejercicio1;
 
 public class Electrodomestico {
     private String marca;

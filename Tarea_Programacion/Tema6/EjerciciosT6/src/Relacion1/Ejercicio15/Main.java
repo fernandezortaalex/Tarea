@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio15;
+package src.Relacion1.Ejercicio15;
 
 // ### 15. Empleados con Diferentes Roles
 // **Enunciado:**  

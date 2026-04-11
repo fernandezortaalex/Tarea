@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio2;
+package src.Relacion1.Ejercicio2;
 // Crea una clase Empleado con los atributos nombre y sueldoBase. 
 // Luego, crea tres subclases: Programador, Diseñador y Gerente. 
 // Cada subclase debe tener un método calcularSueldo() 

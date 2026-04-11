@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio11;
+package src.Relacion1.Ejercicio11;
 
 public class Cuadrado extends Figura {
     private double lado;

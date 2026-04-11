@@ -1,4 +1,4 @@
-package EjerciciosT6.src.Relacion1.Ejercicio11;
+package src.Relacion1.Ejercicio11;
 
 // Crea una **clase abstracta** `Figura` que tenga un método abstracto `calcularArea()`. Luego, crea dos clases concretas: `Triangulo` y `Cuadrado`. La clase `Triangulo` debe tener los atributos `base` y `altura`, y su método `calcularArea()` debe devolver el área del triángulo. La clase `Cuadrado` debe tener el atributo `lado`, y su método `calcularArea()` debe devolver el área del cuadrado. 
 
