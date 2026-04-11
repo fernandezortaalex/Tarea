@@ -1,7 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "Tema6/EjerciciosT6/src/Relacion1/Ejercicio5",
         "Tema5",
-        "Tema6/EjerciciosT6/src/Relacion1/Ejercicio5"
+        "Tema6/EjerciciosT6/src/Repaso1"
     ],
     "java.debug.settings.onBuildFailureProceed": true
 }
