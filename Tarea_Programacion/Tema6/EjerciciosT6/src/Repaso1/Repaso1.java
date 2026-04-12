@@ -282,8 +282,19 @@
  *
  */
 
+import java.util.ArrayList;
+
 public class Repaso1 {
     public static void main(String[] args) {
         // Desarrolla aquí tu solución.
+        Director director = new Director("Paco", 25, 4, "Guitarra", 4, null, 300);
+        Trompetista trompetista = new Trompetista("Alex", 21, 5, "Trompeta", 5, 5, 20, 3, 200, 20, 5);
+        Percusionista percusionista = new Percusionista("Iker", 23, 7, "Tambor", 7, 4, 30, 5, 100, 30, 20);
+        trompetista.registrarEnsayo();
+
+        ArrayList<PersonaAgrupacion> personas = new ArrayList<>();
+        personas.add(trompetista);
+        personas.add(percusionista);
+
     }
 }
